@@ -8,7 +8,7 @@
 </head>
 <body>
   ...
-  <!-- Le reste du contenu -->
+  test
   ...
   <?php 
 
