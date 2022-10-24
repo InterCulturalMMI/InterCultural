@@ -7,9 +7,17 @@
   <script src="../js/pays.js"></script>
 </head>
 <body>
-  ...
-  <!-- Le reste du contenu -->
-  ...
+  <footer>
+    <div class="gauche">
+      <p> © Copyrights </p>
+    </div>
+    <div class="centre">
+      <img src="../logo/petit_noir.png" alt="logo">
+    </div>
+    <div class="droite">
+      <p> All Rights Reserved </p>
+    </div>
+</footer>
   <?php 
 
   ?>
