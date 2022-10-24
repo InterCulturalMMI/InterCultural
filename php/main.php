@@ -9,42 +9,43 @@
 </head>
 
 <body>
-  <div class="containerBar">
-    <div class="fondBar">
-      <a href="#top">
-        <img href="../img/logo.png"></img>
-      </a>
-
-
-      <div class="containerBoutons">
-
-        <div class="bouton">
+  <nav class="containerBar">
+      <div class="fondBar">
+        <div class="logo">
           <a href="#top">
-            <p>
-              ACCUEIL
-            </p>
+            <img src="../img/logo.png"></img>
           </a>
         </div>
 
-        <div class="bouton">
-          <a href="#pays">
-            <p>
-              PAYS
-            </p>
-          </a>
-        </div>
+        <div class="containerBoutons">
 
-        <div class="bouton">
-          <a href="./reservation.php">
-            <p>
-              RESERVER
-            </p>
-          </a>
-        </div>
+          <div class="bouton">
+            <a href="#top">
+              <p>
+                ACCUEIL
+              </p>
+            </a>
+          </div>
 
+          <div class="bouton">
+            <a href="#pays">
+              <p>
+                PAYS
+              </p>
+            </a>
+          </div>
+
+          <div class="bouton">
+            <a href="./reservation.php">
+              <p id="reservation">
+                RESERVER
+              </p>
+            </a>
+          </div>
+
+        </div>
       </div>
-    </div>
-  </div>
+  </nav>
   <?php 
 
   ?>

@@ -1,0 +1,67 @@
+@font-face {
+    font-family: 'GothamReg';
+    src: url(../fonts/GothamMedium.ttf) format('Opentype');
+}
+
+@font-face {
+    font-family: 'GothamBold';
+    src: url(../fonts/Gotham-Bold.otf) format('Opentype');
+}
+
+.banner {
+    background-image:url('../img/bann_inde.png');
+    height:400px;
+}
+
+.banner h1 {
+    font-family: 'GothamBold';
+    color: white;
+    font-size: 3vw;
+    text-align: center;
+}
+
+.titre h2 {
+    font-family: 'GothamBold';
+    color: #6B705C;
+    font-size: 2vw;
+
+    text-align:center;
+}
+
+footer {
+    display:flex;
+    justify-content: space-around;
+    align-items: center;
+
+    background-color: #6b705c;
+
+    border: none;
+    border-radius: 30px;
+
+    box-shadow: 5px 5px 15px black;
+
+    margin:auto;
+
+    width:35%;
+}
+
+footer p {
+    font-family: 'GothamReg';
+    color: white;
+
+    font-size: 1vw;
+}
+
+footer img {
+    max-width:70%;
+    height:70%;
+}
+
+.centre {
+    display:flex;
+    align-items:center;
+    justify-content: center;
+
+    height:100%;
+    width:30%;
+}

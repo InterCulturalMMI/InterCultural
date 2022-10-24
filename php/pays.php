@@ -7,9 +7,24 @@
   <script src="../js/pays.js"></script>
 </head>
 <body>
-  ...
-  <!-- Le reste du contenu -->
-  ...
+  <div class="banner">
+    <h1>Découvrez la Chine à travers notre exposition !</h1>
+  </div>
+  <div class="titre">
+    <h2> Titre </h2>
+  </div>
+  <div class="pays">
+  <footer>
+      <div class="gauche">
+        <p> © Copyrights </p>
+      </div>
+      <div class="centre">
+        <img src="../img/gros_blanc.png" alt="logo">
+      </div>
+      <div class="droite">
+        <p> All Rights Reserved </p>
+    </div>
+  </footer>
   <?php 
 
   ?>
