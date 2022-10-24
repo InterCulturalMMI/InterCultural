@@ -27,13 +27,26 @@ a {
 
 .containerBar {
     position: fixed;
+<<<<<<< HEAD
     background-image: ;
+=======
+>>>>>>> 204903b1c7ffdb8de07ee6d19798c4eae7f645b3
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
     margin: 2%;
     font-size: 1vw;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.containerBar img {
+    width: 60%;
 }
 
 .logo {
@@ -86,10 +99,18 @@ a {
     transition: 0.4s;
 }
 
+<<<<<<< HEAD
+=======
+#petitBouton {
+    transform: scale(0.8);
+}
+
+>>>>>>> 204903b1c7ffdb8de07ee6d19798c4eae7f645b3
 #reservation {
     font-family: "GothamBlack";
 }
 
+<<<<<<< HEAD
 .imgFond {
     display: flex;
     align-items: center;
@@ -123,4 +144,41 @@ a {
 .fin {
     font-family: "GothamMedium";
     color: black;
+=======
+.mosaique{
+    display:flex;
+    flex-direction: column;
+    justify-content:center;
+
+    height:400px;
+    width: 80%;
+    background-color: #6B705C;
+
+    border:none;
+    border-bottom: 10px solid red;
+    border-radius: 2vh;
+}
+
+.sponsors {
+    display: flex;
+    justify-content: space-around;
+}
+
+.sponsors img {
+    max-width: 50%;
+    height:12%;
+
+    margin:5%;
+
+    align-items:center;
+}
+
+#bouton {
+    background-color:#A5A58D;
+    font-family: "GothamBlack";
+    color: white;
+    border:none;
+    border-radius: 3%;
+
+>>>>>>> 204903b1c7ffdb8de07ee6d19798c4eae7f645b3
 }
