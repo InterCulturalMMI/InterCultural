@@ -9,12 +9,13 @@
 </head>
 
 <body>
-  <div class="containerBar">
+  <nav class="containerBar">
     <div class="fondBar">
-      <a href="#top">
-        <img href="../img/logo.png"></img>
-      </a>
-
+      <div class="logo">
+        <a href="#top">
+          <img src="../img/logo.png"></img>
+        </a>
+      </div>
 
       <div class="containerBoutons">
 
@@ -36,7 +37,7 @@
 
         <div class="bouton">
           <a href="./reservation.php">
-            <p>
+            <p id="reservation">
               RESERVER
             </p>
           </a>
@@ -44,7 +45,21 @@
 
       </div>
     </div>
+</nav>
+
+<div class="imgFond">
+  <div class="edition">
+
+    <p class="bold">
+      EDITION 2022 &nbsp;
+    </p>
+
+    <p class="fin">
+      - LE PUY EN VELAY
+    </p>
+
   </div>
+</div>
   <?php 
 
   ?>

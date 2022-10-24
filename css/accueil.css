@@ -1,6 +1,11 @@
 @font-face {
     font-family: "GothamMedium";
     src: url(../fonts/GothamMedium.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: "GothamBlack";
+    src: url(../fonts/Gotham-Black.otf) format('opentype');
   }
 
 * {
@@ -14,24 +19,44 @@ html {
     height: 100%;
 }
 
+a {
+    text-decoration: none;
+    color: white;
+    font-family: "GothamMedium";
+}
+
 .containerBar {
+    position: fixed;
+    background-image: ;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
     margin: 2%;
+    font-size: 1vw;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.containerBar img {
+    width: 60%;
 }
 
 .fondBar {
     display: grid;
-    grid-template-columns: 2fr 1fr;
-    width: 80%;
-    height: 20%;
+    grid-template-columns: 1.5fr 5.25fr 5.25fr;
+    width: 75%;
+    height: 25%;
     background-color: #6B705C;
     border-radius: 10vh;
 }
 
 .containerBoutons {
+    grid-column: 3;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     width: auto;
@@ -46,7 +71,56 @@ html {
     height: auto;
     padding: 1.2vh;
     background-color: #A5A58D;
+    box-shadow: 0px 0px 20px 1px rgba(0, 0, 0, 0.425);
     border-radius: 10vh;
     margin: 1vh;
+}
+
+.bouton:hover {
+    transform: scale(0.9);
+    transition: 0.4s;
+}
+
+.bouton:not(hover) {
+    transform: scale(1);
+    transition: 0.4s;
+}
+
+#reservation {
+    font-family: "GothamBlack";
+}
+
+.imgFond {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    background-image: url(../img/fond_accueil.jpg);
+    background-size: cover;
+    background-position: center;
+    width: 100vw;
+    height: 80vh;
+}
+
+.edition {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 3vw;
+    height: 40vh;
+    background-color:#EFEFEF;
+    border-radius: 10vh;
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    margin-right: 3vw;
+    font-size: 1vw;
+}
+
+.bold {
+    font-family: "GothamBlack";
+    color: black;
+}
+
+.fin {
     font-family: "GothamMedium";
+    color: black;
 }
