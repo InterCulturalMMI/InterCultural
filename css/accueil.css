@@ -1,0 +1,52 @@
+@font-face {
+    font-family: "GothamMedium";
+    src: url(../fonts/GothamMedium.ttf) format('truetype');
+  }
+
+* {
+    margin: 0;
+    padding: 0;
+    max-width: 100%;
+}
+
+html {
+    width: 100%;
+    height: 100%;
+}
+
+.containerBar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin: 2%;
+}
+
+.fondBar {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    width: 80%;
+    height: 20%;
+    background-color: #6B705C;
+    border-radius: 10vh;
+}
+
+.containerBoutons {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    width: auto;
+    height: auto;
+    padding: 1.2vh;
+    background-color: #868a74;
+    border-radius: 10vh;
+}
+
+.bouton {
+    width: auto;
+    height: auto;
+    padding: 1.2vh;
+    background-color: #A5A58D;
+    border-radius: 10vh;
+    margin: 1vh;
+    font-family: "GothamMedium";
+}
