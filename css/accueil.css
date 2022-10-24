@@ -91,3 +91,40 @@ a {
 #reservation {
     font-family: "GothamBlack";
 }
+
+.mosaique{
+    display:flex;
+    flex-direction: column;
+    justify-content:center;
+
+    height:400px;
+    width: 80%;
+    background-color: #6B705C;
+
+    border:none;
+    border-bottom: 10px solid red;
+    border-radius: 2vh;
+}
+
+.sponsors {
+    display: flex;
+    justify-content: space-around;
+}
+
+.sponsors img {
+    max-width: 50%;
+    height:12%;
+
+    margin:5%;
+
+    align-items:center;
+}
+
+#bouton {
+    background-color:#A5A58D;
+    font-family: "GothamBlack";
+    color: white;
+    border:none;
+    border-radius: 3%;
+
+}
