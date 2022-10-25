@@ -117,13 +117,13 @@ a {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    padding-top: 180px;
+    padding-top: 280px;
 }
 
 .left_img > img {
-    width: 100%;
     height: auto;
     max-width: 100%;
+    border-radius: 20px;
 }
 
 .right_text {
@@ -142,7 +142,7 @@ a {
 
 .choose_pays {
     text-align: center;
-    margin-top: 100px;
+    margin-top: 140px;
 }
 
 .choose_pays h2 {
@@ -156,7 +156,7 @@ a {
     border: none;
     color: #FFFFFF;
     text-align: center;
-    font-size: 28px;
+    font-size: 3vh;
     padding: 10px;
     width: 160px;
     transition: all 0.5s;
@@ -193,11 +193,10 @@ a {
 }
 
 .container_in {
-    padding-top: 20px;
+    padding-top: 50px;
     margin-top: 50px;
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
 
     font-family: 'GothamBlack';
     font-size: 2.5vh;
@@ -207,7 +206,11 @@ a {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
-    align-items: center;
+}
+
+.informations {
+    display: flex;
+    justify-content: space-evenly;
 }
 
 .activity_main {
@@ -217,32 +220,64 @@ a {
 
 .activity1, .activity2 {
     display: flex;
-    justify-content: space-evenly;
-    width: 93%;
+    flex-direction: column;
     margin-bottom: 30px;
 }
 
-.activity1 > p, .activity2 > p {
+.activity1 > p, .activity2 > p, .tarifs p {
     font-family: 'GothamMedium';
     text-align: justify;
     font-size: 1.75vh;
-    margin-top: 30px;
+    margin-top: 50px;
     width: 35vh;
 }
 
-.activity1 > li, .activity2 > li {
+.activity1 > li, .activity2 > li, .tarifs > li {
     font-family: 'GothamMedium';
     text-align: center;
     font-size: 1.75vh;
-    margin-top: 30px;
+    margin-top: 50px;
     width: 35vh;
     list-style: none;
 }
+
+.tarifs p {
+    text-align: center;
+}
+
+
+
+
+.bn3 {
+    display: flex;
+    justify-content: center;
+    width: 20%;
+
+    margin: auto auto 70px auto;
+    padding: 20px;
+
+    border-radius: 2em;
+    box-shadow: 5.6px 11.2px 11.2px hsl(0deg 0% 0% / 0.33);
+
+    text-decoration: none;
+    color: white;
+    text-shadow: 0 0.04em 0.04em rgba(255, 255, 255, 0.253);
+    text-align: center;
+    font-size: 2.5vh;
+    font-family: 'GothamBlack';
+
+    transition: all 0.2s;
+    background-color: #a5a58d;
+  }
+  
+  .bn3:hover {
+    background-color: #6b705c;
+  }
 /*===================== FIN BODY =====================*/
 
 /*===================== FOOTER =====================*/
 footer {
-    display:flex;
+    display: flex;
     justify-content: space-around;
     align-items: center;
 
