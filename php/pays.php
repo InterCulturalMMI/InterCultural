@@ -156,7 +156,7 @@ print_r($tab_image_ban);
     </form>
   </div>
 
-    <div class="titre"><h1> EN ESPERANT VOUS RETROUVER </h1></div>
+    <div class="titre" id="aurevoir"><h1> EN ESPERANT VOUS RETROUVER NOMBREUX </h1></div>
 
   <footer>
       <div class="gauche">
