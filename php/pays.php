@@ -45,21 +45,21 @@
       </div>
   </nav> -->
 
-  <div class="titre"><h1> INDE </h1></div>
+  <div class="titre" id="titre1"><h1> INDE </h1></div>
 
   <div class="banner">
     <img src="../img/bann_inde.png" alt="Banniere du pays" style="width:100%;"></img>
-    <div class="texteimg"><p> Découvrez la culture </p></div>
+    <div class="texteimg"><p> Ouvrez-vous à la culture </p></div>
   </div>
 
   <nav class="navpage">
-    <div><a href="#">Introduction</a></div>
-    <div><a href="#">Monuments</a></div>
-    <div><a href="#">Activités</a></div>
-    <div><a href="#">Inscription</a></div>
+    <div class="zoom"><a href="#intro1">Introduction</a></div>
+    <div class="zoom"><a href="#monumentsid">Monuments</a></div>
+    <div class="zoom"><a href="#activid">Activités</a></div>
+    <div class="zoom"><a href="#">Inscription</a></div>
 </nav>
 
-  <div class="intro">
+  <div class="intro" id="intro1">
     <p>
       Avec ses nombreuses couleurs, ses odeurs et ses saveurs, l’Inde est un dépaysement très fort pour le
       voyageur occidental. Elle surprend, elle déroute, elle enchante et choque même parfois. Les racines
@@ -74,7 +74,7 @@
 
   <div class="monument">
 
-  <div class="titre"><h1  style="color:white;"> MONUMENTS </h1></div>
+  <div class="titre" id="monumentsid"><h1  style="color:white;"> MONUMENTS </h1></div>
 
     <div class="images_monument">
       <div class="un"><img src="../img/illu_inde_1.png"></div>
@@ -95,19 +95,20 @@
     </div>
   </div>
 
-  <div class="titre"><h1> ACTIVITÉS </h1></div>
+  <div class="titre" id="activid"><h1> ACTIVITÉS </h1></div>
 
   <div class="activites">
-    <div class="image_activites">
-      <img src="../img/event_inde.png"></img>
-    </div>
     <div class="texte_activites">
       <p>
-      Samedi soir, aux alentours de la Place du Breuil à 19h, venez célébrer la Holi, tradition du passage au printemps en Inde.
-      Achetez votre peinture et lancez-là à cette occasion pour créer un énorme nuage coloré et ainsi donner au Puy la couleur de
-      l’Inde. Ne venez pas avec vos plus beaux habits, vous finirez probablement couvert de poudre de peinture ! Retrouvez tout
-      le week-end sur la place du Breuil, tout un ensemble d'activités en rapport avec la culture indienne, telles que la tapisserie,
-      des danses ou encore la découverte de la cuisine indienne et de ses épices si particuliers.
+        Samedi soir, aux alentours de la Place du Breuil à 19h, venez célébrer la Holi, tradition du passage au printemps en Inde.
+        Achetez votre peinture et lancez-là à cette occasion pour créer un énorme nuage coloré et ainsi donner au Puy la couleur de
+        l’Inde. Ne venez pas avec vos plus beaux habits, vous finirez probablement couvert de poudre de peinture ! Retrouvez tout
+        le week-end sur la place du Breuil, tout un ensemble d'activités en rapport avec la culture indienne, telles que la tapisserie,
+        des danses ou encore la découverte de la cuisine indienne et de ses épices si particuliers.
+      </p>
+    </div>
+    <div class="image_activites">
+      <img src="../img/event_inde.png"></img>
     </div>
   </div>
 
@@ -126,6 +127,12 @@
     </div>
   </div>
 
+  <div class="reserv">
+    <form action="reservation.php">
+      <input type="submit" value="Réservez dès maintenant" />
+    </form>
+  </div>
+
     <div class="titre"><h1> EN ESPERANT VOUS RETROUVER </h1></div>
 
   <footer>
@@ -139,8 +146,5 @@
         <p> All Rights Reserved </p>
     </div>
   </footer>
-  <?php 
-
-  ?>
 </body>
 </html>

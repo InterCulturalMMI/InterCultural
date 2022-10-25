@@ -13,6 +13,10 @@
     src: url(../fonts/Gotham-Black.otf) format('opentype');
   }
 
+body {
+    background-image: url('../img/fondfond.png');
+}
+  
 .titre h1 {
     font-family: 'GothamBold';
     text-align: right;
@@ -21,6 +25,11 @@
     margin-top: 2%;
     margin-bottom: 2%;
     margin-right:10%;
+}
+
+#titre1 h1{
+    font-size:4vw;
+    margin:0;
 }
 
 .banner {
@@ -57,22 +66,18 @@
     text-decoration: none;
 }
 
-.navpage a:hover {
-    color:#6b705c;
-    transform: scale(1.2);
-    transition: 0.5s;
-}
+.navpage .zoom:hover {transform: scale(1.2);transition: 0.5s;}
 
-.navpage a:not(:hover) {
-    color:black;
-    transition: 0.5s;
-}
+.navpage .zoom:not(:hover) {transition: 0.5s;}
 
 .intro {
     margin:auto;
-    margin-top: 2%;
-    margin-bottom: 2%;
     width:65%;
+}
+
+#intro1 {
+    margin-top: 4%;
+    margin-bottom: 4%;
 }
 
 .intro p{
@@ -90,18 +95,20 @@
 
     width: 80%;
 
-    background-color: #a5a58d;
+    background-image: url('../img/fond.png');
+    background-size: cover ;
     border:none;
-    border-radius: 5vw;
+    border-radius: 3vw;
     margin:auto;
+    padding:0;
+    padding-bottom:1%;
 
-
-    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
 }
 
 .images_monument {
     display:flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
     align-items: center;
 
     margin: auto;
@@ -137,15 +144,24 @@
 
 #monum {width:80%; }
 
+#activid h1{
+    margin:3%;
+    text-align:center;
+}
+
 .activites {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+    align-items: center;
+
+    width:70%;
+    margin:auto;
 }
 .image_activites {display: flex; justify-content:center; width: 40%;}
 
 
-.image_activites img{max-width: 70%;}
+.image_activites img{max-width: 100%;}
 
 
 .texte_activites {
@@ -179,6 +195,43 @@
     font-family: 'GothamReg';
     font-size:1vw;
 }
+
+.reserv {
+    display:flex;
+    justify-content: center;
+
+    margin:2%;
+}
+
+input {
+    display: inline-block;
+    outline: none;
+    cursor: pointer;
+    font-size: 14px;
+    line-height: 1;
+    border-radius: 500px;
+    transition-property: background-color,border-color,color,box-shadow,filter;
+    transition-duration: .3s;
+    border: 1px solid transparent;
+    letter-spacing: 2px;
+    min-width: 160px;
+    text-transform: uppercase;
+    white-space: normal;
+    font-weight: 700;
+    text-align: center;
+    padding: 16px 14px 18px;
+    color: #6b705c;
+    box-shadow: inset 0 0 0 2px #6b705c;
+    background-color: transparent;
+    height: 48px;
+    font-family: 'GothamReg';
+}
+
+input:hover{
+    color: white;
+    background-color: #6b705c;
+}
+
 
 footer {
     display:flex;
