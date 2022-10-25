@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <title> INTERCULTURAL </title>
-  <link rel="stylesheet" href="../css/reservation.css">
+  <link rel="stylesheet" href="../reservation.css">
   <script src="../js/reservation.js"></script>
 </head>
 <body>
@@ -48,36 +48,57 @@
 <div class="container">
     <div class="img_text_top">
       <div class="left_img">
-        <img src="../img/600x500.png" class="img_top">
+        <img src="../img/600x500.png" class="img_top"> <!-- ../img/600x500.png -->
       </div>
       <div class="right_text">
         <h1>Réservez vos places</h1><br>
       <span>
-        <p>Découvrez 5 cultures à travers 5 pays grâce à des activités</p>
-        <p>telles que la Holi, l'escape game situé dans la pyramide de</p>
-        <p>Khéops, le carnaval ou le musée. D'autres activités comme</p>
-        <p>la poterie, la sculpture, spectacle de capoeira, ou tapisserie</p>
-        <p>vous permettront d'en apprendre d'avantage sur chaque culture.</p>
+        Découvrez 5 cultures à travers 5 pays grâce à des activités<br>
+        telles que la Holi, l'escape game situé dans la pyramide de<br>
+        Khéops, le carnaval ou le musée. D'autres activités comme<br>
+        la poterie, la sculpture, spectacle de capoeira, ou tapisserie<br>
+        vous permettront d'en apprendre d'avantage sur chaque culture.<br>
       </span>
       </div>
     </div>
+
+    <div class="choose_pays">
+        <label for="pays"><h3>Quel pays voulez-vous découvrir ?</h3></label>
+        <select name="pays" class="select_pays">
+          <option value="0">Pays</option>
+          
+            <?php
+              /* AFFICHER LISTE PAYS */
+            ?>
+
+        </select>
+    </div>
+
+    <div class="afficher_pays">
+      <div class="container_info">
+        <h3>"Nom pays"</h3>
+
+
+      </div>
+    </div>
+
 </div>    
 
   <?php 
 
   ?>
   
-<footer>
+  <footer>
       <div class="gauche">
-        <p> :copyright: Copyrights </p>
+        <p> © Copyrights </p>
       </div>
       <div class="centre">
-        <img src="../logo/gros_blanc.png" alt="logo">
+        <img src="../img/gros_blanc.png" alt="logo">
       </div>
       <div class="droite">
         <p> All Rights Reserved </p>
     </div>
-</footer>
+  </footer>
 </body>
 
 </html>
