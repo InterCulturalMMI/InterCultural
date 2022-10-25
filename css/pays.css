@@ -8,43 +8,176 @@
     src: url(../fonts/Gotham-Bold.otf) format('Opentype');
 }
 
-.banner {
-    display: flex;
-    width:100%;
-    height:200px;
+@font-face {
+    font-family: "GothamBlack";
+    src: url(../fonts/Gotham-Black.otf) format('opentype');
+  }
 
-    background-image:url('../img/bann_inde.png');
-    background-size: cover;
-    
-    
-    align-items: center;
-    justify-content: center;
-}
-
-.banner h1 {
+.titre h1 {
     font-family: 'GothamBold';
-    color: white;
+    text-align: right;
     font-size: 3vw;
+    
+    margin-top: 2%;
+    margin-bottom: 2%;
+    margin-right:10%;
 }
 
-.pays {width:50%;margin:auto;}
+.banner {
+    position: relative;
+    text-align:center;
+}
 
-.pays p {
+/*.banner img {filter: blur(1px);}*/
+
+.texteimg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    color:white;
+  }
+
+.texteimg p {font-family: 'GothamBold'; font-size: 5vw;}
+
+.navpage {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+
+    margin: 3%;
+}
+
+.navpage a {
+    color: black;
+    font-family: 'GothamBold';
+    font-size:2vw;
+
+    text-decoration: none;
+}
+
+.navpage a:hover {
+    color:#6b705c;
+    transform: scale(1.2);
+    transition: 0.5s;
+}
+
+.navpage a:not(:hover) {
+    color:black;
+    transition: 0.5s;
+}
+
+.intro {
+    margin:auto;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    width:65%;
+}
+
+.intro p{
+    text-align:justify;
+    text-justify: inter-word;
+
+    color: black;
     font-family: 'GothamReg';
-    color: #6B705C;
-    font-size: 0.8vw;
+    font-size:1vw;
+}
+
+.monument {
+    display:flex;
+    flex-direction: column;
+
+    width: 80%;
+
+    background-color: #a5a58d;
+    border:none;
+    border-radius: 5vw;
+    margin:auto;
+
+
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+}
+
+.images_monument {
+    display:flex;
+    justify-content: space-around;
+    align-items: center;
+
+    margin: auto;
+}
+
+.un , .deux {display: flex; justify-content:center;margin-bottom:2%;}
+
+.un img, .deux img {
+    max-width:60%;
+
+    box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+}
+
+.un img:hover{
+    filter: blur(2px);
+    transition:0.5s;
+}
+
+.un img:not(:hover){
+    filter: blur(0px);
+    transition:0.5s;
+}
+
+.deux img:hover {
+    filter: blur(2px);
+    transition:0.5s;
+}
+
+.deux img:not(:hover){
+    filter: blur(0px);
+    transition:0.5s;
+}
+
+#monum {width:80%; }
+
+.activites {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.image_activites {display: flex; justify-content:center; width: 40%;}
+
+
+.image_activites img{max-width: 70%;}
+
+
+.texte_activites {
+    color: black;
+    font-family: 'GothamReg';
+    font-size:1vw;
 
     text-align: justify;
     text-justify: inter-word;
-
+    
+    width: 40%;
+    margin:auto;
 }
 
-.titre h2 {
-    font-family: 'GothamBold';
-    color: #6B705C;
-    font-size: 2vw;
+.secondaire {
+    display:flex;
+    flex-direction: column;
+    width: 60%;
 
-    text-align:center;
+    margin: auto;
+    margin-top:3%;
+}
+
+.act1 {
+    display:flex;
+    justify-content: space-around;
+}
+
+.act1 p {
+    color: black;
+    font-family: 'GothamReg';
+    font-size:1vw;
 }
 
 footer {
