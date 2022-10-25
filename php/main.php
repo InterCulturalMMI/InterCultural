@@ -1,3 +1,23 @@
+<?php 
+
+$connection = new PDO('mysql:host=localhost; port=3306; dbname=sae_web_week_test', 'root', '');
+
+// pour édition 2023 (écrit a droite en haut) --> version 1
+$annee = 'SELECT annee FROM edition WHERE id_edition = 1';
+$resulat = $connection -> query($annee);
+$tab_annee = $resulat -> fetch();
+$resulat -> closeCursor();
+
+// liens avec la page pays
+$nom_pays = 'SELECT pays.nom_pays, pays.id_pays FROM pays, edition, pays_edition WHERE edition.id_edition = 1 AND (edition.id_edition = pays_edition.id_edition AND pays_edition.id_pays = pays.id_pays)';
+$resulat = $connection -> query($nom_pays);
+$tab_pays = $resulat -> fetchAll();
+$resulat -> closeCursor();
+$nbr_pays = count($tab_pays);
+
+?>
+
+
 <!doctype html>
 <html lang="fr">
 
@@ -66,7 +86,11 @@
   <div class="edition">
 
     <p class="bold">
-      EDITION 2022 &nbsp;
+      EDITION 
+      <?php  
+        echo $tab_annee[0];
+      ?> 
+      &nbsp;
     </p>
 
     <p class="fin">
@@ -117,16 +141,19 @@
   <div class="swiper mySwiper">
       <div class="swiper-wrapper">
 
+        <?php 
+        for ($i = 0; $i < $nbr_pays; $i++){
+        ?>
         <div class="swiper-slide">
           <div class="containerSlide">
             <div class="containerBarrePays">
               <div class="containerDrapeauText">
                 <div class="drapeauPays1"><img src="../img/drap_chine.png"></img></div>
-                <div class="textePays1"><p><strong>BRÉSIL</strong> - CHRIST RÉDEMPTEUR</p></div>
+                <div class="textePays1"><p><strong><?php echo $tab_pays[$i]['nom_pays'];?></strong> - CHRIST RÉDEMPTEUR</p></div>
               </div>
               <div class="containerBouton">
                 <div class="bouton">
-                  <a href="#top">
+                  <a href="pays.php?id=<?php echo $tab_pays[$i]['id_pays'] ;?>">
                     <p class="bold">
                       DÉCOUVRIR
                     </p>
@@ -136,6 +163,9 @@
             </div>
           </div>
         </div>
+        <?php
+          }
+        ?>
         
         <div class="swiper-slide"><img src="../img/2.jpg"></img></div>
         <div class="swiper-slide"><img src="../img/3.jpg"></img></div>

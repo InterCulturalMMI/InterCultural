@@ -1,3 +1,28 @@
+<?php 
+
+$connection = new PDO('mysql:host=localhost; port=3306; dbname=sae_web_week_test', 'root', '');
+
+//information propre a pays, sans clefs etrangères
+$nom_pays = 'SELECT pays.nom_pays, pays.id_pays, pays.descriptif_monument, pays.descriptif_pays FROM pays WHERE pays.id_pays ='. $_GET['id'];
+$resulat = $connection -> query($nom_pays);
+$tab_pays = $resulat -> fetch();
+$resulat -> closeCursor();
+//$nbr_pays = count($tab_pays);
+
+//images de pays avec table intermediaire
+$image_monument = 'SELECT image.url, pays.id_pays, image.id_image FROM pays, image, pays_image WHERE pays.id_pays = pays_image.id_pays AND pays_image.id_image = image.id_image AND pays.id_pays ='. $_GET['id'];
+$resulat = $connection -> query($image_monument);
+$tab_image_monument = $resulat -> fetch();
+$resulat -> closeCursor();
+
+//image avec clée etrangère
+$image_drap_ban = 'SELECT image.url, pays.id_image_ban, image.id_image FROM pays, image WHERE pays.id_image_ban = image.id_image AND pays.id_pays ='. $_GET['id'];
+$resulat = $connection -> query($image_drap_ban);
+$tab_image_ban = $resulat -> fetch();
+$resulat -> closeCursor();
+print_r($tab_image_ban);
+?>
+
 <!doctype html>
 <html lang="fr">
 <head>
@@ -45,10 +70,16 @@
       </div>
   </nav> -->
 
-  <div class="titre" id="titre1"><h1> INDE </h1></div>
+  <div class="titre" id="titre1">
+    <h1> 
+      <?php  
+        echo $tab_pays["nom_pays"];
+      ?> 
+    </h1>
+  </div>
 
   <div class="banner">
-    <img src="../img/bann_inde.png" alt="Banniere du pays" style="width:100%;"></img>
+    <img src="<?php  echo $tab_image_ban["url"]; ?> " alt="Banniere du pays" style="width:100%;"></img>
     <div class="texteimg"><p> Ouvrez-vous à la culture </p></div>
   </div>
 
@@ -61,12 +92,9 @@
 
   <div class="intro" id="intro1">
     <p>
-      Avec ses nombreuses couleurs, ses odeurs et ses saveurs, l’Inde est un dépaysement très fort pour le
-      voyageur occidental. Elle surprend, elle déroute, elle enchante et choque même parfois. Les racines
-      de la culture indienne sont profondément plantées, et il vous sera possible de les découvrir au Puy-En-Velay.
-      Les temples hindous, les tapisseries orientales et les savoureux plats indiens sont autant d’éléments qui
-      vous transporteront dans son passé et son histoire. Sans compter le culte autour d’un animal qui chez nous
-      est tout à fait ordinaire, venez découvrir les spécificités de ce pays durant un week-end interculturel.
+      <?php  
+        echo $tab_pays["descriptif_pays"];
+      ?> 
     </p>
   </div>
 
@@ -83,14 +111,9 @@
 
     <div class="intro" id="monum">
       <p  style="color:white;">
-      Monument à l’utilité plutôt incomprise, le Taj Mahal est en réalité le sanctuaire de la femme ‘favorite’ de
-      l’empereur Shâh Jahân, Mumtaz Mahal. Sa construction dure de 1631 à 1648, au cours de laquelle plus de 22.000
-      esclaves travailleront pour réaliser une structure de marbre blanc haute de presque 75 mètres. L’empereur
-      rejoindra sa femme à sa mort, en 1666. Il est considéré comme le joyau de l’architecture mongole, voire mondiale.
-      A utilité religieuse cette fois-ci, le Temple de Mînâkshî est un temple hindou de style dravidien situé à
-      Madurai dans le Tamil Nadu, en Inde. Il est un des chefs-d'œuvre de l'architecture dravidienne et l'un des
-      temples en activité les plus importants de l'Inde. Il est consacré à Mînâkshî, un avatar de la déesse hindoue
-      Parvati, l'épouse de Shiva, ainsi qu'à Shiva, sous sa forme Sundareshvara.
+        <?php  
+          echo $tab_pays["descriptif_monument"];
+        ?> 
       </p>
     </div>
   </div>
