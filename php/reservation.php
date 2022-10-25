@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <title> INTERCULTURAL </title>
-  <link rel="stylesheet" href="../reservation.css">
+  <link rel="stylesheet" href="../css/reservation.css">
   <script src="../js/reservation.js"></script>
 </head>
 <body>
@@ -17,8 +17,8 @@
 
       <div class="containerBoutons">
 
-        <div class="bouton" id="petitBouton">
-          <a href="#top">
+        <div class="bouton" class="petitBouton">
+          <a href="./main.php">
             <p>
               ACCUEIL
             </p>
@@ -26,7 +26,7 @@
         </div>
 
         <div class="bouton" class="petitBouton">
-          <a href="#pays">
+          <a href="./pays.php">
             <p>
               PAYS
             </p>
@@ -63,8 +63,8 @@
     </div>
 
     <div class="choose_pays">
-        <label for="pays"><h3>Quel pays voulez-vous découvrir ?</h3></label>
-        <select name="pays" class="select_pays">
+        <label for="pays"><h2>Quel pays voulez-vous découvrir ?</h2></label>
+        <select class="select_pays" name="pays">
           <option value="0">Pays</option>
           
             <?php
@@ -75,19 +75,31 @@
     </div>
 
     <div class="afficher_pays">
-      <div class="container_info">
-        <h3>"Nom pays"</h3>
+        <span class="container_in">
 
+          <div class="title_activity">
+            <li>Activités proposées :</li>
+            <li>En quoi consiste ces activités ?</li>
+          </div>
 
-      </div>
+        <div class="activity_main">
+          <div class="activity1">
+            <li>"ACTIVITÉ 1"</li>
+            <p>
+            Apprenez en plus sur la Grèce antique en venant contempler plus de 350 objets issus de cette célèbre période dans le musée, où vous pourrez admirer des vases, des bijoux, des éléments en verre ainsi qu’une infinité d’objets. Participez à différentes activités telles que la création de votre propre sculpture ou, pour les enfants, un 1,2,3 soleil avec Méduse, célèbre personnage de la mythologie grecque. 
+            </p>
+          </div> 
+          <div class="activity2"> 
+          <li>"ACTIVITÉ 2"</li>
+            <p>
+              Apprenez en plus sur la Grèce antique en venant contempler plus de 350 objets issus de cette célèbre période dans le musée, où vous pourrez admirer des vases, des bijoux, des éléments en verre ainsi qu’une infinité d’objets. Participez à différentes activités telles que la création de votre propre sculpture ou, pour les enfants, un 1,2,3 soleil avec Méduse, célèbre personnage de la mythologie grecque. 
+            </p>
+          </div>   
+        </div>
+
+        </span>
     </div>
 
-</div>    
-
-  <?php 
-
-  ?>
-  
   <footer>
       <div class="gauche">
         <p> © Copyrights </p>
@@ -99,6 +111,7 @@
         <p> All Rights Reserved </p>
     </div>
   </footer>
+</div>  
 </body>
 
 </html>
