@@ -81,7 +81,7 @@ $nbr_pays = count($tab_pays);
 
 <div class="imgFond">
 
-<div class="texteimg"><h1>INTERCULTURAL UN ÉVENEMENT QUI VA VOUS FAIRE VOYAGER</h1></div>
+<div class="texteBannière"><h1>INTERCULTURAL UN ÉVENEMENT QUI VA VOUS FAIRE VOYAGER</h1></div>
 
   <div class="edition">
 
@@ -235,6 +235,8 @@ $nbr_pays = count($tab_pays);
       <img src="../img/pyramide.png"></img>
       <img src="../img/ruines.png"></img>
     </div>
+
+    <div class="barreFooter"></div>
   </div>
 </footer>
 
