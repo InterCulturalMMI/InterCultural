@@ -19,35 +19,49 @@
 
       <div class="containerBoutons">
 
-        <div class="bouton">
-          <a href="#top">
-            <p>
-              ACCUEIL
-            </p>
-          </a>
-        </div>
+          <div class="bouton">
+            <a href="#top">
+              <p>
+                ACCUEIL
+              </p>
+            </a>
+          </div>
 
-        <div class="bouton">
-          <a href="#pays">
-            <p>
-              PAYS
-            </p>
-          </a>
-        </div>
+      <ul class="listePays">
 
-        <div class="bouton">
-          <a href="./reservation.php">
-            <p id="reservation">
-              RESERVER
-            </p>
-          </a>
-        </div>
+        <li>
+          <div class="boutonPays">
+            <a href="#pays">
+              <p>
+                PAYS
+              </p>
+            </a>
+          </div>
+          <div class="contenaireListElements">
+            <ul>
+              <li><a href="#" class="listeElement">Brésil</a></li>
+              <li><a href="#" class="listeElement">Brésil</a></li>
+            </ul>
+          </div>
+          
+        </li>
+      </ul>
+
+          <div class="bouton">
+            <a href="./reservation.php">
+              <p id="reservation">
+                RESERVER
+              </p>
+            </a>
+          </div>
         
       </div>
     </div>
 </nav>
 
 <div class="imgFond">
+
+<div class="texteimg"><h1>INTERCULTURAL UN ÉVENEMENT QUI VA VOUS FAIRE VOYAGER</h1></div>
 
   <div class="edition">
 
@@ -155,6 +169,7 @@
   <div class="cestQuoi">
 
     <div class="photoCestQuoi">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d45117.3225289944!2d3.86229825241591!3d45.02832241121491!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47f5fa4041a0c829%3A0x4093cafcbe7fa70!2s43000%20Le%20Puy-en-Velay!5e0!3m2!1sfr!2sfr!4v1666709701765!5m2!1sfr!2sfr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     </div>
 
     <div class="cestQuoiParagraph">
