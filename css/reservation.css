@@ -122,9 +122,59 @@ a {
 
 .right_text {
     color: black;
-    margin-left: 5%;
     line-height: 1.8;
     font-size: 2vh;
+    margin-left: 30px;
+}
+
+
+
+.choose_pays {
+    text-align: center;
+    margin-top: 60px;
+}
+
+.select_pays {
+    display: inline-block;
+    border-radius: 4px;
+    background-color: #a5a58d;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 28px;
+    padding: 10px;
+    width: 160px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
+    margin-top: 30px;
+  }
+
+.afficher_pays {
+    display: block;
+    margin: 40px auto 80px auto;
+
+    border-radius: 30px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+
+    text-align: center;
+    background-color: #6b705c;
+    width: 80%;
+    height: 50vh;
+}
+
+.afficher_pays:hover {
+    box-shadow: #6b705c -5px 5px, #7D7D7D -10px 10px, #9E9E9E -15px 15px, #BDBDBD -20px 20px, #D3D3D3 -25px 25px;
+    transition: 0.6s;
+}
+
+.afficher_pays:not(hover) {
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    transition: 0.6s;
+}
+
+.container_info {
+    padding-top: 20px;
 }
 /*===================== FIN BODY =====================*/
 
@@ -141,7 +191,7 @@ footer {
 
     box-shadow: 5px 5px 15px black;
 
-    margin: auto;
+    margin:auto;
 
     width:35%;
 }
