@@ -12,8 +12,9 @@ $resulat -> closeCursor();
 //images de pays avec table intermediaire
 $image_monument = 'SELECT image.url, pays.id_pays, image.id_image FROM pays, image, pays_image WHERE pays.id_pays = pays_image.id_pays AND pays_image.id_image = image.id_image AND pays.id_pays ='. $_GET['id'];
 $resulat = $connection -> query($image_monument);
-$tab_image_monument = $resulat -> fetch();
+$tab_image_monument = $resulat -> fetchAll();
 $resulat -> closeCursor();
+$nbr_image = count($tab_image_monument);
 
 //image avec clée etrangère
 $image_drap_ban = 'SELECT image.url, pays.id_image_ban, image.id_image FROM pays, image WHERE pays.id_image_ban = image.id_image AND pays.id_pays ='. $_GET['id'];
@@ -105,8 +106,8 @@ print_r($tab_image_ban);
   <div class="titre" id="monumentsid"><h1  style="color:white;"> MONUMENTS </h1></div>
 
     <div class="images_monument">
-      <div class="un"><img src="../img/illu_inde_1.png"></div>
-      <div class="deux"><img src="../img/illu_inde_2.png"></div>
+      <div class="un"><img src="<?php  echo $tab_image_monument[0]["url"]; ?>"></div>
+      <div class="deux"><img src="<?php  echo $tab_image_monument[1]["url"]; ?>"></div>
     </div>
 
     <div class="intro" id="monum">
