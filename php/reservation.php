@@ -48,7 +48,7 @@
 <div class="container">
     <div class="img_text_top">
       <div class="left_img">
-        <img src="../img/600x500.png" class="img_top"> <!-- ../img/600x500.png -->
+        <img src="../img/img_reservation.jpg" class="img_top">
       </div>
       <div class="right_text">
         <h1>Réservez vos places</h1><br>
@@ -79,25 +79,49 @@
 
           <div class="title_activity">
             <li>Activités proposées :</li>
-            <li>En quoi consiste ces activités ?</li>
+            <li>Nos tarifs ?</li>
           </div>
 
-        <div class="activity_main">
-          <div class="activity1">
-            <li>"ACTIVITÉ 1"</li>
-            <p>
-            Apprenez en plus sur la Grèce antique en venant contempler plus de 350 objets issus de cette célèbre période dans le musée, où vous pourrez admirer des vases, des bijoux, des éléments en verre ainsi qu’une infinité d’objets. Participez à différentes activités telles que la création de votre propre sculpture ou, pour les enfants, un 1,2,3 soleil avec Méduse, célèbre personnage de la mythologie grecque. 
-            </p>
-          </div> 
-          <div class="activity2"> 
-          <li>"ACTIVITÉ 2"</li>
-            <p>
-              Apprenez en plus sur la Grèce antique en venant contempler plus de 350 objets issus de cette célèbre période dans le musée, où vous pourrez admirer des vases, des bijoux, des éléments en verre ainsi qu’une infinité d’objets. Participez à différentes activités telles que la création de votre propre sculpture ou, pour les enfants, un 1,2,3 soleil avec Méduse, célèbre personnage de la mythologie grecque. 
-            </p>
-          </div>   
-        </div>
+          <div class="informations">    
+            <div class="activity_main">
+              <div class="activity1">
+                <li>"ACTIVITÉ 1"</li>
+                <p>
+                  "DESCRIPTION ACTIVITÉ"              
+                </p>
+                <p>
+                  Date : "AFFICHER DATE ACTIVITÉ"<br><br>
+                  Horaires : "AFFICHER HORAIRES ACTIVITÉ"
+                </p>
+                <p>
+                  Localisation : "AFFICHER LIEU ACTIVITÉ"
+                </p>
+              </div> 
+              <div class="activity2"> 
+                <li>"ACTIVITÉ 2"</li>
+                <p>
+                  "DESCRIPTION ACTIVITÉ"                
+                </p>
+                <p>
+                  Date : "AFFICHER DATE ACTIVITÉ"<br><br>
+                  Horaires : "AFFICHER HORAIRES ACTIVITÉ"
+                </p>
+                <p>
+                  Localisation : "AFFICHER LIEU ACTIVITÉ"
+                </p>
+              </div>   
+            </div>
 
+            <div class="tarifs">
+              <p>Prix enfant : "AFFICHER PRIX"</p>
+              <p>Prix adulte : "AFFICHER PRIX"</p>
+            </div>
+          </div>
         </span>
+    </div>
+
+    <div class="bouton_reserver">
+      <a href="#" class="bn3">Réserver votre place</a>
     </div>
 
   <footer>

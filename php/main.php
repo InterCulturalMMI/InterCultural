@@ -214,15 +214,15 @@ $nbr_carousel = count($tab_pays);
   </div>
 </div>
 
-<div class="containerCestQuoi">
+<div class="containerOu">
 
-  <div class="cestQuoi">
+  <div class="ou">
 
-    <div class="photoCestQuoi">
+    <div class="mapOu">
       <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d45117.3225289944!2d3.86229825241591!3d45.02832241121491!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47f5fa4041a0c829%3A0x4093cafcbe7fa70!2s43000%20Le%20Puy-en-Velay!5e0!3m2!1sfr!2sfr!4v1666709701765!5m2!1sfr!2sfr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     </div>
 
-    <div class="cestQuoiParagraph">
+    <div class="ouParagraph">
       <h2>OÙ SE PASSE L'ÉVENEMENT ?</h2><br>
       <p><strong>INTERCULTURAL</strong> se déroule <strong>dans la ville du Puy en Velay</strong> en Auvergne en France. Une ville connué pour sa fabrication de la <strong>dentelle</strong> du Puy, la culture de la <strong>lentille verte</strong> du Puy et la production de <strong>verveine</strong> du Velay. Elle est aussi connue pour être le départ de la <strong>Via Podiensis, un des quatre chemins de Compostelle français.</strong></p>
 
@@ -242,10 +242,6 @@ $nbr_carousel = count($tab_pays);
       <img src="../img/region_aura.png"></img>
       <img src="../img/site_touriste.png"></img>
       <img src="../img/logo_feader.png"></img>
-    </div>
-
-    <div class="contact">
-      <p>NOUS CONTACTER</p>
     </div>
 
     <div class="containerFooterIcons">
