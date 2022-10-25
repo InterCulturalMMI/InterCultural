@@ -6,7 +6,12 @@
 @font-face {
     font-family: "GothamBlack";
     src: url(../fonts/Gotham-Black.otf) format('opentype');
-  }
+}
+
+@font-face {
+    font-family: "GothamBold";
+    src: url(../fonts/Gotham-Bold.otf) format('opentype');
+}
 
 * {
     margin: 0;
@@ -36,6 +41,7 @@ a {
     align-items: center;
     justify-content: center;
     text-align: center;
+    font-size: 1vw;
     margin: 2%;
 }
 
@@ -52,7 +58,7 @@ a {
 .fondBar {
     display: grid;
     grid-template-columns: 1.5fr 5.25fr 5.25fr;
-    width: 75%;
+    width: 70%;
     height: 25%;
     background-color: #6B705C;
     border-radius: 10vh;
@@ -109,9 +115,9 @@ a {
 
 .img_text_top {
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
-    padding-top: 155px;
+    padding-top: 180px;
 }
 
 .left_img > img {
@@ -127,11 +133,20 @@ a {
     margin-left: 30px;
 }
 
+.right_text > h1 {
+    font-family: 'GothamBold';
+}
+
+
 
 
 .choose_pays {
     text-align: center;
-    margin-top: 60px;
+    margin-top: 100px;
+}
+
+.choose_pays h2 {
+    font-family: 'GothamBold';
 }
 
 .select_pays {
@@ -150,6 +165,9 @@ a {
     margin-top: 30px;
   }
 
+
+
+
 .afficher_pays {
     display: block;
     margin: 40px auto 80px auto;
@@ -157,10 +175,11 @@ a {
     border-radius: 30px;
     box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 
+    color: white;
     text-align: center;
     background-color: #6b705c;
     width: 80%;
-    height: 50vh;
+    height: 100vh;
 }
 
 .afficher_pays:hover {
@@ -173,8 +192,51 @@ a {
     transition: 0.6s;
 }
 
-.container_info {
+.container_in {
     padding-top: 20px;
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+
+    font-family: 'GothamBlack';
+    font-size: 2.5vh;
+}
+
+.title_activity {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.activity_main {
+    display: flex;
+    flex-direction: column;
+}
+
+.activity1, .activity2 {
+    display: flex;
+    justify-content: space-evenly;
+    width: 93%;
+    margin-bottom: 30px;
+}
+
+.activity1 > p, .activity2 > p {
+    font-family: 'GothamMedium';
+    text-align: justify;
+    font-size: 1.75vh;
+    margin-top: 30px;
+    width: 35vh;
+}
+
+.activity1 > li, .activity2 > li {
+    font-family: 'GothamMedium';
+    text-align: center;
+    font-size: 1.75vh;
+    margin-top: 30px;
+    width: 35vh;
+    list-style: none;
 }
 /*===================== FIN BODY =====================*/
 
@@ -192,12 +254,14 @@ footer {
     box-shadow: 5px 5px 15px black;
 
     margin:auto;
+    margin-bottom: 10px;
+    padding: 20px;
 
-    width:35%;
+    width:45%;
 }
 
 footer p {
-    font-family: 'GothamReg';
+    font-family: 'GothamMedium';
     color: white;
 
     font-size: 1vw;
