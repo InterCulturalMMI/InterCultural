@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <title> INTERCULTURAL </title>
   <link rel="stylesheet" href="../css/accueil.css">
-  <script src="../js/accueil.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/><script src="../js/accueil.js"></script>
 </head>
 
 <body>
@@ -42,7 +42,7 @@
             </p>
           </a>
         </div>
-
+        
       </div>
     </div>
 </nav>
@@ -80,22 +80,58 @@
   </div>
 </div>
 
-<div class="cinqPays">
-  <p class="bold">
-      5 &nbsp;
-    </p>
+<div class="containerCarrousel">
 
-    <p class="fin">
-      PAYS - 
-    </p>
-
+  <div class="cinqPays">
     <p class="bold">
-     &nbsp; 5 &nbsp;
-    </p>
+        5 &nbsp;
+      </p>
 
-    <p class="fin">
-      CULTURES
-    </p>
+      <p class="fin">
+        PAYS - 
+      </p>
+
+      <p class="bold">
+      &nbsp; 5 &nbsp;
+      </p>
+
+      <p class="fin">
+        CULTURES
+      </p>
+  </div>
+
+  <div class="swiper mySwiper">
+      <div class="swiper-wrapper">
+
+        <div class="swiper-slide">
+          <div class="containerSlide">
+            <div class="containerBarrePays">
+              <div class="containerDrapeauText">
+                <div class="drapeauPays1"><img src="../img/drap_chine.png"></img></div>
+                <div class="textePays1"><p><strong>BRÉSIL</strong> - CHRIST RÉDEMPTEUR</p></div>
+              </div>
+              <div class="containerBouton">
+                <div class="bouton">
+                  <a href="#top">
+                    <p class="bold">
+                      DÉCOUVRIR
+                    </p>
+                  </a>
+                </div>
+              </div>     
+            </div>
+          </div>
+        </div>
+        
+        <div class="swiper-slide"><img src="../img/2.jpg"></img></div>
+        <div class="swiper-slide"><img src="../img/3.jpg"></img></div>
+      </div>
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+    </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+  <script src="../js/accueil.js"></script>
 </div>
 
 <div class="containerAlea">
@@ -156,6 +192,8 @@
     </div>
   </div>
 </footer>
+
+
   <?php 
 
   ?>
