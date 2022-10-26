@@ -1,13 +1,12 @@
 <?php 
 
-$connection = new PDO('mysql:host=localhost; port=3306; dbname=sae_web_week_test', 'root', '');
+$connection = new PDO('mysql:host=localhost; port=3306; dbname=sae_web_week_finale', 'root', '');
 
 //information propre a pays, sans clefs etrangères
 $nom_pays = 'SELECT pays.nom_pays, pays.id_pays, pays.descriptif_monument, pays.descriptif_pays FROM pays WHERE pays.id_pays ='. $_GET['id'];
 $resulat = $connection -> query($nom_pays);
 $tab_pays = $resulat -> fetch();
 $resulat -> closeCursor();
-//$nbr_pays = count($tab_pays);
 
 //images de pays avec table intermediaire
 $image_monument = 'SELECT image.url, pays.id_pays, image.id_image FROM pays, image, pays_image WHERE pays.id_pays = pays_image.id_pays AND pays_image.id_image = image.id_image AND pays.id_pays ='. $_GET['id'];
@@ -33,56 +32,55 @@ $resulat -> closeCursor();
 <html lang="fr">
 <head>
   <meta charset="utf-8">
-  <title> INTERCULTURAL </title>
+  <title> INTERCULTURAL | <?php echo $tab_pays["nom_pays"] ?></title>
   <link rel="stylesheet" href="../css/pays.css">
   <script src="../js/pays.js"></script>
 </head>
 <body>
-  <!-- <nav class="containerBar">
-      <div class="fondBar">
-        <div class="logo">
+<nav class="containerBar">
+    <div class="fondBar">
+      <div class="logo">
+        <a href="#top">
+          <img src="../img/logo.png"></img>
+        </a>
+      </div>
+
+      <div class="containerBoutons">
+
+        <div class="bouton">
           <a href="#top">
-            <img src="../img/logo.png"></img>
+            <p>
+              ACCUEIL
+            </p>
           </a>
         </div>
 
-        <div class="containerBoutons">
-
-          <div class="bouton">
-            <a href="#top">
-              <p>
-                ACCUEIL
-              </p>
-            </a>
-          </div>
-
-          <div class="bouton">
-            <a href="#pays">
-              <p>
-                PAYS
-              </p>
-            </a>
-          </div>
-
-          <div class="bouton">
-            <a href="./reservation.php">
-              <p id="reservation">
-                RESERVER
-              </p>
-            </a>
-          </div>
-
+        <div class="bouton">
+          <a href="#pays">
+            <p>
+              PAYS
+            </p>
+          </a>
         </div>
-      </div>
-  </nav> -->
 
-  <div class="titre" id="titre1">
-    <h1> 
-      <?php  
-        echo $tab_pays["nom_pays"];
-      ?> 
-    </h1>
-  </div>
+        <div class="bouton">
+          <a href="./reservation.php">
+            <p id="reservation">
+              RESERVER
+            </p>
+          </a>
+        </div>
+
+      </div>
+    </div>
+    <div class="titre" id="titre1">
+      <h1> 
+        <?php  
+          echo $tab_pays["nom_pays"];
+        ?> 
+      </h1>
+    </div>
+  </nav>
 
   <div class="banner">
     <img src="<?php  echo $tab_image_ban["url"]; ?> " alt="Banniere du pays" style="width:100%;"></img>
@@ -126,18 +124,23 @@ $resulat -> closeCursor();
 
   <div class="titre" id="activid"><h1> ACTIVITÉS </h1></div>
 
-  <div class="activites">
-    <div class="texte_activites">
-      <p>
-        <?php  
-          echo $tab_event["descriptif"];
-        ?> 
-      </p>
-    </div>
-    <div class="image_activites">
+<!-- la ca va pas a verifier -->
+
+  <div class="containerCestQuoi">
+  <div class="cestQuoi">
+    <div class="photoCestQuoi">
       <img src="<?php  echo $tab_event["url"]; ?>"></img>
     </div>
+    <div class="cestQuoiParagraph">
+      <h2><?php  
+            echo $tab_event["nom_activitee"];
+          ?> </h2><br>
+      <p><?php  
+            echo $tab_event["descriptif"];
+          ?> </p>
+    </div>
   </div>
+</div>
 
   <div class="secondaire">
     <div class="act1">
@@ -160,7 +163,7 @@ $resulat -> closeCursor();
     </form>
   </div>
 
-    <div class="titre" id="aurevoir"><h1> EN ESPERANT VOUS RETROUVER NOMBREUX </h1></div>
+    <div class="titre" id="soustitre2"><h1> EN ESPERANT VOUS RETROUVER NOMBREUX </h1></div>
 
   <footer>
       <div class="gauche">

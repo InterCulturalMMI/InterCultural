@@ -1,6 +1,6 @@
 <?php 
 
-$connection = new PDO('mysql:host=localhost; port=3306; dbname=sae_web_week_test', 'root', '');
+$connection = new PDO('mysql:host=localhost; port=3306; dbname=sae_web_week_finale', 'root', '');
 
 //Chose qui va bouger --> c'est la requete pour LE HEADER qui passera en fonction AVEC le HEADER
 $nav = 'SELECT pays.id_pays, pays.nom_pays FROM pays, edition WHERE id_edition = 1';
@@ -15,19 +15,26 @@ $resulat = $connection -> query($annee);
 $tab_annee = $resulat -> fetch();
 $resulat -> closeCursor();
 
-// liens avec la page pays
+// liens necessaire au carousel 
 $nom_pays = 'SELECT pays.nom_pays, pays.id_pays, UPPER(pays.nom_monument_principal), image.url FROM image, pays, edition, pays_edition WHERE edition.id_edition = 1 AND (edition.id_edition = pays_edition.id_edition AND pays_edition.id_pays = pays.id_pays) AND pays.id_image_drap = image.id_image';
 $resulat = $connection -> query($nom_pays);
 $tab_pays = $resulat -> fetchAll();
 $resulat -> closeCursor();
 $nbr_pays = count($tab_pays);
 
-// liens images du carousel qui ne marche pas encore
+$image_carousel = 'SELECT image.url FROM image, pays WHERE image.id_image = pays.id_image_car';
+$resulat = $connection -> query($image_carousel);
+$tab_car = $resulat -> fetchAll();
+$resulat -> closeCursor();
+
+// liens images du carousel
 $image_carousel = 'SELECT image.url FROM pays, image WHERE image.id_image = pays.id_image_ban';
 $resulat = $connection -> query($image_carousel);
 $tab_carousel = $resulat -> fetch();
 $resulat -> closeCursor();
 $nbr_carousel = count($tab_pays);
+
+print_r($tab_car);
 
 ?>
 
@@ -115,7 +122,7 @@ $nbr_carousel = count($tab_pays);
         <div class="swiper-slide">
           <div class="containerSlide">
             <div class="containerImg">
-              <img src="../img/1.jpg"></img>
+              <img src="<?php echo $tab_car[$i]['url'];?>"></img>
             </div>
             <div class="containerBarrePays">
               <div class="containerDrapeauText">
