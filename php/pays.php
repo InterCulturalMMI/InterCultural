@@ -38,51 +38,50 @@ $resulat -> closeCursor();
   <script src="../js/pays.js"></script>
 </head>
 <body>
-  <!-- <nav class="containerBar">
-      <div class="fondBar">
-        <div class="logo">
+<nav class="containerBar">
+    <div class="fondBar">
+      <div class="logo">
+        <a href="#top">
+          <img src="../img/logo.png"></img>
+        </a>
+      </div>
+
+      <div class="containerBoutons">
+
+        <div class="bouton">
           <a href="#top">
-            <img src="../img/logo.png"></img>
+            <p>
+              ACCUEIL
+            </p>
           </a>
         </div>
 
-        <div class="containerBoutons">
-
-          <div class="bouton">
-            <a href="#top">
-              <p>
-                ACCUEIL
-              </p>
-            </a>
-          </div>
-
-          <div class="bouton">
-            <a href="#pays">
-              <p>
-                PAYS
-              </p>
-            </a>
-          </div>
-
-          <div class="bouton">
-            <a href="./reservation.php">
-              <p id="reservation">
-                RESERVER
-              </p>
-            </a>
-          </div>
-
+        <div class="bouton">
+          <a href="#pays">
+            <p>
+              PAYS
+            </p>
+          </a>
         </div>
-      </div>
-  </nav> -->
 
-  <div class="titre" id="titre1">
-    <h1> 
-      <?php  
-        echo $tab_pays["nom_pays"];
-      ?> 
-    </h1>
-  </div>
+        <div class="bouton">
+          <a href="./reservation.php">
+            <p id="reservation">
+              RESERVER
+            </p>
+          </a>
+        </div>
+
+      </div>
+    </div>
+    <div class="titre" id="titre1">
+      <h1> 
+        <?php  
+          echo $tab_pays["nom_pays"];
+        ?> 
+      </h1>
+    </div>
+  </nav>
 
   <div class="banner">
     <img src="<?php  echo $tab_image_ban["url"]; ?> " alt="Banniere du pays" style="width:100%;"></img>
@@ -126,16 +125,28 @@ $resulat -> closeCursor();
 
   <div class="titre" id="activid"><h1> ACTIVITÉS </h1></div>
 
+<!-- la ca va pas a verifier -->
+
   <div class="activites">
+    <div class="pgauche">
+      <div class="titre" id="soustitre2">
+        <h1>
+          <?php  
+            echo $tab_event["nom_activitee"];
+          ?>  
+        </h1>
+      </div>
     <div class="texte_activites">
       <p>
-        <?php  
+      <?php  
           echo $tab_event["descriptif"];
         ?> 
       </p>
     </div>
+    </div>
     <div class="image_activites">
-      <img src="<?php  echo $tab_event["url"]; ?>"></img>
+    <img src="<?php  echo $tab_event["url"]; ?>"></img>
+
     </div>
   </div>
 
@@ -160,7 +171,7 @@ $resulat -> closeCursor();
     </form>
   </div>
 
-    <div class="titre" id="aurevoir"><h1> EN ESPERANT VOUS RETROUVER NOMBREUX </h1></div>
+    <div class="titre" id="soustitre2"><h1> EN ESPERANT VOUS RETROUVER NOMBREUX </h1></div>
 
   <footer>
       <div class="gauche">
