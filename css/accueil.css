@@ -19,6 +19,10 @@ html {
     height: 100%;
 }
 
+body {
+    background-image: url(../img/fondfond.png);
+}
+
 h1 {
     font-family: "GothamBlack";
     font-size: 5vh;
@@ -434,13 +438,16 @@ footer {
 
 
 .containerSlide {
-    display: flex;
-    background-image: url(../img/1.jpg);
-    height: 100vh;
-    width: 100vw;
+    height: 100%;
+    width: 100%;
+}
+
+.containerImg {
+    position: absolute; 
 }
 
 .containerBarrePays {
+    position: absolute;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -448,6 +455,7 @@ footer {
     width: 100vw;
     background-color: rgba(0, 0, 0, 0.26);
     margin-top: 50vh;
+    z-index: 100;
 }
 
 .containerDrapeauText {
