@@ -2,13 +2,6 @@
 
 $connection = new PDO('mysql:host=localhost; port=3306; dbname=sae_web_week_finale', 'root', '');
 
-//Chose qui va bouger --> c'est la requete pour LE HEADER qui passera en fonction AVEC le HEADER
-$nav = 'SELECT pays.id_pays, pays.nom_pays FROM pays, edition WHERE id_edition = 1';
-$resulat = $connection -> query($nav);
-$tab_nav = $resulat -> fetchAll();
-$resulat -> closeCursor();
-$nbr_element_nav = count($tab_nav);
-
 // pour édition 2023 (écrit a droite en haut) --> version 1
 $annee = 'SELECT annee FROM edition WHERE id_edition = 1';
 $resulat = $connection -> query($annee);
@@ -73,13 +66,15 @@ $nbr_carousel = count($tab_pays);
   </div>
 </div>
 
-<div class="barreSwipe" href="#contenu">
-  <div class="boutonSwipe">
-  <p>+ INFOS</p>
-  </div>
+<div class="barreSwipe">
+  <a class="boutonSwipe" href="#contenu" id="contenu">
+    <div>
+      <p>+ INFOS</p>
+    </div> 
+  </a>
 </div>
 
-<div class="containerCestQuoi" id="contenu">
+<div class="containerCestQuoi">
 
   <div class="cestQuoi">
 
@@ -95,6 +90,12 @@ $nbr_carousel = count($tab_pays);
 
     </div>
   </div>
+</div>
+
+<div class="expo">
+  <img src="../img/fleche_gauche.png"></img>
+  <h2><strong>DÉCOUVREZ</strong> LES <strong>EXPOSITIONS</strong></h2>
+  <img src="../img/fleche_droite.png"></img>
 </div>
 
 <div class="containerCarrousel">

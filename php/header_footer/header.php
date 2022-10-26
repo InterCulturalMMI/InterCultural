@@ -1,3 +1,15 @@
+<?php
+$connection = new PDO('mysql:host=localhost; port=3306; dbname=sae_web_week_finale', 'root', '');
+
+//Chose qui va bouger --> c'est la requete pour LE HEADER qui passera en fonction AVEC le HEADER
+$nav = 'SELECT pays.id_pays, pays.nom_pays FROM pays, edition WHERE id_edition = 1';
+$resulat = $connection -> query($nav);
+$tab_nav = $resulat -> fetchAll();
+$resulat -> closeCursor();
+$nbr_element_nav = count($tab_nav);
+
+?>
+
 <nav class="containerBar">
     <div class="fondBar">
       <div class="logo">
@@ -20,7 +32,7 @@
 
         <li>
           <div class="boutonPays">
-            <a href="../pays.php">
+            <a>
               <p>
                 PAYS
               </p>
