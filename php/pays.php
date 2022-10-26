@@ -7,7 +7,6 @@ $nom_pays = 'SELECT pays.nom_pays, pays.id_pays, pays.descriptif_monument, pays.
 $resulat = $connection -> query($nom_pays);
 $tab_pays = $resulat -> fetch();
 $resulat -> closeCursor();
-//$nbr_pays = count($tab_pays);
 
 //images de pays avec table intermediaire
 $image_monument = 'SELECT image.url, pays.id_pays, image.id_image FROM pays, image, pays_image WHERE pays.id_pays = pays_image.id_pays AND pays_image.id_image = image.id_image AND pays.id_pays ='. $_GET['id'];
@@ -34,7 +33,7 @@ $resulat -> closeCursor();
 <html lang="fr">
 <head>
   <meta charset="utf-8">
-  <title> INTERCULTURAL </title>
+  <title> INTERCULTURAL | <?php echo $tab_pays["nom_pays"] ?></title>
   <link rel="stylesheet" href="../css/pays.css">
   <script src="../js/pays.js"></script>
 </head>
