@@ -2,6 +2,13 @@
 
 $connection = new PDO('mysql:host=localhost; port=3306; dbname=sae_web_week_test', 'root', '');
 
+//Chose qui va bouger --> c'est la requete pour LE HEADER qui passera en fonction AVEC le HEADER
+$nav = 'SELECT pays.id_pays, pays.nom_pays FROM pays, edition WHERE id_edition = 1';
+$resulat = $connection -> query($nav);
+$tab_nav = $resulat -> fetchAll();
+$resulat -> closeCursor();
+$nbr_element_nav = count($tab_nav);
+
 // pour édition 2023 (écrit a droite en haut) --> version 1
 $annee = 'SELECT annee FROM edition WHERE id_edition = 1';
 $resulat = $connection -> query($annee);
@@ -9,11 +16,18 @@ $tab_annee = $resulat -> fetch();
 $resulat -> closeCursor();
 
 // liens avec la page pays
-$nom_pays = 'SELECT pays.nom_pays, pays.id_pays FROM pays, edition, pays_edition WHERE edition.id_edition = 1 AND (edition.id_edition = pays_edition.id_edition AND pays_edition.id_pays = pays.id_pays)';
+$nom_pays = 'SELECT pays.nom_pays, pays.id_pays, UPPER(pays.nom_monument_principal), image.url FROM image, pays, edition, pays_edition WHERE edition.id_edition = 1 AND (edition.id_edition = pays_edition.id_edition AND pays_edition.id_pays = pays.id_pays) AND pays.id_image_drap = image.id_image';
 $resulat = $connection -> query($nom_pays);
 $tab_pays = $resulat -> fetchAll();
 $resulat -> closeCursor();
 $nbr_pays = count($tab_pays);
+
+// liens images du carousel qui ne marche pas encore
+$image_carousel = 'SELECT image.url FROM pays, image WHERE image.id_image = pays.id_image_ban';
+$resulat = $connection -> query($image_carousel);
+$tab_carousel = $resulat -> fetch();
+$resulat -> closeCursor();
+$nbr_carousel = count($tab_pays);
 
 ?>
 
@@ -59,8 +73,13 @@ $nbr_pays = count($tab_pays);
           </div>
           <div class="contenaireListElements">
             <ul>
-              <li><a href="#" class="listeElement">Brésil</a></li>
-              <li><a href="#" class="listeElement">Brésil</a></li>
+              <?php
+                for($nav = 0; $nav < $nbr_element_nav; $nav++){
+              ?>
+              <li><a href="pays.php?id=<?php echo $tab_nav[$nav]['id_pays'];?>" class="listeElement"><?php echo $tab_nav[$nav]['nom_pays'];?></a></li>
+              <?php
+                }
+              ?>
             </ul>
           </div>
           
@@ -81,7 +100,7 @@ $nbr_pays = count($tab_pays);
 
 <div class="imgFond">
 
-<div class="texteimg"><h1>INTERCULTURAL UN ÉVENEMENT QUI VA VOUS FAIRE VOYAGER</h1></div>
+<div class="texteBannière"><h1>INTERCULTURAL UN ÉVENEMENT QUI VA VOUS FAIRE VOYAGER</h1></div>
 
   <div class="edition">
 
@@ -148,8 +167,8 @@ $nbr_pays = count($tab_pays);
           <div class="containerSlide">
             <div class="containerBarrePays">
               <div class="containerDrapeauText">
-                <div class="drapeauPays1"><img src="../img/drap_chine.png"></img></div>
-                <div class="textePays1"><p><strong><?php echo $tab_pays[$i]['nom_pays'];?></strong> - CHRIST RÉDEMPTEUR</p></div>
+                <div class="drapeauPays1"><img src="<?php echo $tab_pays[$i]['url'];?>"></img></div>
+                <div class="textePays1"><p><strong><?php echo $tab_pays[$i]['nom_pays'];?></strong> - <?php echo $tab_pays[$i]['UPPER(pays.nom_monument_principal)'];?></p></div>
               </div>
               <div class="containerBouton">
                 <div class="bouton">
@@ -188,21 +207,22 @@ $nbr_pays = count($tab_pays);
       <p>CLIQUEZ ICI</p>
       
       <div class="iconAlea">
-        <img src="../img/aleatoire.png"></img>
+        <!-- A FAIRE VERIFIER, PAS SURE QUE CA MARCHE commande aleatoir entre id=0 et id= nbr de pays present dans nav-->
+        <a href="pays.php?id=<?php echo $tab_nav[rand(0, $nbr_element_nav)]['id_pays'] ;?>"><img src="../img/aleatoire.png"></img></a>
       </div>
     </div>
   </div>
 </div>
 
-<div class="containerCestQuoi">
+<div class="containerOu">
 
-  <div class="cestQuoi">
+  <div class="ou">
 
-    <div class="photoCestQuoi">
+    <div class="mapOu">
       <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d45117.3225289944!2d3.86229825241591!3d45.02832241121491!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47f5fa4041a0c829%3A0x4093cafcbe7fa70!2s43000%20Le%20Puy-en-Velay!5e0!3m2!1sfr!2sfr!4v1666709701765!5m2!1sfr!2sfr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     </div>
 
-    <div class="cestQuoiParagraph">
+    <div class="ouParagraph">
       <h2>OÙ SE PASSE L'ÉVENEMENT ?</h2><br>
       <p><strong>INTERCULTURAL</strong> se déroule <strong>dans la ville du Puy en Velay</strong> en Auvergne en France. Une ville connué pour sa fabrication de la <strong>dentelle</strong> du Puy, la culture de la <strong>lentille verte</strong> du Puy et la production de <strong>verveine</strong> du Velay. Elle est aussi connue pour être le départ de la <strong>Via Podiensis, un des quatre chemins de Compostelle français.</strong></p>
 
@@ -224,10 +244,6 @@ $nbr_pays = count($tab_pays);
       <img src="../img/logo_feader.png"></img>
     </div>
 
-    <div class="contact">
-      <p>NOUS CONTACTER</p>
-    </div>
-
     <div class="containerFooterIcons">
       <img src="../img/christ.png"></img>
       <img src="../img/porte.png"></img>
@@ -235,6 +251,8 @@ $nbr_pays = count($tab_pays);
       <img src="../img/pyramide.png"></img>
       <img src="../img/ruines.png"></img>
     </div>
+
+    <div class="barreFooter"></div>
   </div>
 </footer>
 

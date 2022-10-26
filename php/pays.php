@@ -21,7 +21,12 @@ $image_drap_ban = 'SELECT image.url, pays.id_image_ban, image.id_image FROM pays
 $resulat = $connection -> query($image_drap_ban);
 $tab_image_ban = $resulat -> fetch();
 $resulat -> closeCursor();
-print_r($tab_image_ban);
+
+//image et descriptif de l'acitivite principale (nom reccuperer mais pas attribué : /\ prevoir un emplacement pour)
+$main_activitee = 'SELECT event.id_event, event.descriptif, image.url, pays.id_pays, event.main_activitee, event.nom_activitee FROM event, pays, image WHERE event.main_activitee = 1 AND image.id_image = event.id_image AND pays.id_pays = event.id_pays AND pays.id_pays ='. $_GET['id'];
+$resulat = $connection -> query($main_activitee);
+$tab_event = $resulat -> fetch();
+$resulat -> closeCursor();
 ?>
 
 <!doctype html>
@@ -124,15 +129,13 @@ print_r($tab_image_ban);
   <div class="activites">
     <div class="texte_activites">
       <p>
-        Samedi soir, aux alentours de la Place du Breuil à 19h, venez célébrer la Holi, tradition du passage au printemps en Inde.
-        Achetez votre peinture et lancez-là à cette occasion pour créer un énorme nuage coloré et ainsi donner au Puy la couleur de
-        l’Inde. Ne venez pas avec vos plus beaux habits, vous finirez probablement couvert de poudre de peinture ! Retrouvez tout
-        le week-end sur la place du Breuil, tout un ensemble d'activités en rapport avec la culture indienne, telles que la tapisserie,
-        des danses ou encore la découverte de la cuisine indienne et de ses épices si particuliers.
+        <?php  
+          echo $tab_event["descriptif"];
+        ?> 
       </p>
     </div>
     <div class="image_activites">
-      <img src="../img/event_inde.png"></img>
+      <img src="<?php  echo $tab_event["url"]; ?>"></img>
     </div>
   </div>
 
