@@ -2,32 +2,21 @@
 
 $connection = new PDO('mysql:host=localhost; port=3306; dbname=sae_web_week_finale', 'root', '');
 
-//information propre a pays, sans clefs etrangères
-$nom_pays = 'SELECT pays.nom_pays, pays.id_pays, pays.descriptif_monument, pays.descriptif_pays FROM pays WHERE pays.id_pays ='. $_GET['id'];
+// Nom et id pays
+$nom_pays = 'SELECT pays.nom_pays FROM pays, edition WHERE id_edition = 1';
 $resulat = $connection -> query($nom_pays);
 $tab_pays = $resulat -> fetchAll();
 $resulat -> closeCursor();
-//$nbr_pays = count($tab_pays);
+$nbr_element_nav = count($tab_pays);
 
-//images de pays avec table intermediaire
-$image_monument = 'SELECT image.url, pays.id_pays, image.id_image FROM pays, image, pays_image WHERE pays.id_pays = pays_image.id_pays AND pays_image.id_image = image.id_image AND pays.id_pays ='. $_GET['id'];
-$resulat = $connection -> query($image_monument);
-$tab_image_monument = $resulat -> fetchAll();
-$resulat -> closeCursor();
-$nbr_image = count($tab_image_monument);
-
-//image avec clée etrangère
-$image_drap_ban = 'SELECT image.url, pays.id_image_ban, image.id_image FROM pays, image WHERE pays.id_image_ban = image.id_image AND pays.id_pays ='. $_GET['id'];
-$resulat = $connection -> query($image_drap_ban);
-$tab_image_ban = $resulat -> fetch();
-$resulat -> closeCursor();
-
-//image et descriptif de l'activite principale (nom reccuperer mais pas attribué : /\ prevoir un emplacement pour)
-$main_activitee = 'SELECT event.id_event, event.descriptif, image.url, pays.id_pays, event.main_activitee, event.nom_activitee FROM event, pays, image WHERE event.main_activitee = 1 AND image.id_image = event.id_image AND pays.id_pays = event.id_pays AND pays.id_pays ='. $_GET['id'];
-$resulat = $connection -> query($main_activitee);
+// Contenu activités (principale et secondaire)
+$activites = 'SELECT event.id_event, event.id_edition, event.nom_activitee, event.descriptif, event.horraires, event.date_event, event.lieu, event.prix_adulte, event.prix_enfant, 
+              event.payant, event.nbr_place_total, event.nbr_place_dispo, pays.id_pays FROM event, pays WHERE pays.id_pays = event.id_event';
+$resulat = $connection -> query($activites);
 $tab_event = $resulat -> fetch();
 $resulat -> closeCursor();
 ?>
+
 
 <!doctype html>
 <html lang="fr">
@@ -96,12 +85,14 @@ $resulat -> closeCursor();
     <div class="choose_pays">
         <label for="pays"><h2>Quel pays voulez-vous découvrir ?</h2></label>
         <select class="select_pays" name="pays">
-          <option value="0">Pays</option>
-            <?php
+          <option value="0" class="choose">- Pays -</option>
+
+            <?php /*------ GOOD CA MARCHE ------*/
               for($i=0;$i<count($tab_pays);$i++){
-                echo '<option>'.($i+1).". ".$tab_pays[$i]["nom_pays"].'</option>';
+                echo '<option>'.$tab_pays[$i]["nom_pays"].'</option>';
               }
             ?>
+
         </select>
     </div>
 
@@ -114,29 +105,30 @@ $resulat -> closeCursor();
           </div>
 
           <div class="informations">    
-            <div class="activity_main">
+
+              <!-- ACTIVITÉ PRINCIPALE -->
               <div class="activity1">
                 <div class="col">
-                  <li>"ACTIVITÉ 1"</li>
+                  <li><?php echo $tab_event["nom_activitee"];?></li>
+                  <p><?php echo $tab_event["descriptif"];?></p>
                   <p>
-                    "DESCRIPTION ACTIVITÉ"              
+                    Date : <?php echo $tab_event["date_event"];?><br><br>
+                    Horaires : <?php echo $tab_event["horraires"];?>
                   </p>
                   <p>
-                    Date : "AFFICHER DATE ACTIVITÉ"<br><br>
-                    Horaires : "AFFICHER HORAIRES ACTIVITÉ"
-                  </p>
-                  <p>
-                    Localisation : "AFFICHER LIEU ACTIVITÉ"
+                    Localisation : <?php echo $tab_event["lieu"];?>
                   </p>
                 </div>
 
                 <div class="tarifs">
                   <span class="space">
-                    <p>Prix enfant : "AFFICHER PRIX"</p>
-                    <p>Prix adulte : "AFFICHER PRIX"</p>
+                    <p>Prix adulte : <?php echo $tab_event["prix_adulte"];?>€</p>
+                    <p>Prix enfant : <?php echo $tab_event["prix_enfant"];?>€</p>
                   </span>
                 </div>
               </div> 
+
+              <!-- ACTIVITÉ SECONDAIRE -->
               <div class="activity2"> 
                 <div class="col">
                   <li>"ACTIVITÉ 2"</li>
@@ -154,11 +146,11 @@ $resulat -> closeCursor();
 
                 <div class="tarifs">
                   <span class="space">
-                    <p>Prix enfant : "AFFICHER PRIX"</p>
-                    <p>Prix adulte : "AFFICHER PRIX"</p>
+                    <p>Prix enfant : "AFFICHER PRIX"€</p>
+                    <p>Prix adulte : "AFFICHER PRIX"€</p>
                   </span>
-                </div>   
-            </div>
+                </div>
+
           </div>
         </span>
     </div>
