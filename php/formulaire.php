@@ -2,13 +2,12 @@
 
 $connection = new PDO('mysql:host=localhost; port=3306; dbname=sae_web_week_finale', 'root', '');
 
-$utilisateurs = 'SELECT utilisateurs.pseudo_user, utilisateurs.mdp_user FROM utilisateurs';
+$utilisateurs = 'SELECT pseudo_user, mdp_user FROM utilisateurs';
 $resulat = $connection -> query($utilisateurs);
-$tab_pays = $resulat -> fetch();
+$tab_pays = $resulat -> fetchAll();
 $resulat -> closeCursor();
 
 $compteur = count($tab_pays);
-
 ?>
 
 <!doctype html>
@@ -21,11 +20,11 @@ $compteur = count($tab_pays);
 </head>
 <body>
   <div class="global">
-    <form method="POST" action="form2.php">
+    <form method="POST" action="formulaire.php">
       <label for="pseudo" class="label">Pseudonyme</label><br>
-      <input type="pseudo" class="champs" id="pseudo" name="pseudo" placeholder="Pseudonyme"><br>
+      <input type="pseudo" class="champs" id="pseudo" name="pseudo" placeholder="Pseudonyme.."><br>
       <label for="name" class="label">Mot de passe</label></br>
-      <input type="password" class="champs" id="mdp" name="mdp" placeholder="Mot de passe"><br><br> 
+      <input type="password" class="champs" id="mdp" name="mdp" placeholder="Mot de passe.."><br><br> 
       <input type="submit" class="boutt" name="connec" value="Connexion">
     </form>
   </div>
@@ -34,20 +33,22 @@ $compteur = count($tab_pays);
 
 $etat=false;
 
-if(isset($_POST['pseudo'])){
+if(isset($_POST['connec'])){
 
   $pseudo = $_POST['pseudo']; 
   $mdp = $_POST['mdp'];
 
   for($i=0; $i<$compteur; $i++){
-    if ($mdp == $tab_pays[$i]['mdp_user'] and $pseudo == $tab_pays[$i]['pseudo_user']) {
-      header('location:form2.php');
+    if ($mdp == $tab_pays[0]['mdp_user'] && $pseudo == $tab_pays[0]['pseudo_user']) {
+      echo 'Connection réussie : ' ?> </br><a href="admin.php"> Page Admin </a> <?php 
     }
     else {
-      header('location:form3.php');
+      echo 'Connexion échouée : mauvais identifiants';
     }
   }
+
 }
+
 
 ?>
 

@@ -27,6 +27,12 @@ $resulat = $connection -> query($main_activitee);
 $tab_event = $resulat -> fetch();
 $resulat -> closeCursor();
 
+$nav = 'SELECT pays.id_pays, pays.nom_pays FROM pays, edition WHERE id_edition = 1';
+$resulat = $connection -> query($nav);
+$tab_nav = $resulat -> fetchAll();
+$resulat -> closeCursor();
+$nbr_element_nav = count($tab_nav);
+
 ?>
 
 <!doctype html>
@@ -39,41 +45,9 @@ $resulat -> closeCursor();
 </head>
 <body>
 <nav class="containerBar">
-    <div class="fondBar">
-      <div class="logo">
-        <a href="#top">
-          <img src="../img/logo.png"></img>
-        </a>
-      </div>
 
-      <div class="containerBoutons">
+    <?php include './header_footer/header.php';?> 
 
-        <div class="bouton">
-          <a href="#top">
-            <p>
-              ACCUEIL
-            </p>
-          </a>
-        </div>
-
-        <div class="bouton">
-          <a href="#pays">
-            <p>
-              PAYS
-            </p>
-          </a>
-        </div>
-
-        <div class="bouton">
-          <a href="./reservation.php">
-            <p id="reservation">
-              RESERVER
-            </p>
-          </a>
-        </div>
-
-      </div>
-    </div>
     <div class="titre" id="titre1">
       <h1> 
         <?php  
