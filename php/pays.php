@@ -1,6 +1,6 @@
 <?php 
 
-$connection = new PDO('mysql:host=localhost; port=3306; dbname=sae_web_week_test', 'root', '');
+$connection = new PDO('mysql:host=localhost; port=3306; dbname=sae_web_week_finale', 'root', '');
 
 //information propre a pays, sans clefs etrangères
 $nom_pays = 'SELECT pays.nom_pays, pays.id_pays, pays.descriptif_monument, pays.descriptif_pays FROM pays WHERE pays.id_pays ='. $_GET['id'];
@@ -27,6 +27,7 @@ $main_activitee = 'SELECT event.id_event, event.descriptif, image.url, pays.id_p
 $resulat = $connection -> query($main_activitee);
 $tab_event = $resulat -> fetch();
 $resulat -> closeCursor();
+
 ?>
 
 <!doctype html>
@@ -142,21 +143,6 @@ $resulat -> closeCursor();
     </div>
   </div>
 </div>
-
-  <div class="secondaire">
-    <div class="act1">
-      <div><p><strong> Nom activité </strong></p></div>
-      <div><p> Desc Rapide </p></div>
-      <div><p> Places </p></div>
-      <div><p> Tarifs </p></div>
-    </div>
-    <div class="act1">
-      <div><p><strong> Nom activité </strong></p></div>
-      <div><p> Desc Rapide </p></div>
-      <div><p> Places </p></div>
-      <div><p> Tarifs </p></div>
-    </div>
-  </div>
 
   <div class="reserv">
     <form action="reservation.php">

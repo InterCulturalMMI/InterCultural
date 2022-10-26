@@ -307,7 +307,7 @@ a {
 .containerCestQuoi {
     display: flex;
     justify-content: center;
-    margin: 10vh 0 10vh 0;
+    margin: 7vh 0 5vh 0;
 }
 
 .cestQuoi {
@@ -321,8 +321,6 @@ a {
 
 .photoCestQuoi {
     width: 30%;
-
-
 }
 
 .cestQuoiParagraph {
@@ -334,36 +332,9 @@ a {
     font-family: "GothamBlack";
 }
 
-.secondaire {
-    display:flex;
-    flex-direction: column;
-    width: 60%;
-
-    margin: auto;
-    margin-top:3%;
-
-    
-}
-
-.act1 {
-    display:flex;
-    justify-content: space-around;
-
-    padding:2%;
-}
-
-.act1 p {
-    color: black;
-    font-family: 'GothamReg';
-    font-size:1vw;
-    
-}
-
 .reserv {
     display:flex;
     justify-content: center;
-
-    margin:2%;
 }
 
 input {

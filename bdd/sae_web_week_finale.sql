@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : mer. 26 oct. 2022 à 11:03
+-- Généré le : mer. 26 oct. 2022 à 16:31
 -- Version du serveur : 10.4.24-MariaDB
 -- Version de PHP : 8.1.6
 
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de données : `sae_web_week`
+-- Base de données : `sae_web_week_finale`
 --
 
 -- --------------------------------------------------------
@@ -74,7 +74,25 @@ INSERT INTO `event` (`id_event`, `id_pays`, `id_image`, `id_edition`, `nom_activ
 (2, 2, 12, 1, 'Lancer de lanternes', 'Découvrez le Palais Impérial et son armée d’argile en participant aux diverses activités mises en place au Puy en Velay. Retrouvez avec nous l’une des tradition emblématique de la Chine et venez lancer des lanternes à l’occasion de l’ouverture du festival d’Intercultural le 7 juillet 2023 ! Lanternes, poterie ou origami, ne laissez que votre imagination vous limiter.\r\n', '22:30:00', '2023-07-07', 'Stade du Viouzou', 0, 0, 0, 300, 300, 1),
 (3, 3, 13, 1, 'Escape Game', 'Retrouvez la pyramide de Khéops et l’escape game qu’elle contient au centre Pierre Cardinal. Vous ne pourrez sortir que de la pyramide en résolvant un ensemble d’énigmes et d’épreuves, sans lesquelles vous resterez bloqués… N’hésitez pas à réserver au plus tôt pour espérer participer à l’activité, premier arrivé premier servi ! Autour de cette dernière toute une zone à thème de l’Egypte dans laquelle vous pourrez trouver tout un ensemble d’activités. Vous pourrez visiter le musée aux momies, participer à des fouilles archéologiques où acheter des produits locaux égyptiens, que vous ne goûterez nulle part ailleurs.\r\n', NULL, NULL, 'Centre Pierre Cardinal', 15, 10, 1, 150, 150, 1),
 (4, 4, 14, 1, 'Olympiades', 'Les Olympiades débarquent au Puy-En-Velay ! Venez affronter vos concurrents lors d’une compétition sans nom. Durant tout le week-end, apprenez en plus sur la Grèce antique en venant contempler plus de 350 objets issus de cette célèbre période dans le musée, où vous pourrez admirer des vases, des bijoux, des éléments en verre ainsi qu’une infinité d’objets. Participez à différentes activités telles que la création de votre propre sculpture ou, pour les enfants, un 1,2,3 soleil avec Méduse, célèbre personnage de la mythologie grecque. ', '13:00:00', '2023-07-08', 'Stade Charles Massot', 7, 5, 1, 130, 130, 1),
-(5, 5, 15, 1, 'Holi, fête des couleurs', 'Samedi soir, aux alentours de la Place du Breuil à 19h, venez célébrer la Holi, tradition du passage au printemps en Inde. Achetez votre peinture et lancez-là à cette occasion pour créer un énorme nuage coloré et ainsi donner au Puy la couleur de l’Inde. Ne venez pas avec vos plus beaux habits, vous finirez probablement couvert de poudre de peinture ! Retrouvez tout le week-end sur la place du Breuil, tout un ensemble d\'activités en rapport avec la culture indienne, telles que la tapisserie, des danses ou encore la découverte de la cuisine indienne et de ses épices si particuliers.\r\n', '19:00:00', '2023-07-08', 'Place du Breuil', 0, 0, 0, 350, 350, 1);
+(5, 5, 15, 1, 'Holi, fête des couleurs', 'Samedi soir, aux alentours de la Place du Breuil à 19h, venez célébrer la Holi, tradition du passage au printemps en Inde. Achetez votre peinture et lancez-là à cette occasion pour créer un énorme nuage coloré et ainsi donner au Puy la couleur de l’Inde. Ne venez pas avec vos plus beaux habits, vous finirez probablement couvert de poudre de peinture ! Retrouvez tout le week-end sur la place du Breuil, tout un ensemble d\'activités en rapport avec la culture indienne, telles que la tapisserie, des danses ou encore la découverte de la cuisine indienne et de ses épices si particuliers.\r\n', '19:00:00', '2023-07-08', 'Place du Breuil', 0, 0, 0, 350, 350, 1),
+(6, 1, 6, 1, 'Création déguisements', 'Création de déguisements et d\'ensembles de contenus pour le Carnaval', NULL, NULL, 'Parc Henry Vinay', 10, 5, 1, 150, 150, 0),
+(7, 1, 6, 1, 'Initiation Danse', 'Apprenez les danses brésiliennes pour vous perfectionner et briller durant le carnaval !', NULL, NULL, 'Parc Henry Vinay', 0, 0, 0, 300, 300, 0),
+(8, 1, 6, 1, 'Coulisses', 'Découvrez les prémices du Carnaval et l\'organisation de cet énorme festival, et possiblement aidez-nous !', '19:00:00', '2023-07-09', 'parc Henry Vinay', 0, 0, 0, 75, 75, 0),
+(9, 1, 6, 1, 'Spectacle capoera', 'Soutenez nos artistes et regardez les en pleine performance de Capoera !', NULL, NULL, 'Parc Henry Vinay', 0, 0, 0, 150, 150, 0),
+(10, 2, 7, 1, 'Poterie', 'Rejoignez nos artisans et réalisez vos propres poteries, repartez avec pour les exposer ou les offrir !', NULL, NULL, 'Stade du Viouzou', 10, 6, 1, 200, 200, 0),
+(11, 2, 7, 1, 'Initiation Art Martiaux', 'Apprenez l\'art de la défense, si traditionnel en Chine à travers différents arts martiaux. A vous de choisir !', NULL, NULL, 'Stade du Viouzou', 5, 2, 1, 175, 175, 0),
+(12, 2, 7, 1, 'Peintures Caligraphiques', 'Apprenez l\'art du dessin à la chinoise en peignant des caractères chinois, au pinceau traditionnel. Repartez avec vos peintures', NULL, NULL, 'Stade du Viouzou', 0, 0, 0, 200, 200, 0),
+(13, 2, 7, 1, 'Création lanterne', 'Avant le lancer de lanterne, venez réaliser les vôtres sur notre activité de réalisation ! Décidez de la lancer ou la garder.', NULL, '2023-07-07', 'Stade du Viouzou', 15, 10, 1, 350, 350, 0),
+(14, 3, 8, 1, 'Fouilles archéologiques', 'Découvrez des squelettes et des reliques dans un terrain à fouiller ! Repartez avec vos récompenses.', NULL, NULL, 'Centre Pierre Cardinal', 15, 7, 1, 150, 150, 0),
+(15, 3, 8, 1, 'Labyrinthe', 'Perdez vous et explorez les alentours des pyramides à l\'intérieur d\'un énorme labyrinthe, lié à l\'Escape Game', NULL, NULL, 'Centre Pierre Cardinal', 3, 2, 1, 500, 500, 0),
+(16, 3, 8, 1, 'Papyrus', 'Utilisez les premières méthodes de confection de l\'écriture ! Ecrivez comme vous ne l\'avez jamais fais.', NULL, NULL, 'Centre Pierre Cardinal', 5, 3, 1, 220, 220, 0),
+(17, 4, 9, 1, 'Exposition Statues', 'Découvrez un musée de statues grecques comme vous ne les avez jamais vues ! Des statues uniques, dont vous n\'oublierez pas les détails.', NULL, NULL, 'Stade Charles Massot', 0, 0, 0, 400, 400, 0),
+(18, 4, 9, 1, 'Atelier Sculpture', 'Découvrez la sculpture autour d\'un atelier de sculpture, à tous les niveaux ! Repartez avec vos représentations !', NULL, NULL, 'Stade Charles Massot', 15, 7, 1, 175, 175, 0),
+(19, 4, 9, 1, '1 2 3 Soleil', 'Un 1 2 3 Soleil grandeur nature, avec comme menace Méduse, l\'humaine aux pouvoirs maudits qui transforment en pierre ! Prenez garde..', NULL, NULL, 'Stade Charles Massot', 0, 0, 0, 200, 200, 0),
+(20, 5, 10, 1, 'Test épices ', 'Sentez, goûtez, testez et cuisinez des épices typiques d\'Inde. Cuisiniers, nous vous attendons pour nous surprendre..', NULL, NULL, 'Place du Breuil', 5, 2, 1, 250, 250, 0),
+(21, 5, 10, 1, 'Tapisserie', 'Tapissez vos propres pièces de coutures, au style indien unique ! Repartez avec vos créations pour décorer vos maisons !', NULL, NULL, 'Place du Breuil', 25, 15, 1, 125, 125, 0),
+(22, 5, 10, 1, 'Danse Indienne', 'Venez apprendre les danses typiques Indiennes avec des danseuses qualifiées. Entrainez-vous pour la représentation dont vous pourrez participer !', NULL, NULL, 'Place du Breuil', 0, 0, 0, 175, 175, 0),
+(23, 5, 10, 1, 'Spectacle Danse', 'Venez assister ou participer à notre spectacle de danse indienne. Si vous avez participés aux cours, nous vous attendons sur scène !', '16:00:00', '2023-07-09', 'Place du Breuil', 0, 0, 0, 200, 200, 0);
 
 -- --------------------------------------------------------
 
@@ -98,7 +116,7 @@ INSERT INTO `image` (`id_image`, `nom_image`, `alt`, `type`, `url`) VALUES
 (1, 'Drapeau Brésil', 'Drapeau du Brésil', 'drap', '../img/drap_bresil.png'),
 (2, 'Drapeau Chine', 'Drapeau de la Chine', 'drap', '../img/drap_chine.png'),
 (3, 'Drapeau Egypte', 'Drapeau de l\'Egypte', 'drap', '../img/drap_egypte.png'),
-(4, 'Drapeau Grece', 'Drapeau de la Grèce', 'drap', '../img/drap_egypte.png'),
+(4, 'Drapeau Grece', 'Drapeau de la Grèce', 'drap', '../img/drap_grece.jpg'),
 (5, 'Drapeau Inde', 'Drapeau de l\'Inde', 'drap', '../img/drap_inde.png'),
 (6, 'Bannière Brésil', 'Bannière Pour le Brésil', 'bann', '../img/bann_bresil.png'),
 (7, 'Bannière Chine', 'Bannière pour la Chine', 'bann', '../img/bann_chine.png'),
@@ -197,11 +215,35 @@ CREATE TABLE `pays_image` (
 --
 
 INSERT INTO `pays_image` (`id_pays_image`, `id_pays`, `id_image`) VALUES
-(1, 1, 26),
-(2, 2, 27),
-(3, 3, 28),
-(4, 4, 29),
-(5, 5, 30);
+(1, 1, 16),
+(2, 1, 17),
+(3, 2, 18),
+(4, 2, 19),
+(5, 3, 20),
+(6, 3, 21),
+(7, 4, 22),
+(8, 4, 23),
+(9, 5, 24),
+(10, 5, 25);
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `utilisateurs`
+--
+
+CREATE TABLE `utilisateurs` (
+  `id_user` int(11) NOT NULL,
+  `pseudo_user` varchar(50) NOT NULL,
+  `mdp_user` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Déchargement des données de la table `utilisateurs`
+--
+
+INSERT INTO `utilisateurs` (`id_user`, `pseudo_user`, `mdp_user`) VALUES
+(1, 'user_test', 'mdp_test');
 
 --
 -- Index pour les tables déchargées
@@ -254,6 +296,12 @@ ALTER TABLE `pays_image`
   ADD KEY `id_image` (`id_image`);
 
 --
+-- Index pour la table `utilisateurs`
+--
+ALTER TABLE `utilisateurs`
+  ADD PRIMARY KEY (`id_user`);
+
+--
 -- AUTO_INCREMENT pour les tables déchargées
 --
 
@@ -267,7 +315,7 @@ ALTER TABLE `edition`
 -- AUTO_INCREMENT pour la table `event`
 --
 ALTER TABLE `event`
-  MODIFY `id_event` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id_event` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- AUTO_INCREMENT pour la table `image`
@@ -291,7 +339,13 @@ ALTER TABLE `pays_edition`
 -- AUTO_INCREMENT pour la table `pays_image`
 --
 ALTER TABLE `pays_image`
-  MODIFY `id_pays_image` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id_pays_image` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+
+--
+-- AUTO_INCREMENT pour la table `utilisateurs`
+--
+ALTER TABLE `utilisateurs`
+  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- Contraintes pour les tables déchargées
