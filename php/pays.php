@@ -136,17 +136,16 @@ $resulat -> closeCursor();
           ?>  
         </h1>
       </div>
-    <div class="texte_activites">
-      <p>
-      <?php  
-          echo $tab_event["descriptif"];
-        ?> 
-      </p>
-    </div>
+      <div class="texte_activites">
+        <p>
+        <?php  
+            echo $tab_event["descriptif"];
+          ?> 
+        </p>
+      </div>
     </div>
     <div class="image_activites">
-    <img src="<?php  echo $tab_event["url"]; ?>"></img>
-
+      <img src="<?php  echo $tab_event["url"]; ?>"></img>
     </div>
   </div>
 
