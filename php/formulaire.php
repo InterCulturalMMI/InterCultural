@@ -1,3 +1,15 @@
+<?php
+
+$connection = new PDO('mysql:host=localhost; port=3306; dbname=sae_web_week_finale', 'root', '');
+
+$utilisateurs = 'SELECT pseudo_user, mdp_user FROM utilisateurs';
+$resulat = $connection -> query($utilisateurs);
+$tab_pays = $resulat -> fetchAll();
+$resulat -> closeCursor();
+
+$compteur = count($tab_pays);
+?>
+
 <!doctype html>
 <html lang="fr">
 <head>
@@ -7,16 +19,38 @@
   <script src="script.js"></script>
 </head>
 <body>
-    <div class="global">
-      <div class="connexion">
-        <form>
-          <!--<label for="pseudo">Pseudonyme</label><br>-->
-          <input type="pseudo" id="pseudo" name="pseudo" placeholder="Pseudonyme.."><br>
-          <!-- <label for="lname">Mot de passe</label><br> -->
-          <input type="password" id="mdp" name="mdp" placeholder="Mot de passe.."><br><br>
-          <input type="submit" value="Connexion">
-        </form> 
-      </div>
-    </div>
+  <div class="global">
+    <form method="POST" action="formulaire.php">
+      <label for="pseudo" class="label">Pseudonyme</label><br>
+      <input type="pseudo" class="champs" id="pseudo" name="pseudo" placeholder="Pseudonyme.."><br>
+      <label for="name" class="label">Mot de passe</label></br>
+      <input type="password" class="champs" id="mdp" name="mdp" placeholder="Mot de passe.."><br><br> 
+      <input type="submit" class="boutt" name="connec" value="Connexion">
+    </form>
+  </div>
+
+<?php
+
+$etat=false;
+
+if(isset($_POST['connec'])){
+
+  $pseudo = $_POST['pseudo']; 
+  $mdp = $_POST['mdp'];
+
+  for($i=0; $i<$compteur; $i++){
+    if ($mdp == $tab_pays[0]['mdp_user'] && $pseudo == $tab_pays[0]['pseudo_user']) {
+      echo 'Connection réussie : ' ?> </br><a href="admin.php"> Page Admin </a> <?php 
+    }
+    else {
+      echo 'Connexion échouée : mauvais identifiants';
+    }
+  }
+
+}
+
+
+?>
+
 </body>
 </html>

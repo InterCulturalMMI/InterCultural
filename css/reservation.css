@@ -208,8 +208,7 @@ a {
 }
 
 .informations {
-    display: flex;
-    justify-content: space-evenly;
+    display: block;
 }
 
 .activity_main {
@@ -221,7 +220,6 @@ a {
     display: flex;
     justify-content: space-evenly;
     flex-direction: row;
-    margin-bottom: 30px;
 }
 
 .col {
@@ -246,10 +244,6 @@ a {
     list-style: none;
 }
 
-.tarifs {
-    margin-left: 100px;
-}
-
 .tarifs p {
     text-align: center;
 }
@@ -259,7 +253,7 @@ a {
     justify-content: center;
     width: 20%;
 
-    margin: auto auto 70px auto;
+    margin: 70px auto 70px auto;
     padding: 20px;
 
     border-radius: 2em;
