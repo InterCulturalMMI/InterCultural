@@ -38,65 +38,14 @@ $nbr_carousel = count($tab_pays);
 <head>
   <meta charset="utf-8">
   <title> INTERCULTURAL </title>
+  <link rel="icon" href="../img/favicon.png" />
   <link rel="stylesheet" href="../css/accueil.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/><script src="../js/accueil.js"></script>
 </head>
 
 <body>
-  <nav class="containerBar">
-    <div class="fondBar">
-      <div class="logo">
-        <a href="#top">
-          <img src="../img/logo.png"></img>
-        </a>
-      </div>
 
-      <div class="containerBoutons">
-
-          <div class="bouton">
-            <a href="#top">
-              <p>
-                ACCUEIL
-              </p>
-            </a>
-          </div>
-
-      <ul class="listePays">
-
-        <li>
-          <div class="boutonPays">
-            <a href="#pays">
-              <p>
-                PAYS
-              </p>
-            </a>
-          </div>
-          <div class="contenaireListElements">
-            <ul>
-              <?php
-                for($nav = 0; $nav < $nbr_element_nav; $nav++){
-              ?>
-              <li><a href="pays.php?id=<?php echo $tab_nav[$nav]['id_pays'];?>" class="listeElement"><?php echo $tab_nav[$nav]['nom_pays'];?></a></li>
-              <?php
-                }
-              ?>
-            </ul>
-          </div>
-          
-        </li>
-      </ul>
-
-          <div class="bouton">
-            <a href="./reservation.php">
-              <p id="reservation">
-                RESERVER
-              </p>
-            </a>
-          </div>
-        
-      </div>
-    </div>
-</nav>
+<?php include './header_footer/header.html';?> 
 
 <div class="imgFond">
 
@@ -236,32 +185,7 @@ $nbr_carousel = count($tab_pays);
   </div>
 </div>
 
-<footer>
-  <div class="containerFooter">
+<?php include './header_footer/footer.html';?> 
 
-    <div class="containerFooterLogos">
-      <img src="../img/logo.png"></img>
-      <img src="../img/departement.png"></img>
-      <img src="../img/region_aura.png"></img>
-      <img src="../img/site_touriste.png"></img>
-      <img src="../img/logo_feader.png"></img>
-    </div>
-
-    <div class="containerFooterIcons">
-      <img src="../img/christ.png"></img>
-      <img src="../img/porte.png"></img>
-      <img src="../img/taj-mahal.png"></img>
-      <img src="../img/pyramide.png"></img>
-      <img src="../img/ruines.png"></img>
-    </div>
-
-    <div class="barreFooter"></div>
-  </div>
-</footer>
-
-
-  <?php 
-
-  ?>
 </body>
 </html>
