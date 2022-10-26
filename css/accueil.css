@@ -29,6 +29,11 @@ h1 {
     font-size: 5vh;
 }
 
+h2 {
+    font-family: "GothamBlack";
+    font-size: 4vh;
+}
+
 a {
     text-decoration: none;
     color: white;
@@ -229,6 +234,7 @@ ul, li {
     color: white;
     border: .5vh solid #ffffff;
     border-radius: 10vh;
+    cursor: pointer;
 }
 
 .boutonSwipe:hover {
@@ -290,6 +296,19 @@ ul, li {
     height: 5px;
     position: relative;
     left: 0;
+}
+
+.expo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 20vh;
+}
+
+.expo img {
+    margin: 5vh 5vh 0 5vh;
+    max-height: 5vh;
 }
 
 
@@ -492,7 +511,7 @@ footer {
     align-items: center;
     justify-content: space-between;
     flex-direction: column;
-    height: 25vh;
+    max-height: 25vh;
     width: 70%;
     margin-bottom: 5vh;
     background-color: #6B705C;
