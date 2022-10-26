@@ -165,6 +165,9 @@ $nbr_carousel = count($tab_pays);
         ?>
         <div class="swiper-slide">
           <div class="containerSlide">
+            <div class="containerImg">
+              <img src="../img/1.jpg"></img>
+            </div>
             <div class="containerBarrePays">
               <div class="containerDrapeauText">
                 <div class="drapeauPays1"><img src="<?php echo $tab_pays[$i]['url'];?>"></img></div>
