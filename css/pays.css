@@ -304,6 +304,36 @@ a {
     margin:auto;
 }
 
+.containerCestQuoi {
+    display: flex;
+    justify-content: center;
+    margin: 10vh 0 10vh 0;
+}
+
+.cestQuoi {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 40vh;
+    width: 90vw;
+    font-size: 1vw;
+}
+
+.photoCestQuoi {
+    width: 30%;
+
+
+}
+
+.cestQuoiParagraph {
+    width: 40%;
+    font-family: "GothamLig";
+}
+
+.cestQuoiParagraph h2 {
+    font-family: "GothamBlack";
+}
+
 .secondaire {
     display:flex;
     flex-direction: column;

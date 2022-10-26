@@ -127,27 +127,21 @@ $resulat -> closeCursor();
 
 <!-- la ca va pas a verifier -->
 
-  <div class="activites">
-    <div class="pgauche">
-      <div class="titre" id="soustitre2">
-        <h1>
-          <?php  
-            echo $tab_event["nom_activitee"];
-          ?>  
-        </h1>
-      </div>
-      <div class="texte_activites">
-        <p>
-        <?php  
-            echo $tab_event["descriptif"];
-          ?> 
-        </p>
-      </div>
-    </div>
-    <div class="image_activites">
+  <div class="containerCestQuoi">
+  <div class="cestQuoi">
+    <div class="photoCestQuoi">
       <img src="<?php  echo $tab_event["url"]; ?>"></img>
     </div>
+    <div class="cestQuoiParagraph">
+      <h2><?php  
+            echo $tab_event["nom_activitee"];
+          ?> </h2><br>
+      <p><?php  
+            echo $tab_event["descriptif"];
+          ?> </p>
+    </div>
   </div>
+</div>
 
   <div class="secondaire">
     <div class="act1">
