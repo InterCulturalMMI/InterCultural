@@ -20,7 +20,7 @@ $compteur = count($tab_pays);
 </head>
 <body>
   <div class="global">
-    <form method="POST" action="formulaire.php">
+    <form method="POST" action="inscription.php">
       <label for="pseudo" class="label">Pseudonyme</label><br>
       <input type="pseudo" class="champs" id="pseudo" name="pseudo" placeholder="Pseudonyme.."><br>
       <label for="name" class="label">Mot de passe</label></br>
@@ -28,29 +28,33 @@ $compteur = count($tab_pays);
       <input type="submit" class="boutt" name="connec" value="Connexion">
     </form>
   </div>
+</body>
 
 <?php
 
-$etat=false;
-
 if(isset($_POST['connec'])){
+    $pseudo = $_POST['pseudo']; 
+    $mdp = $_POST['mdp'];
 
-  $pseudo = $_POST['pseudo']; 
-  $mdp = $_POST['mdp'];
+    echo $pseudo;
+    echo $mdp;
 
-  for($i=0; $i<$compteur; $i++){
-    if ($mdp == $tab_pays[0]['mdp_user'] && $pseudo == $tab_pays[0]['pseudo_user']) {
-      echo 'Connection réussie : ' ?> </br><a href="admin.php"> Page Admin </a> <?php 
+    $etat=false;
+
+    for($i=0 ;$i<$compteur ;$i++){
+        if ($pseudo == $tab_pays[$i]['pseudo_user']){
+            $etat=true;
+            echo "Ce pseudonyme existe déjà.";
+        }
+        if ($etat==false){
+            echo "Bienvenue, veuillez désormais vous connecter : " ;?><a href="connexion.php"> Connexion </a> <?php
+        }
     }
-    else {
-      echo 'Connexion échouée : mauvais identifiants';
-    }
-  }
 
+    if ($etat==false){
+        $insertion="INSERT INTO utilisateurs (pseudo_user, mdp_user) VALUES ('$pseudo', '$mdp');";
+        $resultat = $connection->query($insertion);
+        $resultat->closeCursor();
+    }
 }
-
-
 ?>
-
-</body>
-</html>
