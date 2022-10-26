@@ -33,9 +33,6 @@ $resulat = $connection -> query($image_carousel);
 $tab_carousel = $resulat -> fetch();
 $resulat -> closeCursor();
 $nbr_carousel = count($tab_pays);
-
-print_r($tab_car);
-
 ?>
 
 
@@ -47,12 +44,13 @@ print_r($tab_car);
   <title> INTERCULTURAL </title>
   <link rel="icon" href="../img/favicon.png" />
   <link rel="stylesheet" href="../css/accueil.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/><script src="../js/accueil.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
+  <script src="../js/accueil.js"></script>
 </head>
 
 <body>
 
-<?php include './header_footer/header.html';?> 
+<?php include './header_footer/header.php';?> 
 
 <div class="imgFond">
 
@@ -75,7 +73,13 @@ print_r($tab_car);
   </div>
 </div>
 
-<div class="containerCestQuoi">
+<div class="barreSwipe" href="#contenu">
+  <div class="boutonSwipe">
+  <p>+ INFOS</p>
+  </div>
+</div>
+
+<div class="containerCestQuoi" id="contenu">
 
   <div class="cestQuoi">
 
@@ -124,33 +128,31 @@ print_r($tab_car);
             <div class="containerImg">
               <img src="<?php echo $tab_car[$i]['url'];?>"></img>
             </div>
+            <div class="swiper-pagination"></div>
             <div class="containerBarrePays">
               <div class="containerDrapeauText">
-                <div class="drapeauPays1"><img src="<?php echo $tab_pays[$i]['url'];?>"></img></div>
-                <div class="textePays1"><p><strong><?php echo $tab_pays[$i]['nom_pays'];?></strong> - <?php echo $tab_pays[$i]['UPPER(pays.nom_monument_principal)'];?></p></div>
-              </div>
-              <div class="containerBouton">
-                <div class="bouton">
-                  <a href="pays.php?id=<?php echo $tab_pays[$i]['id_pays'] ;?>">
-                    <p class="bold">
-                      DÉCOUVRIR
-                    </p>
-                  </a>
-                </div>
-              </div>     
+                <div class="drapeauPays"><img src="<?php echo $tab_pays[$i]['url'];?>"></img></div>
+                <div class="textePays"><p><strong><?php echo $tab_pays[$i]['nom_pays'];?></strong> - <?php echo $tab_pays[$i]['UPPER(pays.nom_monument_principal)'];?></p></div>
             </div>
+            <div class="containerBouton">
+              <div class="bouton">
+                <a href="pays.php?id=<?php echo $tab_pays[$i]['id_pays'] ;?>">
+                  <p class="bold">
+                    DÉCOUVRIR
+                  </p>
+                </a>
+              </div>
+            </div>     
           </div>
         </div>
-        <?php
-          }
-        ?>
-        
-        <div class="swiper-slide"><img src="../img/2.jpg"></img></div>
-        <div class="swiper-slide"><img src="../img/3.jpg"></img></div>
       </div>
-      <div class="swiper-button-next"></div>
-      <div class="swiper-button-prev"></div>
+      <?php
+        }
+      ?>
     </div>
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+  </div>
 
   <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
   <script src="../js/accueil.js"></script>
@@ -185,9 +187,7 @@ print_r($tab_car);
       <h2>OÙ SE PASSE L'ÉVENEMENT ?</h2><br>
       <p><strong>INTERCULTURAL</strong> se déroule <strong>dans la ville du Puy en Velay</strong> en Auvergne en France. Une ville connué pour sa fabrication de la <strong>dentelle</strong> du Puy, la culture de la <strong>lentille verte</strong> du Puy et la production de <strong>verveine</strong> du Velay. Elle est aussi connue pour être le départ de la <strong>Via Podiensis, un des quatre chemins de Compostelle français.</strong></p>
 
-      <div class="barre">
-      </div>
-
+      <div class="barre"></div>
     </div>
   </div>
 </div>

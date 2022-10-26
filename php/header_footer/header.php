@@ -26,7 +26,7 @@
               </p>
             </a>
           </div>
-          <div class="contenaireListElements">
+          <div class="containerListElements">
             <ul>
               <?php
                 for($nav = 0; $nav < $nbr_element_nav; $nav++){
