@@ -30,6 +30,16 @@ body {
     text-align:center;
 }
 
+.titre {
+    text-align: center;
+}
+
+.titre h1 {
+    font-family:'GothamBold';
+    font-size: 3vw;
+
+}
+
 .global {
     display:inline-block;
     width: 100%;
@@ -107,4 +117,12 @@ label {
     transform: scale(1);
     color: black;
     transition: 0.3s;
+}
+
+.lien {text-align:center;margin: 10%;}
+
+.lien p {
+    font-family:'GothamLig';
+    font-size: 1vw;
+
 }

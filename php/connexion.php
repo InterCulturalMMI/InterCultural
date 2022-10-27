@@ -19,6 +19,10 @@ $compteur = count($tab_pays);
   <script src="script.js"></script>
 </head>
 <body>
+  <div class="titre">
+    <h1> Connexion </h1>
+  </div>
+
   <div class="global">
     <form method="POST" action="connexion.php">
       <label for="pseudo" class="label">Pseudonyme</label><br>
@@ -27,6 +31,10 @@ $compteur = count($tab_pays);
       <input type="password" class="champs" id="mdp" name="mdp" placeholder="Mot de passe.."><br><br> 
       <input type="submit" class="boutt" name="connec" value="Connexion">
     </form>
+  </div>
+  
+  <div class="lien">
+    <p> Pas de comptes ? <a href="inscription.php">Cliquez-ici</a></p>
   </div>
 
 <?php

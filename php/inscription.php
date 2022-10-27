@@ -19,6 +19,10 @@ $compteur = count($tab_pays);
   <script src="script.js"></script>
 </head>
 <body>
+  <div class="titre">
+    <h1> Inscription </h1>
+  </div>
+
   <div class="global">
     <form method="POST" action="inscription.php">
       <label for="pseudo" class="label">Pseudonyme</label><br>
