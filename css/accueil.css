@@ -127,7 +127,7 @@ ul, li {
 .containerBoutons {
     grid-column: 3;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 0.4fr;
     width: auto;
     height: auto;
     padding: 1.5vh;
@@ -145,6 +145,16 @@ ul, li {
     margin: 1vh;
 }
 
+.bouton:hover {
+    transform: scale(0.9);
+    transition: 0.4s;
+}
+
+.bouton:not(hover) {
+    transform: scale(1);
+    transition: 0.4s;
+}
+
 .boutonPays {
     width: auto;
     height: auto;
@@ -155,12 +165,29 @@ ul, li {
     margin: 1vh;
 }
 
-.bouton:hover {
+.pays:hover {
     transform: scale(0.9);
     transition: 0.4s;
 }
 
-.bouton:not(hover) {
+.pays:not(hover) {
+    transform: scale(1);
+    transition: 0.4s;
+}
+
+.boutonLangue {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 3.5vw;
+}
+
+.boutonLangue:hover {
+    transform: scale(0.9);
+    transition: 0.4s;
+}
+
+.boutonLangue:not(hover) {
     transform: scale(1);
     transition: 0.4s;
 }

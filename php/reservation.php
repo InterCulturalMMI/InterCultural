@@ -33,43 +33,8 @@ $nbr_event_sec = count($tab_event_sec);
   <script src="../js/reservation.js"></script>
 </head>
 <body>
-<nav class="containerBar">
-    <div class="fondBar">
-      <div class="logo">
-        <a href="#top">
-          <img src="../img/logo.png"></img>
-        </a>
-      </div>
-
-      <div class="containerBoutons">
-
-        <div class="bouton" class="petitBouton">
-          <a href="./main.php">
-            <p>
-              ACCUEIL
-            </p>
-          </a>
-        </div>
-
-        <div class="bouton" class="petitBouton">
-          <a href="./pays.php">
-            <p>
-              PAYS
-            </p>
-          </a>
-        </div>
-
-        <div class="bouton">
-          <a href="./reservation.php">
-            <p id="reservation">
-              RESERVER
-            </p>
-          </a>
-        </div>
-
-      </div>
-    </div>
-</nav>
+  
+<?php include './header_footer/header.php';?> 
 
 <div class="container">
     <div class="containerCestQuoi">

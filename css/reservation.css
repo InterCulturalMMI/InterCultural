@@ -38,19 +38,72 @@ html {
     height: 100%;
 }
 
-/*===================== HEADER =====================*/
+p {
+    font-family: "GothamReg";
+    font-size: 1vw;
+}
+
 a {
     text-decoration: none;
     color: white;
     font-family: "GothamReg";
 }
 
+/*===================== HEADER =====================*/
+nav {
+    z-index: 1000;
+}
+
+ul, li {
+    text-decoration: none;
+    list-style-type: none;
+}
+
+.listePays .containerListElements {
+    display: none;
+    height: auto;
+    margin: 0;
+    padding: 0;
+}
+
+.listePays li{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.listePays li:hover .containerListElements {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    position: relative;
+    margin: auto;
+}
+
+.containerListElements ul{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    position: absolute;
+    width: 100%;
+    padding: 1.5vh;
+    background-color: #A5A58D;
+    border-radius: 2vh;
+}
+
+.listeElement {
+    padding: 1vh;
+}
+
 .containerBar {
+    position: fixed;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
     margin: 2%;
+    font-size: 1vw;
 }
 
 .logo {
@@ -70,15 +123,16 @@ a {
     height: 25%;
     background-color: #6B705C;
     border-radius: 10vh;
+    box-shadow: 0px 0px 20px 1px rgba(0, 0, 0, 0.425);
 }
 
 .containerBoutons {
     grid-column: 3;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 0.4fr;
     width: auto;
     height: auto;
-    padding: 1.2vh;
+    padding: 1.5vh;
     background-color: #868a74;
     border-radius: 10vh;
 }
@@ -86,7 +140,7 @@ a {
 .bouton {
     width: auto;
     height: auto;
-    padding: 1.2vh;
+    padding: 1.5vh;
     background-color: #A5A58D;
     box-shadow: 0px 0px 20px 1px rgba(0, 0, 0, 0.425);
     border-radius: 10vh;
@@ -103,8 +157,41 @@ a {
     transition: 0.4s;
 }
 
-#petitBouton {
-    transform: scale(0.8);
+.boutonPays {
+    width: auto;
+    height: auto;
+    padding: 1.5vh;
+    background-color: #A5A58D;
+    box-shadow: 0px 0px 20px 1px rgba(0, 0, 0, 0.425);
+    border-radius: 10vh;
+    margin: 1vh;
+}
+
+.pays:hover {
+    transform: scale(0.9);
+    transition: 0.4s;
+}
+
+.pays:not(hover) {
+    transform: scale(1);
+    transition: 0.4s;
+}
+
+.boutonLangue {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 3.5vw;
+}
+
+.boutonLangue:hover {
+    transform: scale(0.9);
+    transition: 0.4s;
+}
+
+.boutonLangue:not(hover) {
+    transform: scale(1);
+    transition: 0.4s;
 }
 
 #reservation {

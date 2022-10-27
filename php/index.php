@@ -83,7 +83,7 @@ $nbr_carousel = count($tab_pays);
 
     <div class="cestQuoiParagraph">
       <h2>QU'EST CE QUE C'EST ?</h2><br>
-      <p><strong>INTERCULTURAL</strong> est une exposition inédite. Tout les <strong>5 ans</strong> nous vous invitons à découvrir la culture de <strong>5 pays</strong> à travers des zones réparties <strong>dans la ville du Puy en Velay en France.</strong></p>
+      <p><strong>INTERCULTURAL</strong> est une exposition inédite. Tout les <strong>5 ans</strong> nous vous invitons à découvrir la culture de <strong>5 pays</strong> à travers des zones réparties <strong>dans la ville du Puy en Velay en France.<br>Sur chaque zone vous serez plongé dans l'univers d'un pays récréé de toute pièce. Vous pourrez principalement y observer une reconstitution en taille réduite d'un monument </strong></p>
 
       <div class="barre">
       </div>
