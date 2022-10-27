@@ -14,7 +14,7 @@ $compteur = count($tab_pays);
 <html lang="fr">
 <head>
   <meta charset="utf-8">
-  <title>Titre de la page</title>
+  <title>INTERCULTURAL | Admin - connexion</title>
   <link rel="stylesheet" href="../css/formulaire.css">
   <script src="script.js"></script>
 </head>
@@ -48,7 +48,7 @@ if(isset($_POST['connec'])){
 
   for($i=0; $i<$compteur; $i++){
     if ($mdp == $tab_pays[$i]['mdp_user'] && $pseudo == $tab_pays[$i]['pseudo_user']) {
-      header('location:admin.php');
+      header('location:admin/admin.php');
     }
     else {
       echo '<script type="text/JavaScript"> alert("Erreur de mots de passe ou identifiants !"); </script>';
