@@ -13,7 +13,7 @@ $nbr_element_nav = count($tab_nav);
 <nav class="containerBar">
     <div class="fondBar">
       <div class="logo">
-        <a href="#top">
+        <a href="./index.php">
           <img src="../img/logo.png"></img>
         </a>
       </div>
@@ -21,7 +21,7 @@ $nbr_element_nav = count($tab_nav);
       <div class="containerBoutons">
 
           <div class="bouton">
-            <a href="../index.php">
+            <a href="./index.php">
               <p>
                 ACCUEIL
               </p>
@@ -54,7 +54,7 @@ $nbr_element_nav = count($tab_nav);
       </ul>
 
           <div class="bouton">
-            <a href="../reservation.php">
+            <a href="./reservation.php">
               <p id="reservation">
                 RESERVER
               </p>
