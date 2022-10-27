@@ -132,7 +132,7 @@ $nbr_event_sec = count($tab_event_sec);
                 </div>
               </div> 
 
-              <!-- ACTIVITÉ SECONDAIRE -->
+              <!-- ACTIVITÉs SECONDAIREs -->
               <?php 
                 for($i = 0; $i < $nbr_event_sec; $i++){ ?>
                   <div class="activity2"> 
@@ -165,9 +165,10 @@ $nbr_event_sec = count($tab_event_sec);
       <a href="page_reserv.php" class="bn3">Réserver votre place</a>
     </div>
 
-    <?php include './header_footer/footer.html';?> 
-
 </div>  
+
+  <?php include './header_footer/footer.html';?> 
+
 </body>
 
 </html>
