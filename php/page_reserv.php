@@ -20,9 +20,8 @@ $nbr_event = count($tab_event);
 <html lang="fr">
 <head>
   <meta charset="utf-8">
-  <title> INTERCULTURAL </title>
+  <title> INTERCULTURAL | Envoi code</title>
   <link rel="stylesheet" href="../css/formulaire.css">
-  <script src="../js/reservation.js"></script>
 </head>
 <body>
     <div class="titre">
@@ -42,7 +41,7 @@ $nbr_event = count($tab_event);
                 }
                 ?>
             </select>
-            <input type="submit" class="boutt" name="connec" value="Envoi mail">
+            <div class="envoi"><a href="mailto: <?php $recepteur ?>"><input type="submit" class="boutt" name="connec" value="Envoi mail"></a></div>
         </form>
     </div>
 
@@ -72,8 +71,5 @@ if(isset($_POST['connec'])){
     $expediteur="interculturalmmi@gmail.com";
     $recepteur= $_POST['mail'];
     $objet="Code d'activité Intercultural";
-    $message= "Bonjour " .$recepteur. " ! Votre code pour l'activité " .$activite. " est " .implode("",$code). " . Amusez vous bien !";
-
-    mail($expediteur,$recepteur,$message,$objet);
 }
 ?>

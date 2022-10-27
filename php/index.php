@@ -34,7 +34,7 @@ $nbr_carousel = count($tab_pays);
 
 <head>
   <meta charset="utf-8">
-  <title> INTERCULTURAL </title>
+  <title> INTERCULTURAL | Accueil</title>
   <link rel="icon" href="../img/favicon.png" />
   <link rel="stylesheet" href="../css/accueil.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>

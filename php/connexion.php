@@ -14,7 +14,7 @@ $compteur = count($tab_pays);
 <html lang="fr">
 <head>
   <meta charset="utf-8">
-  <title>Titre de la page</title>
+  <title>INTERCULTURAL | Connexion</title>
   <link rel="stylesheet" href="../css/formulaire.css">
   <script src="script.js"></script>
 </head>

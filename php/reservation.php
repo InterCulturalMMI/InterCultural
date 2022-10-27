@@ -3,19 +3,19 @@
 $connection = new PDO('mysql:host=localhost; port=3306; dbname=sae_web_week_finale', 'root', '');
 
 // Nom et id pays
-$pays = 'SELECT pays.id_pays, pays.nom_pays FROM pays';
+$pays = 'SELECT pays.id_pays, pays.nom_pays FROM pays ';
 $resulat = $connection -> query($pays);
 $tab_pays = $resulat -> fetchAll();
 $resulat -> closeCursor();
 $nbr_pays = count($tab_pays);
 
 // Contenu activités (principale)
-$activitesp = 'SELECT event.* FROM event WHERE event.id_pays = 2 AND event.main_activitee = 1';
+$activitesp = 'SELECT event.* FROM event WHERE event.id_pays = '.$_GET['id'].' AND event.main_activitee = 1';
 $resulat = $connection -> query($activitesp);
 $tab_event_pri = $resulat -> fetchAll();
 $resulat -> closeCursor();
 
-$activitess = 'SELECT event.* FROM event WHERE event.id_pays = 2 AND event.main_activitee = 0';
+$activitess = 'SELECT event.* FROM event WHERE event.id_pays = '.$_GET['id'].' AND event.main_activitee = 0';
 $resulat = $connection -> query($activitess);
 $tab_event_sec = $resulat -> fetchAll();
 $resulat -> closeCursor();
@@ -28,7 +28,7 @@ $nbr_event_sec = count($tab_event_sec);
 <html lang="fr">
 <head>
   <meta charset="utf-8">
-  <title> INTERCULTURAL </title>
+  <title> INTERCULTURAL | Réservation </title>
   <link rel="stylesheet" href="../css/reservation.css">
   <script src="../js/reservation.js"></script>
 </head>
@@ -142,18 +142,18 @@ $nbr_event_sec = count($tab_event_sec);
                         "DESCRIPTION ACTIVITÉ"                
                       </p>
                       <p>
-                        Date : <?php echo $tab_event_sec[$i]["date_event"];?><br><br>
-                        Horaires : <?php echo $tab_event_sec[$i]["horraires"];?>
+                        Date : <?php echo $tab_event_sec[0]["date_event"];?><br><br>
+                        Horaires : <?php echo $tab_event_sec[0]["horraires"];?>
                       </p>
                       <p>
-                        Localisation : <?php echo $tab_event_sec[$i]["lieu"];?>
+                        Localisation : <?php echo $tab_event_sec[0]["lieu"];?>
                       </p>
                     </div>
 
                     <div class="tarifs">
                       <span class="space">
-                        <p>Prix enfant : <?php echo $tab_event_sec[$i]["prix_adulte"];?>€</p>
-                        <p>Prix adulte : <?php echo $tab_event_sec[$i]["prix_adulte"];?>€</p>
+                        <p>Prix enfant : <?php echo $tab_event_sec[0]["prix_adulte"];?>€</p>
+                        <p>Prix adulte : <?php echo $tab_event_sec[0]["prix_adulte"];?>€</p>
                       </span>
                     </div>
                   </div>

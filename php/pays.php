@@ -114,9 +114,7 @@ $nbr_element_nav = count($tab_nav);
 </div>
 
   <div class="reserv">
-    <form action="reservation.php">
-      <input type="submit" class ="boutt" value="Réservez dès maintenant" />
-    </form>
+    <a href="reservation.php?id=<?php echo $_GET['id'];?>"> Reservez vos places pour les activités ! </a>
   </div>
 
   <?php include './header_footer/footer.html';?> 
