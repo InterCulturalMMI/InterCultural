@@ -119,16 +119,7 @@ $nbr_element_nav = count($tab_nav);
     </form>
   </div>
 
-  <footer>
-      <div class="gauche">
-        <p> © Copyrights </p>
-      </div>
-      <div class="centre">
-        <img src="../img/gros_blanc.png" alt="logo">
-      </div>
-      <div class="droite">
-        <p> All Rights Reserved </p>
-    </div>
-  </footer>
+  <?php include './header_footer/footer.html';?> 
+
 </body>
 </html>

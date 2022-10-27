@@ -1,16 +1,30 @@
 @font-face {
-    font-family: "GothamMedium";
-    src: url(../fonts/GothamMedium.ttf) format('truetype');
+    font-family: 'GothamReg';
+    src: url(../fonts/GothamMedium.ttf) format('Opentype');
+}
+
+@font-face {
+    font-family: 'GothamBold';
+    src: url(../fonts/Gotham-Bold.otf) format('Opentype');
 }
 
 @font-face {
     font-family: "GothamBlack";
     src: url(../fonts/Gotham-Black.otf) format('opentype');
-}
+  }
 
 @font-face {
-    font-family: "GothamBold";
-    src: url(../fonts/Gotham-Bold.otf) format('opentype');
+    font-family: "GothamLig";
+    src: url(../fonts/Gotham-Light.otf) format('opentype');
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-image: url('../img/fondfond.jpg');
+    background-size: cover;
 }
 
 * {
@@ -22,11 +36,6 @@
 html {
     width: 100%;
     height: 100%;
-}
-
-body {
-    font-family: 'GothamMedium';
-    background-image: url('../img/fondfond.png');
 }
 
 /*===================== HEADER =====================*/
@@ -104,36 +113,39 @@ a {
 /*===================== FIN HEADER =====================*/
 
 /*===================== BODY =====================*/
-.container {
-    width: 1330px;
-    margin-right: auto;
-    margin-left: auto;
-    padding-left: 8px;
-    padding-right: 8px;
-}
 
-.img_text_top {
+
+.containerCestQuoi {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
+    margin: 1vw 0 1vw 0;
+}
+
+.cestQuoi {
+    display: flex;
     align-items: center;
-    padding-top: 160px;
-}
-
-.left_img > img {
-    height: auto;
-    max-width: 100%;
-    border-radius: 20px;
-}
-
-.right_text {
-    color: black;
-    line-height: 1.8;
+    justify-content: space-evenly;
+    height: 40vh;
+    width: 90vw;
     font-size: 2vh;
-    margin-left: 30px;
 }
 
-.right_text > h1 {
-    font-family: 'GothamBold';
+.photoCestQuoi {
+    width: 40%;
+    height: 25vh;
+    background-image: url(../img/gros_noir.png);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.cestQuoiParagraph {
+    width: 40%;
+    font-family: "GothamLig";
+}
+
+.cestQuoiParagraph h2 {
+    font-family: "GothamBlack";
 }
 
 
@@ -141,7 +153,6 @@ a {
 
 .choose_pays {
     text-align: center;
-    margin-top: 140px;
 }
 
 .choose_pays h2 {
@@ -169,14 +180,15 @@ a {
 
 .afficher_pays {
     display: block;
-    margin: 40px auto 80px auto;
+    margin: 1vw auto 1vw auto;
 
     border-radius: 30px;
     box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 
     color: white;
     text-align: center;
-    background-color: #6b705c;
+    background-image: url('../img/fond.png');
+    background-size:cover;
     width: 80%;
     height: 100vh;
 }
@@ -186,19 +198,20 @@ a {
     transition: 0.6s;
 }
 
-.afficher_pays:not(hover) {
+.afficher_pays:not(:hover) {
     box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
     transition: 0.6s;
 }
 
 .container_in {
-    padding-top: 50px;
-    margin-top: 50px;
+    padding-top: 2vw;
+    margin-top: 2vw;
     display: flex;
     flex-direction: column;
+    text-align:center;
 
     font-family: 'GothamBlack';
-    font-size: 2.5vh;
+    font-size: 1.5vw;
 }
 
 .title_activity {
@@ -228,19 +241,19 @@ a {
 }
 
 .col > p, .col > p, .tarifs p {
-    font-family: 'GothamMedium';
+    font-family: 'GothamLig';
     text-align: justify;
-    font-size: 1.75vh;
-    margin-top: 50px;
-    width: 35vh;
+    font-size: 1vw;
+    margin-top: 2vw;
+    width: 35vw;
 }
 
 .col > li, .col > li, .tarifs > li {
-    font-family: 'GothamMedium';
+    font-family: 'GothamReg';
     text-align: center;
-    font-size: 1.75vh;
-    margin-top: 50px;
-    width: 35vh;
+    font-size: 1vw;
+    margin-top: 2vw;
+    width: 35vw;
     list-style: none;
 }
 
@@ -253,8 +266,8 @@ a {
     justify-content: center;
     width: 20%;
 
-    margin: 70px auto 70px auto;
-    padding: 20px;
+    margin: 3vw auto 3vw auto;
+    padding: 1.2vw;
 
     border-radius: 2em;
     box-shadow: 5.6px 11.2px 11.2px hsl(0deg 0% 0% / 0.33);
@@ -263,7 +276,7 @@ a {
     color: white;
     text-shadow: 0 0.04em 0.04em rgba(255, 255, 255, 0.253);
     text-align: center;
-    font-size: 2.5vh;
+    font-size: 1vw;
     font-family: 'GothamBlack';
 
     transition: all 0.2s;
@@ -278,41 +291,86 @@ a {
 /*===================== FOOTER =====================*/
 footer {
     display: flex;
-    justify-content: space-around;
     align-items: center;
-
-    background-color: #6b705c;
-
-    border: none;
-    border-radius: 30px;
-
-    box-shadow: 5px 5px 15px black;
-
-    margin:auto;
-    margin-bottom: 10px;
-    padding: 20px;
-
-    width:45%;
+    justify-content: center;
+    flex-direction: column;
+    color: white;
+    font-family: 'GothamReg';
 }
 
-footer p {
-    font-family: 'GothamMedium';
-    color: white;
-
+p {
     font-size: 1vw;
 }
 
-footer img {
+.containerFooter {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    max-height: 25vh;
+    width: 70%;
+    margin-bottom: 5vh;
+    background-color: #6B705C;
+    border-radius: 1vh;
+    box-shadow: 0px 0px 20px 1px rgba(0, 0, 0, 0.425);
+}
+
+.containerFooterLogos {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+    padding: 5vh 0 5vh 0;
+}
+
+.containerFooterLogos img {
+    width: 7vw;
+}
+
+.containerFooterIcons {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+}
+
+.containerFooterIcons img {
+    width: 3vw;
+}
+
+.barreFooter {
+    width: 100%;
+    height: 2vh;
+    max-height: 2vh;
+    border-radius: 0 0 1vh 1vh; 
+    background-color: white;
+    position: relative;
+}
+
+.copyright {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #6b705c;
+    border: none;
+    border-radius: 30px;
+    box-shadow: 0px 0px 20px 1px rgba(0, 0, 0, 0.425);
+    margin:auto;
+    margin-bottom: 10px;
+    padding: 20px;
+    width: 27%;
+}
+
+.copyright img {
     max-width:70%;
     height:70%;
 }
 
 .centre {
-    display:flex;
-    align-items:center;
+    display: flex;
+    align-items: center;
     justify-content: center;
-
-    height:100%;
-    width:30%;
+    height: 100%;
+    width: 30%;
 }
 /*===================== FIN FOOTER =====================*/

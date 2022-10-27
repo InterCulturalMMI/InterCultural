@@ -72,21 +72,19 @@ $nbr_event_sec = count($tab_event_sec);
 </nav>
 
 <div class="container">
-    <div class="img_text_top">
-      <div class="left_img">
-        <img src="../img/img_reservation.jpg" class="img_top">
-      </div>
-      <div class="right_text">
-        <h1>Réservez vos places</h1><br>
-      <span>
-        Découvrez 5 cultures à travers 5 pays grâce à des activités<br>
-        telles que la Holi, l'escape game situé dans la pyramide de<br>
-        Khéops, le carnaval ou le musée. D'autres activités comme<br>
-        la poterie, la sculpture, spectacle de capoeira, ou tapisserie<br>
-        vous permettront d'en apprendre d'avantage sur chaque culture.<br>
-      </span>
+    <div class="containerCestQuoi">
+      <div class="cestQuoi">
+        <div class="photoCestQuoi"></div>
+        <div class="cestQuoiParagraph">
+          <h2>Réservez vos places</h2><br>
+          <p> Découvrez 5 cultures à travers 5 pays grâce à des activités
+          telles que la Holi, l'escape game situé dans la pyramide de
+          Khéops, le carnaval ou le musée. D'autres activités comme
+          la poterie, la sculpture, spectacle de capoeira, ou tapisserie
+          vous permettront d'en apprendre d'avantage sur chaque culture.</p>
       </div>
     </div>
+  </div>`
 
     <div class="choose_pays">
         <label for="pays"><h2>Quel pays voulez-vous découvrir ?</h2></label>
@@ -167,17 +165,8 @@ $nbr_event_sec = count($tab_event_sec);
       <a href="page_reserv.php" class="bn3">Réserver votre place</a>
     </div>
 
-  <footer>
-      <div class="gauche">
-        <p> © Copyrights </p>
-      </div>
-      <div class="centre">
-        <img src="../img/gros_blanc.png" alt="logo">
-      </div>
-      <div class="droite">
-        <p> All Rights Reserved </p>
-    </div>
-  </footer>
+    <?php include './header_footer/footer.html';?> 
+
 </div>  
 </body>
 

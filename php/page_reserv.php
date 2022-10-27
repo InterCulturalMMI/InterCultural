@@ -45,6 +45,11 @@ $nbr_event = count($tab_event);
             <input type="submit" class="boutt" name="connec" value="Envoi mail">
         </form>
     </div>
+
+    <div class="lien">
+        <p> Retour à <a href="inscription.php">l'accueil</a></p>
+    </div>
+
 </body>
 <?php
 
@@ -67,7 +72,7 @@ if(isset($_POST['connec'])){
     $expediteur="interculturalmmi@gmail.com";
     $recepteur= $_POST['mail'];
     $objet="Code d'activité Intercultural";
-    $message= "Bonjour " .$recepteur. " ! Votre code pour l'activité est " .implode("",$code). " . Amusez vous bien !";
+    $message= "Bonjour " .$recepteur. " ! Votre code pour l'activité " .$activite. " est " .implode("",$code). " . Amusez vous bien !";
 
     mail($expediteur,$recepteur,$message,$objet);
 }
