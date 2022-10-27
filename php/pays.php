@@ -77,8 +77,6 @@ $nbr_element_nav = count($tab_nav);
     </p>
   </div>
 
-  
-
   <div class="monument">
 
   <div class="titre" id="monumentsid"><h1  style="color:white;"> MONUMENTS </h1></div>
@@ -99,8 +97,6 @@ $nbr_element_nav = count($tab_nav);
 
   <div class="titre" id="activid"><h1> ACTIVITÉS </h1></div>
 
-<!-- la ca va pas a verifier -->
-
   <div class="containerCestQuoi">
   <div class="cestQuoi">
     <div class="photoCestQuoi">
@@ -119,11 +115,9 @@ $nbr_element_nav = count($tab_nav);
 
   <div class="reserv">
     <form action="reservation.php">
-      <input type="submit" value="Réservez dès maintenant" />
+      <input type="submit" class ="boutt" value="Réservez dès maintenant" />
     </form>
   </div>
-
-    <div class="titre" id="soustitre2"><h1> EN ESPERANT VOUS RETROUVER NOMBREUX </h1></div>
 
   <footer>
       <div class="gauche">
