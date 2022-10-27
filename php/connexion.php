@@ -48,10 +48,10 @@ if(isset($_POST['connec'])){
 
   for($i=0; $i<$compteur; $i++){
     if ($mdp == $tab_pays[$i]['mdp_user'] && $pseudo == $tab_pays[$i]['pseudo_user']) {
-      echo 'Connection réussie : ' ?> </br><a href="admin.php"> Page Admin </a> <?php 
+      header('location:admin.php');
     }
     else {
-      echo 'Connexion échouée : mauvais identifiants';
+      echo '<script type="text/JavaScript"> alert("Erreur de mots de passe ou identifiants !"); </script>';
     }
   }
 

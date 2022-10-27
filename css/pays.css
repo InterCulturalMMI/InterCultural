@@ -80,13 +80,13 @@ ul, li {
     flex-direction: column;
     position: absolute;
     width: 100%;
-    padding: 1.5vh;
+    padding: 0.2vw;
     background-color: #A5A58D;
-    border-radius: 2vh;
+    border-radius: 1vw;
 }
 
 .listeElement {
-    padding: 1vh;
+    padding: 0.5vw;
 }
 
 
@@ -96,7 +96,7 @@ ul, li {
     align-items: center;
     text-align: center;
 
-    margin:1%;
+    margin:0.6vw;
 }
 
 .logo {
@@ -115,7 +115,7 @@ ul, li {
     width: 75%;
     height: 25%;
     background-color: #6B705C;
-    border-radius: 10vh;
+    border-radius: 10vw;
 }
 
 .containerBoutons {
@@ -124,29 +124,29 @@ ul, li {
     grid-template-columns: 1fr 1fr 1fr;
     width: auto;
     height: auto;
-    padding: 1.5vh;
+    padding: 0.7vw;
     background-color: #868a74;
-    border-radius: 10vh;
+    border-radius: 10vw;
 }
 
 .bouton {
     width: auto;
     height: auto;
-    padding: 1.5vh;
+    padding: 0.6vw;
     background-color: #A5A58D;
     box-shadow: 0px 0px 20px 1px rgba(0, 0, 0, 0.425);
-    border-radius: 10vh;
-    margin: 1vh;
+    border-radius: 10vw;
+    margin: 0.4vw;
 }
 
 .boutonPays {
     width: auto;
     height: auto;
-    padding: 1.5vh;
+    padding: 0.6vw;
     background-color: #A5A58D;
     box-shadow: 0px 0px 20px 1px rgba(0, 0, 0, 0.425);
-    border-radius: 10vh;
-    margin: 1vh;
+    border-radius: 10vw;
+    margin: 0.4vw;
 }
 
 .bouton:hover {
@@ -168,9 +168,9 @@ ul, li {
     text-align: right;
     font-size: 3vw;
     
-    margin-top: 2%;
-    margin-bottom: 2%;
-    margin-right:8%;
+    margin-top: 1vw;
+    margin-bottom: 1.1vw;
+    margin-right:2vw;
 }
 
 #titre1 h1{
@@ -201,7 +201,7 @@ ul, li {
     flex-direction: row;
     justify-content: space-around;
 
-    margin: 3%;
+    margin: 2.2vw;
 }
 
 .navpage a {
@@ -222,8 +222,8 @@ ul, li {
 }
 
 #intro1 {
-    margin-top: 4%;
-    margin-bottom: 4%;
+    margin-top: 3vw;
+    margin-bottom: 3vw;
 }
 
 .intro p{
@@ -249,7 +249,7 @@ ul, li {
     border-radius: 3vw;
     margin:auto;
     padding:0;
-    padding-bottom:2%;
+    padding-bottom:1.4vw;
 
     box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
 }
@@ -260,8 +260,8 @@ ul, li {
     align-items: center;
 
     margin: auto;
-    padding-top:2%;
-    padding-bottom:2%;
+    padding-top:1.2vw;
+    padding-bottom:1.2vw;
 }
 
 .un , .deux {display: flex; justify-content:center;margin-bottom:2%;}
@@ -299,12 +299,12 @@ ul, li {
     transition:0.5s;
 }
 
-#monum {width:80%; }
+#monum {width:80%;}
 
 #monum p {line-height: 1.3;}
 
 #activid h1{
-    margin:3%;
+    margin:2vw;
     text-align:center;
 }
 
@@ -313,10 +313,7 @@ ul, li {
     flex-direction: row;
     justify-content: space-evenly;
     align-items: center;
-    margin:3%;
-
-    margin-left:6%;
-    margin-right:12%;
+    margin:2vw;
 }
 
 .pgauche {
@@ -328,15 +325,15 @@ ul, li {
 #soustitre2 h1{
     text-align:center;
     margin:auto; 
-    margin-top:2%;
-    margin-bottom:2%;
+    margin-top:1.2vw;
+    margin-bottom:1.2vw;
     font-size:1.5vw;
     font-family: 'GothamReg';
 }
 
 .image_activites {display: flex; justify-content:center;width: 35%;}
 
-.image_activites img{width: 100%; margin-left:5%;margin-right:5%;}
+.image_activites img{width: 100%;}
 
 .image_activites img:hover {transform:scale(0.9);filter:blur(2px);transition:0.5s;}
 
@@ -361,14 +358,14 @@ ul, li {
 .containerCestQuoi {
     display: flex;
     justify-content: center;
-    margin: 7vh 0 5vh 0;
+    margin: 1.5vw 0 1.5vw 0;
 }
 
 .cestQuoi {
     display: flex;
     align-items: center;
     justify-content: space-evenly;
-    height: 40vh;
+    height: 20vw;
     width: 90vw;
     font-size: 1vw;
 
@@ -391,35 +388,31 @@ ul, li {
 .reserv {
     display:flex;
     justify-content: center;
+    
+    margin: 1.5vw;
 }
 
-input {
-    display: inline-block;
+.boutt {
     outline: none;
-    cursor: pointer;
-    font-size: 14px;
-    line-height: 1;
-    border-radius: 500px;
-    transition-property: background-color,border-color,color,box-shadow,filter;
-    transition-duration: .3s;
-    border: 1px solid transparent;
-    letter-spacing: 2px;
-    min-width: 160px;
-    text-transform: uppercase;
-    white-space: normal;
-    font-weight: 700;
-    text-align: center;
-    padding: 16px 14px 18px;
-    color: #6b705c;
-    box-shadow: inset 0 0 0 2px #6b705c;
-    background-color: transparent;
-    height: 48px;
-    font-family: 'GothamReg';
+    border: none;
+    background:none;
+
+    font-size: 2vw;
+    font-family: 'GothamReg'
 }
 
-input:hover{
-    color: white;
-    background-color: #6b705c;
+.boutt:hover {
+    transform: scale(1.2);
+    color: #6b705c;
+    transition: 0.3s;
+
+    border-bottom: 1px solid #6b705c;
+}
+
+.boutt:not(:hover){
+    transform: scale(1);
+    color: black;
+    transition: 0.3s;
 }
 
 
@@ -436,17 +429,10 @@ footer {
     box-shadow: 5px 5px 15px black;
 
     margin:auto;
-    margin-bottom: 10px;
-    padding: 20px;
+    margin-bottom: 1vw;
+    padding: 1vw;
 
     width:35%;
-}
-
-#soustitre h1{
-    text-align:center;
-    margin-bottom:2%;
-    margin-top:2%;
-    font-family: 'GothamReg';
 }
 
 footer p {
@@ -468,4 +454,27 @@ footer img {
 
     height:100%;
     width:30%;
+}
+
+@media screen and (max-width:820px){
+    .monument {
+        padding: 1.4vw;
+        padding-bottom: 1.6vw;
+    }
+
+    p, #monum p, #intro1 p{
+        font-size: 1.4vw;
+    }
+}
+
+
+@media screen and (max-width:400px){
+    .monument {
+        padding: 1.4vw;
+        padding-bottom: 1.6vw;
+    }
+
+    p, #monum p, #intro1 p{
+        font-size: 1vw;
+    }
 }

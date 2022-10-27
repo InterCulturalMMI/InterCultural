@@ -48,10 +48,10 @@ if(isset($_POST['connec'])){
     for($i=0 ;$i<$compteur ;$i++){
         if ($pseudo == $tab_pays[$i]['pseudo_user']){
             $etat=true;
-            echo "Ce pseudonyme existe déjà.";
+            echo '<script type="text/JavaScript"> alert("Pseudonyme déjà existant !"); </script>';
         }
         if ($etat==false){
-            echo "Bienvenue, veuillez désormais vous connecter : " ;?><a href="connexion.php"> Connexion </a> <?php
+            header('location:connexion.php');
         }
     }
 
