@@ -184,8 +184,6 @@ ul, li {
     text-align:center;
 }
 
-/*.banner img {filter: blur(1px);}*/
-
 .texteimg {
     position: absolute;
     top: 50%;
@@ -390,7 +388,25 @@ ul, li {
     display:flex;
     justify-content: center;
     
-    margin: 1.5vw;
+    margin: 2.5vw;
+}
+
+.reserv a {
+    color: black;
+    font-family: 'GothamBold';
+    font-size:1.5vw;
+}
+
+.reserv a:hover{
+    transform: scale(1.1);
+    color: #6B705C;
+    transition:0.5s;
+}
+
+.reserv a:not(:hover){
+    transform: scale(1);
+    color: black;
+    transition:0.5s;
 }
 
 .boutt {

@@ -33,43 +33,9 @@ $nbr_event_sec = count($tab_event_sec);
   <script src="../js/reservation.js"></script>
 </head>
 <body>
-<nav class="containerBar">
-    <div class="fondBar">
-      <div class="logo">
-        <a href="#top">
-          <img src="../img/logo.png"></img>
-        </a>
-      </div>
 
-      <div class="containerBoutons">
+<?php include './header_footer/header.php';?> 
 
-        <div class="bouton" class="petitBouton">
-          <a href="./main.php">
-            <p>
-              ACCUEIL
-            </p>
-          </a>
-        </div>
-
-        <div class="bouton" class="petitBouton">
-          <a href="./pays.php">
-            <p>
-              PAYS
-            </p>
-          </a>
-        </div>
-
-        <div class="bouton">
-          <a href="./reservation.php">
-            <p id="reservation">
-              RESERVER
-            </p>
-          </a>
-        </div>
-
-      </div>
-    </div>
-</nav>
 
 <div class="container">
     <div class="containerCestQuoi">
@@ -84,21 +50,7 @@ $nbr_event_sec = count($tab_event_sec);
           vous permettront d'en apprendre d'avantage sur chaque culture.</p>
       </div>
     </div>
-  </div>`
-
-    <div class="choose_pays">
-        <label for="pays"><h2>Quel pays voulez-vous découvrir ?</h2></label>
-        <select class="select_pays" name="pays">
-          <option value="0" class="choose">- Pays -</option>
-
-            <?php /*------ GOOD CA MARCHE ------*/
-              for($i=0;$i<count($tab_pays);$i++){
-                echo '<option>'.$tab_pays[$i]["nom_pays"].'</option>';
-              }
-            ?>
-
-        </select>
-    </div>
+  </div>
 
     <div class="afficher_pays">
         <span class="container_in">
@@ -137,23 +89,23 @@ $nbr_event_sec = count($tab_event_sec);
                 for($i = 0; $i < $nbr_event_sec; $i++){ ?>
                   <div class="activity2"> 
                     <div class="col">
-                      <li>"ACTIVITÉ 2"</li>
+                      <li><?php echo $tab_event_sec[$i]["nom_activitee"];?></li>
                       <p>
-                        "DESCRIPTION ACTIVITÉ"                
+                        <?php echo $tab_event_sec[$i]["descriptif"];?>              
                       </p>
                       <p>
-                        Date : <?php echo $tab_event_sec[0]["date_event"];?><br><br>
-                        Horaires : <?php echo $tab_event_sec[0]["horraires"];?>
+                        Date : <?php echo $tab_event_sec[$i]["date_event"];?><br><br>
+                        Horaires : <?php echo $tab_event_sec[$i]["horraires"];?>
                       </p>
                       <p>
-                        Localisation : <?php echo $tab_event_sec[0]["lieu"];?>
+                        Localisation : <?php echo $tab_event_sec[$i]["lieu"];?>
                       </p>
                     </div>
 
                     <div class="tarifs">
                       <span class="space">
-                        <p>Prix enfant : <?php echo $tab_event_sec[0]["prix_adulte"];?>€</p>
-                        <p>Prix adulte : <?php echo $tab_event_sec[0]["prix_adulte"];?>€</p>
+                        <p>Prix enfant : <?php echo $tab_event_sec[$i]["prix_adulte"];?>€</p>
+                        <p>Prix adulte : <?php echo $tab_event_sec[$i]["prix_adulte"];?>€</p>
                       </span>
                     </div>
                   </div>

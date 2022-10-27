@@ -46,7 +46,7 @@ $nbr_event = count($tab_event);
     </div>
 
     <div class="lien">
-        <p> Retour à <a href="inscription.php">l'accueil</a></p>
+        <p> Retour à <a href="index.php">l'accueil</a></p>
     </div>
 
 </body>
