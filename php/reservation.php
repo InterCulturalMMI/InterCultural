@@ -3,18 +3,24 @@
 $connection = new PDO('mysql:host=localhost; port=3306; dbname=sae_web_week_finale', 'root', '');
 
 // Nom et id pays
-$nom_pays = 'SELECT pays.nom_pays FROM pays, edition WHERE id_edition = 1';
-$resulat = $connection -> query($nom_pays);
+$pays = 'SELECT pays.id_pays, pays.nom_pays FROM pays';
+$resulat = $connection -> query($pays);
 $tab_pays = $resulat -> fetchAll();
 $resulat -> closeCursor();
-$nbr_element_nav = count($tab_pays);
+$nbr_pays = count($tab_pays);
 
-// Contenu activités (principale et secondaire)
-$activites = 'SELECT event.id_event, event.id_edition, event.nom_activitee, event.descriptif, event.horraires, event.date_event, event.lieu, event.prix_adulte, event.prix_enfant, 
-              event.payant, event.nbr_place_total, event.nbr_place_dispo, pays.id_pays FROM event, pays WHERE pays.id_pays = event.id_event';
-$resulat = $connection -> query($activites);
-$tab_event = $resulat -> fetch();
+// Contenu activités (principale)
+$activitesp = 'SELECT event.* FROM event WHERE event.id_pays = 2 AND event.main_activitee = 1';
+$resulat = $connection -> query($activitesp);
+$tab_event_pri = $resulat -> fetchAll();
 $resulat -> closeCursor();
+
+$activitess = 'SELECT event.* FROM event WHERE event.id_pays = 2 AND event.main_activitee = 0';
+$resulat = $connection -> query($activitess);
+$tab_event_sec = $resulat -> fetchAll();
+$resulat -> closeCursor();
+$nbr_event_sec = count($tab_event_sec);
+
 ?>
 
 
@@ -109,51 +115,53 @@ $resulat -> closeCursor();
               <!-- ACTIVITÉ PRINCIPALE -->
               <div class="activity1">
                 <div class="col">
-                  <li><?php echo $tab_event["nom_activitee"];?></li>
-                  <p><?php echo $tab_event["descriptif"];?></p>
+                  <li><?php echo $tab_event_pri[0]["nom_activitee"];?></li>
+                  <p><?php echo $tab_event_pri[0]["descriptif"];?></p>
                   <p>
-                    Date : <?php echo $tab_event["date_event"];?><br><br>
-                    Horaires : <?php echo $tab_event["horraires"];?>
+                    Date : <?php echo $tab_event_pri[0]["date_event"];?><br><br>
+                    Horaires : <?php echo $tab_event_pri[0]["horraires"];?>
                   </p>
                   <p>
-                    Localisation : <?php echo $tab_event["lieu"];?>
+                    Localisation : <?php echo $tab_event_pri[0]["lieu"];?>
                   </p>
                 </div>
 
                 <div class="tarifs">
                   <span class="space">
-                    <p>Prix adulte : <?php echo $tab_event["prix_adulte"];?>€</p>
-                    <p>Prix enfant : <?php echo $tab_event["prix_enfant"];?>€</p>
+                    <p>Prix adulte : <?php echo $tab_event_pri[0]["prix_adulte"];?>€</p>
+                    <p>Prix enfant : <?php echo $tab_event_pri[0]["prix_enfant"];?>€</p>
                   </span>
                 </div>
               </div> 
 
               <!-- ACTIVITÉ SECONDAIRE -->
-              <div class="activity2"> 
-                <div class="col">
-                  <li>"ACTIVITÉ 2"</li>
-                  <p>
-                    "DESCRIPTION ACTIVITÉ"                
-                  </p>
-                  <p>
-                    Date : "AFFICHER DATE ACTIVITÉ"<br><br>
-                    Horaires : "AFFICHER HORAIRES ACTIVITÉ"
-                  </p>
-                  <p>
-                    Localisation : "AFFICHER LIEU ACTIVITÉ"
-                  </p>
-                </div>
+              <?php 
+                for($i = 0; $i < $nbr_event_sec; $i++){ ?>
+                  <div class="activity2"> 
+                    <div class="col">
+                      <li>"ACTIVITÉ 2"</li>
+                      <p>
+                        "DESCRIPTION ACTIVITÉ"                
+                      </p>
+                      <p>
+                        Date : <?php echo $tab_event_sec[$i]["date_event"];?><br><br>
+                        Horaires : <?php echo $tab_event_sec[$i]["horraires"];?>
+                      </p>
+                      <p>
+                        Localisation : <?php echo $tab_event_sec[$i]["lieu"];?>
+                      </p>
+                    </div>
 
-                <div class="tarifs">
-                  <span class="space">
-                    <p>Prix enfant : "AFFICHER PRIX"€</p>
-                    <p>Prix adulte : "AFFICHER PRIX"€</p>
-                  </span>
-                </div>
-
-          </div>
-        </span>
-    </div>
+                    <div class="tarifs">
+                      <span class="space">
+                        <p>Prix enfant : <?php echo $tab_event_sec[$i]["prix_adulte"];?>€</p>
+                        <p>Prix adulte : <?php echo $tab_event_sec[$i]["prix_adulte"];?>€</p>
+                      </span>
+                    </div>
+                  </div>
+                <?php } ?>
+          </span>
+      </div>
 
     <div class="bouton_reserver">
       <a href="#" class="bn3">Réserver votre place</a>
