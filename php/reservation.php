@@ -164,7 +164,7 @@ $nbr_event_sec = count($tab_event_sec);
       </div>
 
     <div class="bouton_reserver">
-      <a href="#" class="bn3">Réserver votre place</a>
+      <a href="page_reserv.php" class="bn3">Réserver votre place</a>
     </div>
 
   <footer>

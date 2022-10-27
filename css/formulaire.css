@@ -32,24 +32,26 @@ body {
 
 .titre {
     text-align: center;
+
+    padding: 2vw;
 }
 
 .titre h1 {
     font-family:'GothamBold';
-    font-size: 100%;
+    font-size: 2vw;
 
 }
 
 .global {
     display:inline-block;
     width: 100%;
-    padding-top: 12%;
+    padding-top: 8vw;
 }
 
 .champs {
-    margin:2%;
-    width:17%;
-    height:4%;
+    margin:3vw;
+    width: 20vw;
+    height:2vw;
 
     font-family: 'GothamLig';
     font-size:1.2vw;

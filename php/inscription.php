@@ -32,6 +32,11 @@ $compteur = count($tab_pays);
       <input type="submit" class="boutt" name="connec" value="Connexion">
     </form>
   </div>
+
+  <div class="lien">
+    <p> Déjà un compte ? <a href="connexion.php">Cliquez-ici</a></p>
+  </div>
+
 </body>
 
 <?php
