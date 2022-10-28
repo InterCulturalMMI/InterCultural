@@ -136,6 +136,39 @@ label {
     font-size: 1vw;
 }
 
-.envoi {
-    margin-top: 2vw;
+#envoyer {
+  margin-bottom: 5vw;
+}
+
+@media screen and (max-width: 1500px) {
+    .champs {
+        margin:6vw;
+        height:2.5vw;
+    }
+}
+
+@media screen and (max-width: 1250px) {
+    .champs {
+        margin:9vw;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .champs {
+        margin: 14vw;
+    }
+}
+
+@media screen and (max-width: 750px) {
+    .champs {
+        width:25vw;
+        margin: 23vw;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .champs {
+        width:30vw;
+        margin: 28vw;
+    }
 }
