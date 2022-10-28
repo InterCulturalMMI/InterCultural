@@ -68,8 +68,21 @@ $nbr_event_sec = count($tab_event_sec);
                   <li><?php echo $tab_event_pri[0]["nom_activitee"];?></li>
                   <p><?php echo $tab_event_pri[0]["descriptif"];?></p>
                   <p>
-                    Date : <?php echo $tab_event_pri[0]["date_event"];?><br><br>
-                    Horaires : <?php echo $tab_event_pri[0]["horraires"];?>
+                    Date : <?php echo $tab_event_pri[0]["date_event"];
+                    
+                    if ($tab_event_pri[0]["date_event"] == NULL OR $tab_event_pri[0]["date_event"] == 0000-00-00){
+                      echo 'Tout le week-end !';
+                    }
+
+                    ?>
+                    <br><br>
+                    Horaires : <?php echo $tab_event_pri[0]["horraires"];
+                    
+                    if ($tab_event_pri[0]["horraires"] == NULL OR $tab_event_pri[0]["horraires"] == '00:00:00'){
+                      echo 'Tout le week-end !';
+                    }
+
+                    ?>
                   </p>
                   <p>
                     Localisation : <?php echo $tab_event_pri[0]["lieu"];?>
@@ -94,8 +107,20 @@ $nbr_event_sec = count($tab_event_sec);
                         <?php echo $tab_event_sec[$i]["descriptif"];?>              
                       </p>
                       <p>
-                        Date : <?php echo $tab_event_sec[$i]["date_event"];?><br><br>
-                        Horaires : <?php echo $tab_event_sec[$i]["horraires"];?>
+                        Date : <?php echo $tab_event_sec[$i]["date_event"];
+                        
+                        if ($tab_event_sec[$i]["date_event"] == NULL OR $tab_event_sec[$i]["date_event"] == 0000-00-00){
+                          echo 'Tout le week-end !';
+                        }
+                        
+                        ?><br><br>
+                        Horaires : <?php echo $tab_event_sec[$i]["horraires"];
+                        
+                        if ($tab_event_sec[$i]["horraires"] == 'NULL' OR $tab_event_sec[$i]["horraires"] == '00:00:00'){
+                          echo 'Tout le week-end !';
+                        }
+                        
+                        ?>
                       </p>
                       <p>
                         Localisation : <?php echo $tab_event_sec[$i]["lieu"];?>

@@ -43,7 +43,7 @@ $nbr_element_nav = count($tab_nav);
               <?php
                 for($nav = 0; $nav < $nbr_element_nav; $nav++){
               ?>
-              <li><a href="pays.php?id=<?php echo $tab_nav[$nav]['id_pays'];?>" class="listeElement"><?php echo $tab_nav[$nav]['nom_pays'];?></a></li>
+              <li class="pays"><a href="pays.php?id=<?php echo $tab_nav[$nav]['id_pays'];?>" class="listeElement"><?php echo $tab_nav[$nav]['nom_pays'];?></a></li>
               <?php
                 }
               ?>
@@ -58,6 +58,12 @@ $nbr_element_nav = count($tab_nav);
               <p id="reservation">
                 RESERVER
               </p>
+            </a>
+          </div>
+
+          <div class="boutonLangue">
+            <a href="./reservation.php">
+              <img src="../img/anglais.png"></img>
             </a>
           </div>
         
