@@ -139,7 +139,7 @@ $nbr_event_sec = count($tab_event_sec);
       </div>
 
     <div class="bouton_reserver">
-      <a href="page_reserv.php" class="bn3">Reserve your seats</a>
+      <a href="../reservation.php?id=<?php echo $_GET['id'];?>" class="bn3">Use french version to reserve</a>
     </div>
 
 </div>  
