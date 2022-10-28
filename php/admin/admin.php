@@ -4,6 +4,7 @@
   <meta charset="utf-8">
   <title>INTERCULTURAL | Admin - accueil</title>
   <link rel="stylesheet" href="../../css/formulaire.css">
+  <link rel="stylesheet" href="../../css/formulaire.css">
   <script src="script.js"></script>
 </head>
 <body>

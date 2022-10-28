@@ -150,85 +150,162 @@ label {
   margin-bottom: 5vw;
 }
 
-footer {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
+a {
+    text-decoration: none;
     color: white;
-    font-family: 'GothamReg';
+    font-family: "GothamReg";
 }
 
-.containerFooter {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-direction: column;
-    max-height: 25vh;
-    width: 70%;
-    margin-bottom: 5vh;
-    background-color: #6B705C;
-    border-radius: 1vh;
-    box-shadow: 0px 0px 20px 1px rgba(0, 0, 0, 0.425);
+p {
+    font-family: "GothamReg";
+    font-size: 1vw;
 }
 
-.containerFooterLogos {
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    width: 100%;
-    padding: 5vh 0 5vh 0;
+nav {
+    z-index: 1000;
 }
 
-.containerFooterLogos img {
-    width: 7vw;
+ul, li {
+    text-decoration: none;
+    list-style-type: none;
 }
 
-.containerFooterIcons {
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    width: 100%;
+.listePays .containerListElements {
+    display: none;
+    height: auto;
+    margin: 0;
+    padding: 0;
 }
 
-.containerFooterIcons img {
-    width: 3vw;
-}
-
-.barreFooter {
-    width: 100%;
-    height: 2vh;
-    max-height: 2vh;
-    border-radius: 0 0 1vh 1vh; 
-    background-color: white;
+.listePays li{
     position: relative;
-}
-
-.copyright {
-    display:flex;
+    display: flex;
+    flex-direction: column;
     justify-content: center;
-    align-items: center;
-    background-color: #6b705c;
-    border: none;
-    border-radius: 30px;
-    box-shadow: 0px 0px 20px 1px rgba(0, 0, 0, 0.425);
-    margin:auto;
-    margin-bottom: 10px;
-    padding: 20px;
-    width: 27%;
 }
 
-.copyright img {
-    max-width:70%;
-    height:70%;
+.listePays li:hover .containerListElements {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    position: relative;
+    margin: auto;
 }
 
-.centre {
+.containerListElements ul{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    position: absolute;
+    width: 100%;
+    padding: 1.5vh;
+    background-color: #A5A58D;
+    border-radius: 2vh;
+}
+
+.listeElement {
+    padding: 1vh;
+}
+
+.containerBar {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 100%;
-    width: 30%;
+    text-align: center;
+    margin: 2%;
+    font-size: 1vw;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.containerBar img {
+    width: 60%;
+}
+
+.fondBar {
+    display: grid;
+    grid-template-columns: 1.5fr 5.25fr 5.25fr;
+    width: 70%;
+    height: 25%;
+    background-color: #6B705C;
+    border-radius: 10vh;
+    box-shadow: 0px 0px 20px 1px rgba(0, 0, 0, 0.425);
+}
+
+.containerBoutons {
+    grid-column: 3;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 0.4fr;
+    width: auto;
+    height: auto;
+    padding: 1.5vh;
+    background-color: #868a74;
+    border-radius: 10vh;
+}
+
+.bouton {
+    width: auto;
+    height: auto;
+    padding: 1.5vh;
+    background-color: #A5A58D;
+    box-shadow: 0px 0px 20px 1px rgba(0, 0, 0, 0.425);
+    border-radius: 10vh;
+    margin: 1vh;
+}
+
+.bouton:hover {
+    transform: scale(0.9);
+    transition: 0.4s;
+}
+
+.bouton:not(hover) {
+    transform: scale(1);
+    transition: 0.4s;
+}
+
+.boutonPays {
+    width: auto;
+    height: auto;
+    padding: 1.5vh;
+    background-color: #A5A58D;
+    box-shadow: 0px 0px 20px 1px rgba(0, 0, 0, 0.425);
+    border-radius: 10vh;
+    margin: 1vh;
+}
+
+.pays:hover {
+    transform: scale(0.9);
+    transition: 0.4s;
+}
+
+.pays:not(hover) {
+    transform: scale(1);
+    transition: 0.4s;
+}
+
+.boutonLangue {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 3.5vw;
+}
+
+.boutonLangue:hover {
+    transform: scale(0.9);
+    transition: 0.4s;
+}
+
+.boutonLangue:not(hover) {
+    transform: scale(1);
+    transition: 0.4s;
+}
+
+#reservation {
+    font-family: "GothamBlack";
 }
 
 @media screen and (max-width: 1500px) {
