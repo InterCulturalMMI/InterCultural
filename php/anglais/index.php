@@ -1,6 +1,6 @@
 <?php 
 
-include("../config/config.php") ;
+include("./config/config.php") ;
 $connection = new PDO('mysql:host='.$hote.';port='.$port.';dbname='.$nombase,$user, $mdp);
 
 // pour édition 2023 (écrit a droite en haut) --> version 1
@@ -36,10 +36,10 @@ $nbr_carousel = count($tab_pays);
 <head>
   <meta charset="utf-8">
   <title> INTERCULTURAL | Accueil</title>
-  <link rel="icon" href="../img/favicon.png" />
-  <link rel="stylesheet" href="../css/accueil.css">
+  <link rel="icon" href="../../img/favicon.png" />
+  <link rel="stylesheet" href="../../css/accueil.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
-  <script src="../js/accueil.js"></script>
+  <script src="../../js/accueil.js"></script>
 </head>
 
 <body>
@@ -48,7 +48,7 @@ $nbr_carousel = count($tab_pays);
 
 <div class="imgFond">
 
-<div class="texteBannière"><h1>INTERCULTURAL UN ÉVENEMENT QUI VA VOUS FAIRE VOYAGER</h1></div>
+<div class="texteBannière"><h1>INTERCULTURAL AN EVENT THAT WILL MAKE YOU TRAVEL</h1></div>
 
   <div class="edition">
 
@@ -83,19 +83,17 @@ $nbr_carousel = count($tab_pays);
     </div>
 
     <div class="cestQuoiParagraph">
-      <h2>QU'EST CE QUE C'EST ?</h2><br>
-      <p><strong>INTERCULTURAL</strong> est une exposition inédite. Tout les <strong>5 ans</strong> nous vous invitons à découvrir la culture de <strong>5 pays</strong> à travers des zones réparties <strong>dans la ville du Puy en Velay en France</strong>.<br>Sur chaque zone vous serez plongé dans l'univers d'un pays récréé de toute pièce. Vous pourrez principalement y observer une <strong>reconstitution en taille réduite d'un monument.</strong></p>
-
-      </div>
+      <h2>WHAT IS THAT ?</h2><br>
+      <p><strong>INTERCULTURAL</strong> is a unique exhibition. Every <strong>5 years</strong> we invite you to discover the culture of <strong>5 countries</strong> through areas distributed in <strong>the city of Puy en Velay in France</strong>.<br>On each zone you will be immersed in the universe of a country recreated from scratch. You will mainly be able to observe <strong>a reduced-size reconstruction of a monument.</strong></p>
 
     </div>
   </div>
 </div>
 
 <div class="expo">
-  <img src="../img/fleche_gauche.png"></img>
-  <h2><strong>DÉCOUVREZ</strong> LES <strong>EXPOSITIONS</strong></h2>
-  <img src="../img/fleche_droite.png"></img>
+  <img src="../../img/fleche_gauche.png"></img>
+  <h2><strong>DISCOVER EXPOSITIONS</strong></h2>
+  <img src="../../img/fleche_droite.png"></img>
 </div>
 
 <div class="containerCarrousel">
@@ -106,7 +104,7 @@ $nbr_carousel = count($tab_pays);
       </p>
 
       <p class="fin">
-        PAYS - 
+        COUNTRIES - 
       </p>
 
       <p class="bold">
@@ -138,7 +136,7 @@ $nbr_carousel = count($tab_pays);
               <div class="bouton">
                 <a href="pays.php?id=<?php echo $tab_pays[$i]['id_pays'] ;?>">
                   <p class="bold">
-                    DÉCOUVRIR
+                    DISCOVER
                   </p>
                 </a>
               </div>
@@ -155,21 +153,21 @@ $nbr_carousel = count($tab_pays);
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
-  <script src="../js/accueil.js"></script>
+  <script src="../../js/accueil.js"></script>
 </div>
 
 <div class="containerAlea">
   <div class="alea">
     <div class="textAlea">
-      <p>SI VOUS <strong>N'ARRIVEZ PAS</strong> À FAIRE <strong>VOTRE CHOIX</strong></p>
+      <p>IF YOU <strong>CAN'T MAKE YOUR CHOICE</strong></p>
     </div>
 
     <div class="boutonAlea">
-      <p>CLIQUEZ ICI</p>
+      <p>CLICK HERE</p>
       
       <div class="iconAlea">
         <!-- A FAIRE VERIFIER, PAS SURE QUE CA MARCHE commande aleatoir entre id=0 et id= nbr de pays present dans nav-->
-        <a href="pays.php?id=<?php echo $tab_nav[rand(0, $nbr_element_nav)]['id_pays'] ;?>"><img src="../img/aleatoire.png"></img></a>
+        <a href="pays.php?id=<?php echo $tab_nav[rand(0, $nbr_element_nav)]['id_pays'] ;?>"><img src="../../img/aleatoire.png"></img></a>
       </div>
     </div>
   </div>
@@ -184,8 +182,8 @@ $nbr_carousel = count($tab_pays);
     </div>
 
     <div class="ouParagraph">
-      <h2>OÙ SE PASSE L'ÉVENEMENT ?</h2><br>
-      <p><strong>INTERCULTURAL</strong> se déroule <strong>dans la ville du Puy en Velay</strong> en Auvergne en France. Une ville connué pour sa fabrication de la <strong>dentelle</strong> du Puy, la culture de la <strong>lentille verte</strong> du Puy et la production de <strong>verveine</strong> du Velay. Elle est aussi connue pour être le départ de la <strong>Via Podiensis, un des quatre chemins de Compostelle français.</strong></p>
+      <h2>WHERE IS THE EVENT ?</h2><br>
+      <p><strong>INTERCULTURAL</strong> takes place <strong>in the town of Le Puy en Velay</strong> in Auvergne, France. A city known for its manufacture of <strong>lace</strong> from Le Puy, the cultivation of <strong>green lentils</strong> from Le Puy and the production of <strong>verbena</strong> from Le Velay. It is also known for being the start of the <strong>Via Podiensis, one of the four French Compostela routes.</strong></p>
 
     </div>
   </div>
