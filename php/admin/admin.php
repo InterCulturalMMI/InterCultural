@@ -12,8 +12,14 @@
   </div>
 
   <div class="lien">
-    <p><a class="lien" href="admin_event.php">Ajouter un event</a></p>
+    <p><a class="lien" href="admin_event.php">Ajouter un évènement</a></p>
   </div>
+
+  <div class="lien">
+    <p><a class="lien" href="admin_event_delete.php">Supprimer un évènement</a></p>
+  </div>
+
+  <input class="boutt" type="buttom" name="Ajouter un évènement" id="Ajouter un évènement">
   
 
   <div class="global">
