@@ -23,6 +23,12 @@ include "fiche_classes_poo.php";
 // si l'utilisateur appuie sur ajout, on reccupere les données seulement si la balise alt n'as pas d'équivalent (pour eviter les doublon et faciliter la recherche de l'id de l'image)
 if(isset($_POST['ajout'])){
 
+  $horraire_null = $_POST['horraires'];
+
+  if($horraire_null == '00:00:00'){
+    $horraire_null == NULL;
+  }
+
   $blblbl = $_POST['alt'];
   $temoin=False;
 
@@ -51,7 +57,7 @@ if(isset($_POST['ajout'])){
     $tab_id_image_envoyee = $resulat -> fetch();
     $resulat -> closeCursor();
     
-    $event = $p_pays->ajoutEvent($tab_p[0], $tab_id_image_envoyee[0], $_POST['nom_activitee'], $_POST['descriptif'], $_POST['horraires'],$_POST['date_event'], $_POST['lieu'], $_POST['prix_adulte'], $_POST['prix_enfant'] , $_POST['payant'], $_POST['nbr_place_total'], $_POST['nbr_place_dispo'], $_POST['main_activitee']);
+    $event = $p_pays->ajoutEvent($tab_p[0], $tab_id_image_envoyee[0], $_POST['nom_activitee'], $_POST['descriptif'], $horraire_null, $_POST['date_event'], $_POST['lieu'], $_POST['prix_adulte'], $_POST['prix_enfant'] , $_POST['payant'], $_POST['nbr_place_total'], $_POST['nbr_place_dispo'], $_POST['main_activitee']);
     }
 
   
@@ -65,7 +71,7 @@ if(isset($_POST['ajout'])){
   <meta charset="utf-8">
   <link rel="stylesheet" href="../../css/formulaire.css">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>INTERCULTURAL | Admin - Event</title>
+  <title>INTERCULTURAL | Admin - Event ajout</title>
 </head>
 <body>
   <div class="titre">
@@ -118,11 +124,11 @@ if(isset($_POST['ajout'])){
             <label for="main_activitee">Est-ce un événement principal ?</label>
             <p>
               <label>Oui</label>
-              <input type="checkbox" name="main_activitee" value="1" class="check">
+              <input type="radio" name="main_activitee" value="1" class="check">
             </p>
             <p>
               <label>Non</label>
-              <input type="checkbox" name="main_activitee"value="0" class="check">
+              <input type="radio" name="main_activitee"value="0" class="check">
             </p>
           </p>
 
@@ -133,11 +139,11 @@ if(isset($_POST['ajout'])){
             <label for="type_course">Est-ce un évènement payant ?</label>
             <p>
               <label>Oui</label>
-              <input type="checkbox" name="payant" value="1" class="check">
+              <input type="radio" name="payant" value="1" class="check">
             </p>
             <p>
               <label>Non</label>
-              <input type="checkbox" name="payant" value="0" class="check">
+              <input type="radio" name="payant" value="0" class="check">
             </p>
           </p>
   
@@ -166,9 +172,9 @@ if(isset($_POST['ajout'])){
 
         <!-- argument inchangeable, sinon ça ne marche pas / value = taille max du fichier (en loccurence image)-->
         <input type="hidden" name="MAX_FILE_SIZE" value="30000">
-
         <p>
-          <input class="champs" type="file" name="imagee">
+          <label for="nom_image">Choississez une image associée</label>
+          <input class="champs" type="file" name="imagee">    
         </p>
 
         <p>
@@ -178,7 +184,7 @@ if(isset($_POST['ajout'])){
 
         <p>
           <label for="type">Type d'image</label>
-          <input class="champs" type="text" name="type" readonly="event" placeholder="event (argument incheangable)">
+          <input class="champs" type="text" name="type" readonly="event" placeholder="event (argument inchangeable)">
         </p>
 
         <p>

@@ -179,7 +179,7 @@ class Event {
     $secu->bindParam(':nbr_place_total', $this->nbr_place_total);
     $secu->bindParam(':nbr_place_dispo', $this->nbr_place_dispo);
     $secu->bindParam(':main_activitee', $this->main_activitee);
-    $secu->execute(); 
+    $succes = $secu->execute(); 
   }
 
   public function suppressionEBDD($id_reccup_suppr){
