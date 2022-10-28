@@ -127,7 +127,7 @@ ul, li {
 .containerBoutons {
     grid-column: 3;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 0.4fr;
+    grid-template-columns: 1fr 1fr 0.3fr;
     width: auto;
     height: auto;
     padding: 1.5vh;

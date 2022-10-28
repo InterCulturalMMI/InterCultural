@@ -1,6 +1,7 @@
 <?php
 
-$connection = new PDO('mysql:host=localhost; port=3306; dbname=sae_web_week_finale', 'root', '');
+include("../config/config.php") ;
+$connection = new PDO('mysql:host='.$hote.';port='.$port.';dbname='.$nombase,$user, $mdp);
 
 $utilisateurs = 'SELECT pseudo_user, mdp_user FROM utilisateurs';
 $resulat = $connection -> query($utilisateurs);

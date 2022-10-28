@@ -1,6 +1,6 @@
 <?php
 
-include("../config/config.php") ;
+include("./config/config.php") ;
 $connection = new PDO('mysql:host='.$hote.';port='.$port.';dbname='.$nombase,$user, $mdp);
 
 $utilisateurs = 'SELECT pseudo_user, mdp_user FROM utilisateurs';
@@ -35,7 +35,7 @@ $compteur = count($tab_pays);
   </div>
   
   <div class="lien">
-    <p> Pas de compte ? <a href="inscription.php">Cliquez-ici</a></p>
+    <p> Pas de comptes ? <a href="inscription.php">Cliquez-ici</a></p>
   </div>
 
 <?php

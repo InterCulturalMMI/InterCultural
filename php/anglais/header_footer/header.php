@@ -1,5 +1,6 @@
 <?php
-$connection = new PDO('mysql:host=localhost; port=3306; dbname=sae_web_week_finale', 'root', '');
+include("./config/config.php") ;
+$connection = new PDO('mysql:host='.$hote.';port='.$port.';dbname='.$nombase,$user, $mdp);
 
 //Chose qui va bouger --> c'est la requete pour LE HEADER qui passera en fonction AVEC le HEADER
 $nav = 'SELECT pays.id_pays, pays.nom_pays FROM pays, edition WHERE id_edition = 1';
@@ -14,7 +15,7 @@ $nbr_element_nav = count($tab_nav);
     <div class="fondBar">
       <div class="logo">
         <a href="./index.php">
-          <img src="../img/logo.png"></img>
+          <img src="../../img/logo.png"></img>
         </a>
       </div>
 
@@ -23,7 +24,7 @@ $nbr_element_nav = count($tab_nav);
           <div class="bouton">
             <a href="./index.php">
               <p>
-                ACCUEIL
+                HOME
               </p>
             </a>
           </div>
@@ -54,8 +55,8 @@ $nbr_element_nav = count($tab_nav);
       </ul>
 
           <div class="boutonLangue">
-            <a href="./anglais/index.php">
-              <img src="../img/anglais.png"></img>
+            <a href="../index.php">
+              <img src="../../img/francais.png"></img>
             </a>
           </div>
         
