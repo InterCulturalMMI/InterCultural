@@ -115,6 +115,16 @@ label {
     font-family: 'GothamReg'
 }
 
+.phrasecode {
+    margin: 2vw;
+}
+
+.phrasecode p {
+    font-family: 'GothamReg';
+    font-size:1.2vw;
+    line-height: 2;
+}
+
 .boutt:hover {
     transform: scale(1.2);
     color: #6b705c;
