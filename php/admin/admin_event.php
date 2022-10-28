@@ -74,6 +74,9 @@ if(isset($_POST['ajout'])){
   <title>INTERCULTURAL | Admin - Event ajout</title>
 </head>
 <body>
+
+<?php include 'header_admin.php';?> 
+
   <div class="titre">
     <h1> Ajout d'un évènement</h1>
   </div>

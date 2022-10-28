@@ -19,11 +19,11 @@ if(isset($_POST['connec'])){
 
     $code=array();
 
-    $nb_place = $_POST['nb_place'];
+    // $nb_place = $_POST['nb_place'];
 
     $actid = $_POST['activite'];
 
-    $modifier= 'UPDATE event SET event.nbr_place_dispo = event.nbr_place_dispo - '.$nb_place. 'WHERE event.id_event = 2';
+    // $modifier= 'UPDATE event SET event.nbr_place_dispo = event.nbr_place_dispo - '.$nb_place. 'WHERE event.id_event = 2';
 
     for ($i=0; $i<$longueur_code; $i++){
         $part_code= rand(0,9);
@@ -65,18 +65,18 @@ if(isset($_POST['connec'])){
                 }
                 ?>
             </select></br>
-            <select class="champs" name="nb_place">
+            <!--<select class="champs" name="nb_place">
                 <option value="1"> 1 place </option>
                 <option value="2"> 2 places </option>
                 <option value="3"> 3 places </option>
                 <option value="3"> 4 places </option>
-            </select>
+            </select>-->
             <div class="envoi"><a href="mailto: <?php $recepteur ?>"><input type="submit" class="boutt" name="connec" value="Envoi code"></a></div>
             <div class="phrasecode">
                 <p>
                 <?php
-
-                $temoin=FALSE;
+                if (isset($_POST['connec'])){
+                    $temoin=FALSE;
 
                 for ($i=0 ;$i< count($tab_codes); $i++){
                     if ($code_final == $tab_codes[$i]["code"]){
@@ -96,7 +96,7 @@ if(isset($_POST['connec'])){
                         $ajout->execute();
                     }
                 }
-
+                }
                 ?>
                 </p>
             </div>

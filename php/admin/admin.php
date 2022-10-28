@@ -7,6 +7,9 @@
   <script src="script.js"></script>
 </head>
 <body>
+
+<?php include 'header_admin.php';?> 
+
   <div class="titre">
     <h1>Administration du site web</h1>
   </div>

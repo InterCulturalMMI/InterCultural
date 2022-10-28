@@ -55,6 +55,8 @@ if(isset($_POST['supprimer'])){
   <title>INTERCULTURAL | Admin - Event suppression</title>
 </head>
 <body>
+
+<?php include 'header_admin.php';?> 
   
   <div class="titre">
     <h1> Suppression  d'un évènement</h1>
