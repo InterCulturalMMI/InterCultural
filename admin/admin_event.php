@@ -46,9 +46,9 @@ if(isset($_POST['ajout'])){
     $p_pays = new Pays($tab_ed[0], $tab_p[4], $tab_p[5], $tab_p[6], $tab_p[7], $tab_p[8], $tab_p[9] , $tab_p[10]);
     
       //['tmp_name'] et ['name'] --> appartient fonc php = inchangeable
-    move_uploaded_file($_FILES['imagee']['tmp_name'], '../img/'.$_POST['type'].'_'.$tab_p[4].'_'. basename($_FILES['imagee']['name']));
+    move_uploaded_file($_FILES['imagee']['tmp_name'], 'img/'.$_POST['type'].'_'.$tab_p[4].'_'. basename($_FILES['imagee']['name']));
     
-    $image = new Image($_POST['nom_image'], $_POST['alt'], $_POST['type'],'../img/'.$_POST['type'].' _'.$tab_p[4].'_'.basename($_FILES['imagee']['name']));
+    $image = new Image($_POST['nom_image'], $_POST['alt'], $_POST['type'],'img/'.$_POST['type'].' _'.$tab_p[4].'_'.basename($_FILES['imagee']['name']));
     $image->ajoutiBDD();
 
     
@@ -69,7 +69,7 @@ if(isset($_POST['ajout'])){
 <html>
 <head>
   <meta charset="utf-8">
-  <link rel="stylesheet" href="../../css/formulaire.css">
+  <link rel="stylesheet" href="../css/formulaire.css">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>INTERCULTURAL | Admin - Event ajout</title>
 </head>

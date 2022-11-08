@@ -1,6 +1,6 @@
 <?php
 
-include("../config/config.php") ;
+include("config/config.php") ;
 $connection = new PDO('mysql:host='.$hote.';port='.$port.';dbname='.$nombase,$user, $mdp);
 
 $utilisateurs = 'SELECT pseudo_user, mdp_user FROM utilisateurs';
@@ -16,7 +16,7 @@ $compteur = count($tab_pays);
 <head>
   <meta charset="utf-8">
   <title>INTERCULTURAL | Inscription</title>
-  <link rel="stylesheet" href="../css/formulaire.css">
+  <link rel="stylesheet" href="css/formulaire.css">
   <script src="script.js"></script>
 </head>
 <body>

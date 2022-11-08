@@ -50,7 +50,7 @@ if(isset($_POST['supprimer'])){
 <html>
 <head>
   <meta charset="utf-8">
-  <link rel="stylesheet" href="../../css/formulaire.css">
+  <link rel="stylesheet" href="../css/formulaire.css">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>INTERCULTURAL | Admin - Event suppression</title>
 </head>

@@ -1,5 +1,5 @@
 <?php
-include("./config/config.php") ;
+include("../config/config.php") ;
 $connection = new PDO('mysql:host='.$hote.';port='.$port.';dbname='.$nombase,$user, $mdp);
 
 //Chose qui va bouger --> c'est la requete pour LE HEADER qui passera en fonction AVEC le HEADER
@@ -14,15 +14,15 @@ $nbr_element_nav = count($tab_nav);
 <nav class="containerBar">
     <div class="fondBar">
       <div class="logo">
-        <a href="./index.php">
-          <img src="../../img/logo.png"></img>
+        <a href="index.php">
+          <img src="../img/logo.png"></img>
         </a>
       </div>
 
       <div class="containerBoutons">
 
           <div class="bouton">
-            <a href="./index.php">
+            <a href="index.php">
               <p>
                 HOME
               </p>
@@ -56,7 +56,7 @@ $nbr_element_nav = count($tab_nav);
 
           <div class="boutonLangue">
             <a href="../index.php">
-              <img src="../../img/francais.png"></img>
+              <img src="../img/francais.png"></img>
             </a>
           </div>
         

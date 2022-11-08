@@ -13,7 +13,7 @@ $nbr_element_nav = count($tab_nav);
 <nav class="containerBar">
     <div class="fondBar">
       <div class="logo">
-        <a href="./index.php">
+        <a href="../index.php">
           <img src="../img/logo.png"></img>
         </a>
       </div>
@@ -21,7 +21,7 @@ $nbr_element_nav = count($tab_nav);
       <div class="containerBoutons">
 
           <div class="bouton">
-            <a href="./index.php">
+            <a href="admin.php">
               <p>
                 ACCUEIL
               </p>
@@ -32,30 +32,20 @@ $nbr_element_nav = count($tab_nav);
 
         <li>
           <div class="boutonPays">
-            <a>
+            <a href="admin_event.php">
               <p>
-                EXPOSITIONS
+                AJOUTER
               </p>
             </a>
           </div>
-          <div class="containerListElements">
-            <ul>
-              <?php
-                for($nav = 0; $nav < $nbr_element_nav; $nav++){
-              ?>
-              <li class="pays"><a href="pays.php?id=<?php echo $tab_nav[$nav]['id_pays'];?>" class="listeElement"><?php echo $tab_nav[$nav]['nom_pays'];?></a></li>
-              <?php
-                }
-              ?>
-            </ul>
-          </div>
-          
         </li>
       </ul>
 
-          <div class="boutonLangue">
-            <a href="./anglais/index.php">
-              <img src="../img/anglais.png"></img>
+          <div class="bouton">
+            <a href="admin_event_delete.php">
+              <p id="reservation">
+                SUPPRIMER
+              </p>
             </a>
           </div>
         

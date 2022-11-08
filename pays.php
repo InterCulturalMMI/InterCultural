@@ -1,6 +1,6 @@
 <?php 
 
-include("./config/config.php") ;
+include("config/config.php") ;
 $connection = new PDO('mysql:host='.$hote.';port='.$port.';dbname='.$nombase,$user, $mdp);
 
 //information propre a pays, sans clefs etrangères
@@ -41,13 +41,13 @@ $nbr_element_nav = count($tab_nav);
 <head>
   <meta charset="utf-8">
   <title> INTERCULTURAL | <?php echo $tab_pays["nom_pays"] ?></title>
-  <link rel="stylesheet" href="../../css/pays.css">
-  <script src="../../js/pays.js"></script>
+  <link rel="stylesheet" href="css/pays.css">
+  <script src="js/pays.js"></script>
 </head>
 <body>
 <nav class="containerBar">
 
-    <?php include './header_footer/header.php';?> 
+    <?php include 'header_footer/header.php';?> 
 
     <div class="titre" id="titre1">
       <h1> 
@@ -60,14 +60,14 @@ $nbr_element_nav = count($tab_nav);
 
   <div class="banner">
     <img src="<?php  echo $tab_image_ban["url"]; ?> " alt="Banniere du pays" style="width:100%;"></img>
-    <div class="texteimg"><p> Open yourself to culture </p></div>
+    <div class="texteimg"><p> Ouvrez-vous à la culture </p></div>
   </div>
 
   <nav class="navpage">
     <div class="zoom"><a href="#intro1">Introduction</a></div>
     <div class="zoom"><a href="#monumentsid">Monuments</a></div>
-    <div class="zoom"><a href="#activid">Activities</a></div>
-    <div class="zoom"><a href="#">Inscription</a></div>
+    <div class="zoom"><a href="#activid">Activités</a></div>
+    <div class="zoom"><a href="#reserva">Inscription</a></div>
 </nav>
 
   <div class="intro" id="intro1">
@@ -96,7 +96,7 @@ $nbr_element_nav = count($tab_nav);
     </div>
   </div>
 
-  <div class="titre" id="activid"><h1> ACTIVITIES </h1></div>
+  <div class="titre" id="activid"><h1> ACTIVITÉS </h1></div>
 
   <div class="containerCestQuoi">
   <div class="cestQuoi">
@@ -114,11 +114,11 @@ $nbr_element_nav = count($tab_nav);
   </div>
 </div>
 
-  <div class="reserv">
-    <a href="reservation.php?id=<?php echo $_GET['id'];?>"> Reserve your seats for the activities ! </a>
+  <div class="reserv" id="reserva">
+    <a href="reservation.php?id=<?php echo $_GET['id'];?>"> Reservez vos places pour les activités ! </a>
   </div>
 
-  <?php include './header_footer/footer.html';?> 
+  <?php include 'header_footer/footer.html';?> 
 
 </body>
 </html>

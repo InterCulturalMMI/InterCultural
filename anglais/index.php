@@ -1,6 +1,6 @@
 <?php 
 
-include("./config/config.php") ;
+include("../config/config.php") ;
 $connection = new PDO('mysql:host='.$hote.';port='.$port.';dbname='.$nombase,$user, $mdp);
 
 // pour édition 2023 (écrit a droite en haut) --> version 1
@@ -10,19 +10,19 @@ $tab_annee = $resulat -> fetch();
 $resulat -> closeCursor();
 
 // liens necessaire au carousel 
-$nom_pays = 'SELECT pays.nom_pays, pays.id_pays, UPPER(pays.nom_monument_principal), image.url FROM image, pays, edition, pays_edition WHERE edition.id_edition = 1 AND (edition.id_edition = pays_edition.id_edition AND pays_edition.id_pays = pays.id_pays) AND pays.id_image_drap = image.id_image';
+$nom_pays = 'SELECT pays.nom_pays_en, pays.id_pays, UPPER(pays.nom_monument_principal_en), image.url FROM image, pays, edition, pays_edition WHERE edition.id_edition = 1 AND (edition.id_edition = pays_edition.id_edition AND pays_edition.id_pays = pays.id_pays) AND pays.id_image_drap = image.id_image';
 $resulat = $connection -> query($nom_pays);
 $tab_pays = $resulat -> fetchAll();
 $resulat -> closeCursor();
 $nbr_pays = count($tab_pays);
 
-$image_carousel = 'SELECT image.url FROM image, pays WHERE image.id_image = pays.id_image_car';
+$image_carousel = 'SELECT image.url_en FROM image, pays WHERE image.id_image = pays.id_image_car';
 $resulat = $connection -> query($image_carousel);
 $tab_car = $resulat -> fetchAll();
 $resulat -> closeCursor();
 
 // liens images du carousel
-$image_carousel = 'SELECT image.url FROM pays, image WHERE image.id_image = pays.id_image_ban';
+$image_carousel = 'SELECT image.url_en FROM pays, image WHERE image.id_image = pays.id_image_ban';
 $resulat = $connection -> query($image_carousel);
 $tab_carousel = $resulat -> fetch();
 $resulat -> closeCursor();
@@ -36,15 +36,15 @@ $nbr_carousel = count($tab_pays);
 <head>
   <meta charset="utf-8">
   <title> INTERCULTURAL | Accueil</title>
-  <link rel="icon" href="../../img/favicon.png" />
-  <link rel="stylesheet" href="../../css/accueil.css">
+  <link rel="icon" href="../img/favicon.png" />
+  <link rel="stylesheet" href="../css/accueil.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
-  <script src="../../js/accueil.js"></script>
+  <script src="../js/accueil.js"></script>
 </head>
 
 <body>
 
-<?php include './header_footer/header.php';?> 
+<?php include 'header_footer/header.php';?> 
 
 <div class="imgFond">
 
@@ -91,9 +91,9 @@ $nbr_carousel = count($tab_pays);
 </div>
 
 <div class="expo">
-  <img src="../../img/fleche_gauche.png"></img>
+  <img src="../img/fleche_gauche.png"></img>
   <h2><strong>DISCOVER EXPOSITIONS</strong></h2>
-  <img src="../../img/fleche_droite.png"></img>
+  <img src="../img/fleche_droite.png"></img>
 </div>
 
 <div class="containerCarrousel">
@@ -125,12 +125,12 @@ $nbr_carousel = count($tab_pays);
         <div class="swiper-slide">
           <div class="containerSlide">
             <div class="containerImg">
-              <img src="<?php echo $tab_car[$i]['url'];?>"></img>
+              <img src="<?php echo $tab_car[$i]['url_en'];?>"></img>
             </div>
             <div class="containerBarrePays">
               <div class="containerDrapeauText">
-                <div class="drapeauPays"><img src="<?php echo $tab_pays[$i]['url'];?>"></img></div>
-                <div class="textePays"><p><strong><?php echo $tab_pays[$i]['nom_pays'];?></strong> - <?php echo $tab_pays[$i]['UPPER(pays.nom_monument_principal)'];?></p></div>
+                <div class="drapeauPays"><img src="<?php echo $tab_pays[$i]['url_en'];?>"></img></div>
+                <div class="textePays"><p><strong><?php echo $tab_pays[$i]['nom_pays_en'];?></strong> - <?php echo $tab_pays[$i]['UPPER(pays.nom_monument_principal_en)'];?></p></div>
             </div>
             <div class="containerBouton">
               <div class="bouton">
@@ -153,7 +153,7 @@ $nbr_carousel = count($tab_pays);
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
-  <script src="../../js/accueil.js"></script>
+  <script src="../js/accueil.js"></script>
 </div>
 
 <div class="containerAlea">
@@ -167,7 +167,7 @@ $nbr_carousel = count($tab_pays);
       
       <div class="iconAlea">
         <!-- A FAIRE VERIFIER, PAS SURE QUE CA MARCHE commande aleatoir entre id=0 et id= nbr de pays present dans nav-->
-        <a href="pays.php?id=<?php echo $tab_nav[rand(0, $nbr_element_nav)]['id_pays'] ;?>"><img src="../../img/aleatoire.png"></img></a>
+        <a href="pays.php?id=<?php echo $tab_nav[rand(0, $nbr_element_nav)]['id_pays'] ;?>"><img src="../img/aleatoire.png"></img></a>
       </div>
     </div>
   </div>
@@ -189,7 +189,7 @@ $nbr_carousel = count($tab_pays);
   </div>
 </div>
 
-<?php include './header_footer/footer.html';?> 
+<?php include 'header_footer/footer.html';?> 
 
 </body>
 </html>

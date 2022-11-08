@@ -1,6 +1,6 @@
 <?php 
 
-include("../config/config.php") ;
+include("config/config.php") ;
 $connection = new PDO('mysql:host='.$hote.';port='.$port.';dbname='.$nombase,$user, $mdp);
 
 // pour édition 2023 (écrit a droite en haut) --> version 1
@@ -36,15 +36,15 @@ $nbr_carousel = count($tab_pays);
 <head>
   <meta charset="utf-8">
   <title> INTERCULTURAL | Accueil</title>
-  <link rel="icon" href="../img/favicon.png" />
-  <link rel="stylesheet" href="../css/accueil.css">
+  <link rel="icon" href="img/favicon.png" />
+  <link rel="stylesheet" href="css/accueil.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
-  <script src="../js/accueil.js"></script>
+  <script src="js/accueil.js"></script>
 </head>
 
 <body>
 
-<?php include './header_footer/header.php';?> 
+<?php include 'header_footer/header.php';?> 
 
 <div class="imgFond">
 
@@ -93,9 +93,9 @@ $nbr_carousel = count($tab_pays);
 </div>
 
 <div class="expo">
-  <img src="../img/fleche_gauche.png"></img>
+  <img src="img/fleche_gauche.png"></img>
   <h2><strong>DÉCOUVREZ</strong> LES <strong>EXPOSITIONS</strong></h2>
-  <img src="../img/fleche_droite.png"></img>
+  <img src="img/fleche_droite.png"></img>
 </div>
 
 <div class="containerCarrousel">
@@ -155,7 +155,7 @@ $nbr_carousel = count($tab_pays);
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
-  <script src="../js/accueil.js"></script>
+  <script src="js/accueil.js"></script>
 </div>
 
 <div class="containerAlea">
@@ -169,7 +169,7 @@ $nbr_carousel = count($tab_pays);
       
       <div class="iconAlea">
         <!-- A FAIRE VERIFIER, PAS SURE QUE CA MARCHE commande aleatoir entre id=0 et id= nbr de pays present dans nav-->
-        <a href="pays.php?id=<?php echo $tab_nav[rand(0, $nbr_element_nav)]['id_pays'] ;?>"><img src="../img/aleatoire.png"></img></a>
+        <a href="pays.php?id=<?php echo $tab_nav[rand(0, $nbr_element_nav)]['id_pays'] ;?>"><img src="img/aleatoire.png"></img></a>
       </div>
     </div>
   </div>
@@ -191,7 +191,7 @@ $nbr_carousel = count($tab_pays);
   </div>
 </div>
 
-<?php include './header_footer/footer.html';?> 
+<?php include 'header_footer/footer.html';?> 
 
 </body>
 </html>
