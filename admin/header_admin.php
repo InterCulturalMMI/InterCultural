@@ -1,7 +1,8 @@
 <?php
-$connection = new PDO('mysql:host=localhost; port=3306; dbname=sae_web_week_finale', 'root', '');
 
-//Chose qui va bouger --> c'est la requete pour LE HEADER qui passera en fonction AVEC le HEADER
+include("../config/config.php") ;
+$connection = new PDO('mysql:host='.$hote.';port='.$port.';dbname='.$nombase,$user, $mdp);
+
 $nav = 'SELECT pays.id_pays, pays.nom_pays FROM pays, edition WHERE id_edition = 1';
 $resulat = $connection -> query($nav);
 $tab_nav = $resulat -> fetchAll();
@@ -20,34 +21,36 @@ $nbr_element_nav = count($tab_nav);
 
       <div class="containerBoutons">
 
-          <div class="bouton">
-            <a href="admin.php">
-              <p>
-                ACCUEIL
-              </p>
-            </a>
-          </div>
+        <div class="bouton">
+          <form method="POST" action="admin.php">
+            <div>
+              <input type="submit" value="ACCUEIL">
+              <input type="hidden" name="blbl" value="0">
+            </div>
+          </form>
+        </div>
 
-      <ul class="listePays">
+        <ul class="listePays">
+          <li>
+            <div class="boutonPays">
+              <form method="POST" action="admin_event.php">
+                <div>
+                  <input type="submit" value="AJOUTER">
+                  <input type="hidden" name="blbl" value="1">
+                </div>
+              </form>
+            </div>
+          </li>
+        </ul>
 
-        <li>
-          <div class="boutonPays">
-            <a href="admin_event.php">
-              <p>
-                AJOUTER
-              </p>
-            </a>
-          </div>
-        </li>
-      </ul>
-
-          <div class="bouton">
-            <a href="admin_event_delete.php">
-              <p id="reservation">
-                SUPPRIMER
-              </p>
-            </a>
-          </div>
+        <div class="bouton">
+          <form method="POST" action="admin_event_delete.php">
+            <div>
+              <input type="submit" value="SUPPRIMER">
+              <input type="hidden" name="blbl" value="2">
+            </div>
+          </form>
+        </div>
         
       </div>
     </div>

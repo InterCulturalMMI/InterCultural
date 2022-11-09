@@ -1,4 +1,7 @@
 <?php 
+
+include("../config/config.php") ;
+$connection = new PDO('mysql:host='.$hote.';port='.$port.';dbname='.$nombase,$user, $mdp);
  
 class Pays {
   public $connection;
@@ -21,7 +24,7 @@ class Pays {
   public $list_id_image_pays = array();
 
   public function __construct($id_edition, $nom_pays, $geoloc_long, $geoloc_latt, $descriptif_pays, $descriptif_monument, $nom_monument_principal, $nom_monument_secondaire){
-    $this->connection = $connection = new PDO('mysql:host=localhost; port=3306; dbname=sae_web_week_finale', 'root', '');
+    $this->connection = $GLOBALS['connection'];
     // $this->id_image_ban = 1;
     // $this->id_image_car = 1;
     // $this->id_image_drap = 1;
@@ -34,15 +37,15 @@ class Pays {
     $this->nom_monument_principal = $nom_monument_principal;
     $this->nom_monument_secondaire = $nom_monument_secondaire;
   }
-  public function ajoutEvent ($id_pays, $id_image ,$nom_activitee, $descriptif, $horraires, $date_event, $lieu, $prix_adulte, $prix_enfant, $payant, $nbr_place_total, $nbr_place_dispo, $main_activitee){
-    $event = new Event($id_pays, $id_image, $nom_activitee, $descriptif, $horraires, $date_event, $lieu, $prix_adulte, $prix_enfant, $payant, $nbr_place_total, $nbr_place_dispo, $main_activitee); 
+  public function ajoutEvent ($id_pays, $id_image ,$nom_activitee, $descriptif, $horraires, $date_event, $lieu, $prix_adulte, $prix_enfant, $payant, $nbr_place_total, $nbr_place_dispo, $main_activitee, $nom_activitee_en, $descriptif_en){
+    $event = new Event($id_pays, $id_image, $nom_activitee, $descriptif, $horraires, $date_event, $lieu, $prix_adulte, $prix_enfant, $payant, $nbr_place_total, $nbr_place_dispo, $main_activitee, $nom_activitee_en, $descriptif_en); 
     $this->liste_event[] = (array)$event;
     $event->ajoutEBDD();
   }
 
   public function ajoutPBDD(){
-    $connection = new PDO('mysql:host=localhost; port=3306; dbname=sae_web_week_finale', 'root', '');
-    $secu = $connection->prepare("INSERT INTO event (id_edition, nom_pays, geoloc_long, geoloc_latt, descriptif_pays, descriptif_monument, nom_monument_principal, nom_monument_secondaire) values (:id_edition, :nom_pays, :geoloc_long, :geoloc_latt, :descriptif_pays, :descriptif_monument, :nom_monument_principal, :nom_monument_secondaire)");
+    
+    $secu = $GLOBALS['connection']->prepare("INSERT INTO event (id_edition, nom_pays, geoloc_long, geoloc_latt, descriptif_pays, descriptif_monument, nom_monument_principal, nom_monument_secondaire) values (:id_edition, :nom_pays, :geoloc_long, :geoloc_latt, :descriptif_pays, :descriptif_monument, :nom_monument_principal, :nom_monument_secondaire)");
     $secu->bindParam(':id_edition', $this->id_edition);
     $secu->bindParam(':nom_pays', $this->nom_pays);
     $secu->bindParam(':geoloc_long', $this->geoloc_long);
@@ -68,7 +71,7 @@ class Edition {
   public $liste_pays = array();
 
   public function __construct(/*$id_edition,*/ $annee, $theme, $descriptif_annee){
-    $this->connection = $connection = new PDO('mysql:host=localhost; port=3306; dbname=sae_web_week_finale', 'root', '');
+    $this->connection = $GLOBALS['connection'];
    /* $this->id_edition = $id_edition;*/
 
     $this->annee = $annee;
@@ -102,8 +105,8 @@ class Image {
   }
 
   public function ajoutIBDD(){
-    $connection = new PDO('mysql:host=localhost; port=3306; dbname=sae_web_week_finale', 'root', '');
-    $secu = $connection->prepare("INSERT INTO image (/*id_image,*/ nom_image, alt, type, url) values (/*:id_image,*/ :nom_image, :alt, :type, :url)");
+   
+    $secu = $GLOBALS['connection']->prepare("INSERT INTO image (/*id_image,*/ nom_image, alt, type, url) values (/*:id_image,*/ :nom_image, :alt, :type, :url)");
     /*$secu->bindParam(':id_image', $this->id_image);*/
     $secu->bindParam(':nom_image', $this->nom_image);
     $secu->bindParam(':alt', $this->alt);
@@ -113,9 +116,9 @@ class Image {
   }
 
   public function suppressionIBDD($id_reccup_suppr){
-    $connection = new PDO('mysql:host=localhost; port=3306; dbname=sae_web_week_finale', 'root', '');
+    
 
-    $secu = $connection-> prepare("DELETE FROM image WHERE image.id_image=".$id_reccup_suppr);
+    $secu = $GLOBALS['connection']-> prepare("DELETE FROM image WHERE image.id_image=".$id_reccup_suppr);
     $secu->execute();
   }
 }
@@ -139,11 +142,13 @@ class Event {
   public $nbr_place_total;
   public $nbr_place_dispo;
   public $main_activitee;
+  public $nom_activitee_en;
+  public $descriptif_en;
 
   public $list_id_image_event = array();
 
-  public function __construct($id_pays, $id_image, $nom_activitee, $descriptif, $horraires, $date_event, $lieu, $prix_adulte, $prix_enfant, $payant, $nbr_place_total, $nbr_place_dispo, $main_activitee){
-    $this->connection = $connection = new PDO('mysql:host=localhost; port=3306; dbname=sae_web_week_finale', 'root', '');
+  public function __construct($id_pays, $id_image, $nom_activitee, $descriptif, $horraires, $date_event, $lieu, $prix_adulte, $prix_enfant, $payant, $nbr_place_total, $nbr_place_dispo, $main_activitee, $nom_activitee_en, $descriptif_en){
+    $this->connection = $GLOBALS['connection'];
     //$this->id_event = $id_event; 
 
     $this->id_pays = $id_pays;
@@ -159,12 +164,14 @@ class Event {
     $this->payant = $payant;
     $this->nbr_place_total = $nbr_place_total;
     $this->nbr_place_dispo = $nbr_place_dispo;
-    $this->main_activitee = $main_activitee;    
+    $this->main_activitee = $main_activitee; 
+    $this->nom_activitee_en = $nom_activitee_en; 
+    $this->descriptif_en = $descriptif_en;    
   }
 
   public function ajoutEBDD(){
-    $connection = new PDO('mysql:host=localhost; port=3306; dbname=sae_web_week_finale', 'root', '');
-    $secu = $connection->prepare("INSERT INTO event (id_pays, id_image, id_edition, nom_activitee, descriptif, horraires, date_event, lieu, prix_adulte, prix_enfant, payant, nbr_place_total, nbr_place_dispo, main_activitee) values (:id_pays, :id_image, :id_edition, :nom_activitee,  :descriptif, :horraires, :date_event, :lieu, :prix_adulte, :prix_enfant, :payant, :nbr_place_total, :nbr_place_dispo, :main_activitee)"); 
+
+    $secu = $GLOBALS['connection']->prepare("INSERT INTO event (id_pays, id_image, id_edition, nom_activitee, descriptif, horraires, date_event, lieu, prix_adulte, prix_enfant, payant, nbr_place_total, nbr_place_dispo, main_activitee, nom_activitee_en, descriptif_en) values (:id_pays, :id_image, :id_edition, :nom_activitee,  :descriptif, :horraires, :date_event, :lieu, :prix_adulte, :prix_enfant, :payant, :nbr_place_total, :nbr_place_dispo, :main_activitee, :nom_activitee_en, :descriptif_en)"); 
     $secu->bindParam(':id_pays', $this->id_pays);
     $secu->bindParam(':id_image', $this->id_image);
     $secu->bindParam(':id_edition', $this->id_edition);
@@ -179,13 +186,14 @@ class Event {
     $secu->bindParam(':nbr_place_total', $this->nbr_place_total);
     $secu->bindParam(':nbr_place_dispo', $this->nbr_place_dispo);
     $secu->bindParam(':main_activitee', $this->main_activitee);
+    $secu->bindParam(':nom_activitee_en', $this->nom_activitee_en);
+    $secu->bindParam(':descriptif_en', $this->descriptif_en);
     $succes = $secu->execute(); 
   }
 
   public function suppressionEBDD($id_reccup_suppr){
-    $connection = new PDO('mysql:host=localhost; port=3306; dbname=sae_web_week_finale', 'root', '');
-
-    $secu = $connection-> prepare("DELETE FROM event WHERE event.id_event=".$id_reccup_suppr);
+    
+    $secu = $GLOBALS['connection']-> prepare("DELETE FROM event WHERE event.id_event=".$id_reccup_suppr);
     $secu->execute();
   }
 }
