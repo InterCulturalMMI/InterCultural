@@ -45,18 +45,25 @@ if(isset($_POST['connec'])){
 <html lang="fr">
 <head>
   <meta charset="utf-8">
-  <title> INTERCULTURAL | Envoi code</title>
+  <title> INTERCULTURAL | Code sending </title>
+
+  <meta name="description" content="Discover the different activities that the country offers, with additional information about the country!">
+  <meta name="author" content="InterCultural Evenement">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="apple-touch-icon" href="../img/favicon.png"/>
+  <link rel="icon" href="../img/favicon.png" />
   <link rel="stylesheet" href="../css/formulaire.css">
 </head>
 <body>
     <div class="titre">
-        <h1> Envoi du code </h1>
+        <h1> Code sending </h1>
     </div>
 
     <div class="global">
         <form method="POST" action="page_reserv.php">
-            <label for="pseudo" class="label">Adresse mail</label><br>
-            <input type="email" class="champs" id="mail" name="mail" placeholder="Adresse mail.."><br>
+            <label for="pseudo" class="label">Email adress</label><br>
+            <input type="email" class="champs" id="mail" name="mail" placeholder="Email.." required><br>
             <select class="champs" name="activite">
                 <?php 
                 for($i = 0; $i < $nbr_event; $i++){
@@ -72,37 +79,36 @@ if(isset($_POST['connec'])){
                 <option value="3"> 3 places </option>
                 <option value="3"> 4 places </option>
             </select>
-            <div class="envoi"><a href="mailto: <?php $recepteur ?>"><input type="submit" class="boutt" name="connec" value="Envoi code"></a></div>
+            <div class="envoi"><a href="mailto: <?php $recepteur ?>"><input type="submit" class="boutt" name="connec" value="Send code"></a></div>
 
             <?php
 
-            $temoin=FALSE;
+            if(isset($_POST['connec'])){
 
-            for ($i=0 ;$i< count($tab_codes); $i++){
-                if ($code_final == $tab_codes[$i]["code"]){
-                    $temoin=TRUE;
+                $temoin=FALSE;
+
+                for ($i=0 ;$i< count($tab_codes); $i++){
+                    if ($code_final == $tab_codes[$i]["code"]){
+                        $temoin=TRUE;
+                    }
                 }
-            }
 
-            if ($temoin == FALSE) {
-                if (isset($_POST['connec'])){
-
-
-                    echo 'Voici votre code, ne le perdez pas ! </br>' .$code_final;
+                if ($temoin == FALSE) {
+                    echo 'This is your code, do not lose it ! </br>' .$code_final;
     
                     $ajout = $connection-> prepare('INSERT INTO mails (email, code) VALUES (:recepteur, :code_final)');
                     $ajout->bindParam(':recepteur', $recepteur, PDO::PARAM_STR);
                     $ajout->bindParam(':code_final', $code_final, PDO::PARAM_STR);
                     $ajout->execute();
                 }
-            }
+        }
 
             ?>
         </form>
     </div>
 
     <div class="lien">
-        <p> Retour à <a href="index.php">l'accueil</a></p>
+        <p> Go back to <a href="index.php">Home Page</a></p>
     </div>
 
 </body>

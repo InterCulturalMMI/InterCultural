@@ -3,7 +3,7 @@ include("../config/config.php") ;
 $connection = new PDO('mysql:host='.$hote.';port='.$port.';dbname='.$nombase,$user, $mdp);
 
 //Chose qui va bouger --> c'est la requete pour LE HEADER qui passera en fonction AVEC le HEADER
-$nav = 'SELECT pays.id_pays, pays.nom_pays FROM pays, edition WHERE id_edition = 1';
+$nav = 'SELECT pays.id_pays, pays.nom_pays_en FROM pays, edition WHERE id_edition = 1';
 $resulat = $connection -> query($nav);
 $tab_nav = $resulat -> fetchAll();
 $resulat -> closeCursor();
@@ -15,7 +15,7 @@ $nbr_element_nav = count($tab_nav);
     <div class="fondBar">
       <div class="logo">
         <a href="index.php">
-          <img src="../img/logo.png"></img>
+          <img src="../img/logo.png" alt="Logo InterCultural"></img>
         </a>
       </div>
 
@@ -44,7 +44,7 @@ $nbr_element_nav = count($tab_nav);
               <?php
                 for($nav = 0; $nav < $nbr_element_nav; $nav++){
               ?>
-              <li class="pays"><a href="pays.php?id=<?php echo $tab_nav[$nav]['id_pays'];?>" class="listeElement"><?php echo $tab_nav[$nav]['nom_pays'];?></a></li>
+              <li class="pays"><a href="pays.php?id=<?php echo $tab_nav[$nav]['id_pays'];?>" class="listeElement"><?php echo $tab_nav[$nav]['nom_pays_en'];?></a></li>
               <?php
                 }
               ?>
@@ -56,7 +56,7 @@ $nbr_element_nav = count($tab_nav);
 
           <div class="boutonLangue">
             <a href="../index.php">
-              <img src="../img/francais.png"></img>
+              <img src="../img/francais.png" alt="Drapeau de changement de langue"></img>
             </a>
           </div>
         
