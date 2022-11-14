@@ -33,8 +33,8 @@ $nbr_event_sec = count($tab_event_sec);
 	<meta name="author" content="InterCultural Evenement">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-	<link rel="apple-touch-icon" href="../img/favicon.png"/>
-  <link rel="icon" href="../img/favicon.png" />
+	<link rel="apple-touch-icon" href="../img/favicon.webp"/>
+  <link rel="icon" href="../img/favicon.webp" />
   <link rel="stylesheet" href="../css/reservation.css">
   <script src="../js/reservation.js"></script>
 </head>

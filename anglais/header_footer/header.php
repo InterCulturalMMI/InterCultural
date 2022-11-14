@@ -15,7 +15,7 @@ $nbr_element_nav = count($tab_nav);
     <div class="fondBar">
       <div class="logo">
         <a href="index.php">
-          <img src="../img/logo.png" alt="Logo InterCultural"></img>
+          <img src="../img/logo.webp" alt="Logo InterCultural"></img>
         </a>
       </div>
 
@@ -54,9 +54,35 @@ $nbr_element_nav = count($tab_nav);
         </li>
       </ul>
 
+
+      <ul class="listePays">
+
+        <li>
+          <div class="boutonPays">
+            <a>
+              <p>
+                RESERVE
+              </p>
+            </a>
+          </div>
+          <div class="containerListElements">
+            <ul>
+              <?php
+                for($nav = 0; $nav < $nbr_element_nav; $nav++){
+              ?>
+              <li class="pays"><a href="reservation.php?id=<?php echo $tab_nav[$nav]['id_pays'];?>" class="listeElement"><?php echo $tab_nav[$nav]['nom_pays_en'];?></a></li>
+              <?php
+                }
+              ?>
+            </ul>
+          </div>
+          
+        </li>
+      </ul>
+
           <div class="boutonLangue">
             <a href="../index.php">
-              <img src="../img/francais.png" alt="Drapeau de changement de langue"></img>
+              <img src="../img/francais.webp" alt="Drapeau de changement de langue"></img>
             </a>
           </div>
         

@@ -18,7 +18,7 @@ html {
     scroll-behavior: smooth;
 }
 body {
-    background-image: url('../img/fondfond.jpg');
+    background-image: url('../img/fondfond.webp');
     background-size: cover;
 }
 * {
@@ -105,7 +105,7 @@ ul, li {
 
 .fondBar {
     display: grid;
-    grid-template-columns: 1.5fr 5.25fr 5.25fr;
+    grid-template-columns: 2fr 5fr 7fr;
     width: 70%;
     height: 25%;
     background-color: #6B705C;
@@ -116,7 +116,7 @@ ul, li {
 .containerBoutons {
     grid-column: 3;
     display: grid;
-    grid-template-columns: 1fr 1fr 0.3fr;
+    grid-template-columns: 1fr 1fr 1fr 0.3fr;
     width: auto;
     height: auto;
     padding: 1.5vh;
@@ -202,7 +202,7 @@ ul, li {
 .photoCestQuoi {
     width: 40%;
     height: 25vh;
-    background-image: url(../img/gros_noir.png);
+    background-image: url(../img/gros_noir.webp);
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
@@ -242,7 +242,7 @@ ul, li {
     box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
     color: white;
     text-align: center;
-    background-image: url('../img/fond.png');
+    background-image: url('../img/fond.webp');
     background-size:cover;
     width: 80%;
     height: 100vh;

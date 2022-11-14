@@ -47,8 +47,8 @@ $nbr_element_nav = count($tab_nav);
 	<meta name="author" content="InterCultural Evenement">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <link rel="apple-touch-icon" href="img/favicon.png"/>
-  <link rel="icon" href="img/favicon.png" />
+  <link rel="apple-touch-icon" href="img/favicon.webp"/>
+  <link rel="icon" href="img/favicon.webp" />
   <script src="js/pays.js"></script>
 </head>
 <body>
