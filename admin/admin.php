@@ -7,8 +7,13 @@ $utilisateurs = 'SELECT * FROM utilisateurs';
 $resulat = $connection -> query($utilisateurs);
 $tab_pays = $resulat -> fetchAll();
 $resulat -> closeCursor();
-
 $compteur = count($tab_pays);
+
+$event = 'SELECT id_event, nom_activitee FROM event';
+$resulat = $connection -> query($event);
+$tab_event = $resulat -> fetchAll();
+$resulat -> closeCursor();
+$nbr_event = count($tab_event);
 
 if(isset($_POST['id'])){
     //echo $_POST["id"];
@@ -37,6 +42,21 @@ if(isset($_POST['id'])){
 
   <div class="global">
     <p>Bonjour, en tant qu'admin du site web de Intercultural, vous avez la possibilitée de créer ou de supprimer des évènements. Les modifications sont envoyées directement à la base de données ou est stocker le contenue de votre site. Tout changement sera donc instantanément visible sur le site web d'Intercultural. </p>
+    <p>Pour modifier un evénement, il vous suffit de selectionner celui que vous souhaitez : </p>
+
+        <?php 
+          for($i = 0; $i < $nbr_event; $i++){
+        ?>
+        <div>
+          <form method="POST" action='admin_event_modif.php?id=<?php echo $tab_event[$i]['id_event'];?>'>
+            <input type="submit" value="<?php echo $tab_event[$i]['nom_activitee'];?>">
+            <input type="hidden" name="blbl" value="<?php echo $tab_event[$i]['id_event'];?>">
+          </form> 
+        </div>
+        <?php 
+          }
+        ?>
+
   </div>
 
   <?php
@@ -72,6 +92,22 @@ else{
 
   <div class="global">
     <p>Bonjour, en tant qu'admin du site web de Intercultural, vous avez la possibilitée de créer ou de supprimer des évènements. Les modifications sont envoyées directement à la base de données ou est stocker le contenue de votre site. Tout changement sera donc instantanément visible sur le site web d'Intercultural. </p>
+    <p>Pour modifier un evénement, il vous suffit de selectionner celui que vous souhaitez : </p>
+    <form method="POST" action="admin.php">
+     
+        <?php 
+          for($i = 0; $i < $nbr_event; $i++){
+        ?>
+        <div>
+          <form method="POST" action='admin_event_modif.php?id=<?php echo $tab_event[$i]['id_event'];?>'>
+            <input type="submit" value="<?php echo $tab_event[$i]['nom_activitee'];?>">
+            <input type="hidden" name="blbl" value="<?php echo $tab_event[$i]['id_event'];?>">
+          </form> 
+        </div>
+        <?php 
+          }
+        ?>
+      
   </div>
 
 <?php

@@ -33,6 +33,7 @@ $compteur = count($tab_admin);
           echo '<div>Pour accéder au côté admin de la force, il vous faut vous connecter</div>';
       }
     }
+
   ?>
 
   <div class="global">
@@ -60,6 +61,27 @@ $compteur = count($tab_admin);
   <div class="lien">
     <p> Pas de compte ? <a href="inscription.php">Cliquez-ici</a></p>
   </div>
+
+<?php
+
+$etat=false;
+
+if(isset($_POST['connec'])){
+
+  $pseudo = $_POST['pseudo']; 
+  $mdp = $_POST['mdp'];
+
+  for($i=0; $i<$compteur; $i++){
+    if ($mdp == $tab_pays[$i]['mdp_user'] && $pseudo == $tab_pays[$i]['pseudo_user']) {
+      header('location:admin/connect.php');
+    }
+    else {
+      echo '<script type="text/JavaScript"> alert("Erreur de mots de passe ou identifiants !"); </script>';
+    }
+  }
+}
+
+?>
 
 </body>
 </html>

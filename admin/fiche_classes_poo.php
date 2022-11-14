@@ -94,24 +94,27 @@ class Image {
   public $alt;
   public $type;
   public $url;
+  public $url_en;
 
-  public function __construct(/*$id_image,*/ $nom_image, $alt, $type, $url){
+  public function __construct(/*$id_image,*/ $nom_image, $alt, $type, $url, $url_en){
     /*$this->id_image = $id_image;*/
 
     $this->nom_image = $nom_image;
     $this->alt = $alt;
     $this->type = $type;
     $this->url = $url;
+    $this->url_en = $url_en;
   }
 
   public function ajoutIBDD(){
    
-    $secu = $GLOBALS['connection']->prepare("INSERT INTO image (/*id_image,*/ nom_image, alt, type, url) values (/*:id_image,*/ :nom_image, :alt, :type, :url)");
+    $secu = $GLOBALS['connection']->prepare("INSERT INTO image (/*id_image,*/ nom_image, alt, type, url, url_en) values (/*:id_image,*/ :nom_image, :alt, :type, :url, :url_en)");
     /*$secu->bindParam(':id_image', $this->id_image);*/
     $secu->bindParam(':nom_image', $this->nom_image);
     $secu->bindParam(':alt', $this->alt);
     $secu->bindParam(':type', $this->type);
     $secu->bindParam(':url', $this->url);
+    $secu->bindParam(':url_en', $this->url_en);
     $secu->execute(); 
   }
 
@@ -192,7 +195,7 @@ class Event {
   }
 
   public function suppressionEBDD($id_reccup_suppr){
-    
+
     $secu = $GLOBALS['connection']-> prepare("DELETE FROM event WHERE event.id_event=".$id_reccup_suppr);
     $secu->execute();
   }

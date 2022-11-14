@@ -1,7 +1,6 @@
 <?php
-$connection = new PDO('mysql:host='.$hote.';port='.$port.';dbname='.$nombase,$user, $mdp);
+$connection = new PDO('mysql:host=localhost; port=3306; dbname=sae_web_week_finale', 'root', '');
 
-//Chose qui va bouger --> c'est la requete pour LE HEADER qui passera en fonction AVEC le HEADER
 $nav = 'SELECT pays.id_pays, pays.nom_pays FROM pays, edition WHERE id_edition = 1';
 $resulat = $connection -> query($nav);
 $tab_nav = $resulat -> fetchAll();

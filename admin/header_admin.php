@@ -21,36 +21,37 @@ $nbr_element_nav = count($tab_nav);
 
       <div class="containerBoutons">
 
-        <div class="bouton">
-          <form method="POST" action="admin.php">
-            <div>
-              <input type="submit" value="ACCUEIL">
-              <input type="hidden" name="blbl" value="0">
-            </div>
-          </form>
-        </div>
+          <div class="bouton">
+            <form method="POST" action="admin.php">
+              <div>
+                <input type="submit" value="ACCUEIL">
+                <input type="hidden" name="blbl" value="1000">
+              </div>
+            </form>
+          </div>
 
-        <ul class="listePays">
-          <li>
-            <div class="boutonPays">
-              <form method="POST" action="admin_event.php">
-                <div>
-                  <input type="submit" value="AJOUTER">
-                  <input type="hidden" name="blbl" value="1">
-                </div>
-              </form>
-            </div>
-          </li>
-        </ul>
+      <ul class="listePays">
 
-        <div class="bouton">
-          <form method="POST" action="admin_event_delete.php">
-            <div>
-              <input type="submit" value="SUPPRIMER">
-              <input type="hidden" name="blbl" value="2">
-            </div>
-          </form>
-        </div>
+        <li>
+          <div class="boutonPays">
+            <form method="POST" action="admin_event.php">
+              <div>
+                <input type="submit" value="AJOUTER">
+                <input type="hidden" name="blbl" value="2000">
+              </div>
+            </form>
+          </div>
+        </li>
+      </ul>
+
+          <div class="bouton">
+            <form method="POST" action="admin_event_delete.php">
+              <div>
+                <input type="submit" value="SUPPRIMER">
+                <input type="hidden" name="blbl" value="3000">
+              </div>
+            </form>
+          </div>
         
       </div>
     </div>
