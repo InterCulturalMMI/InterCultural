@@ -12,47 +12,41 @@ $nbr_element_nav = count($tab_nav);
 ?>
 
 <nav class="containerBar">
-    <div class="fondBar">
-      <div class="logo">
-        <a href="../index.php">
-          <img src="../img/logo.png"></img>
-        </a>
-      </div>
-
-      <div class="containerBoutons">
-
-          <div class="bouton">
-            <form method="POST" action="admin.php">
-              <div>
-                <input type="submit" value="ACCUEIL">
-                <input type="hidden" name="blbl" value="1000">
-              </div>
-            </form>
-          </div>
-
-      <ul class="listePays">
-
-        <li>
-          <div class="boutonPays">
-            <form method="POST" action="admin_event.php">
-              <div>
-                <input type="submit" value="AJOUTER">
-                <input type="hidden" name="blbl" value="2000">
-              </div>
-            </form>
-          </div>
-        </li>
-      </ul>
-
-          <div class="bouton">
-            <form method="POST" action="admin_event_delete.php">
-              <div>
-                <input type="submit" value="SUPPRIMER">
-                <input type="hidden" name="blbl" value="3000">
-              </div>
-            </form>
-          </div>
-        
-      </div>
+  <div class="fondBar">
+    <div class="logo">
+      <a href="../index.php">
+        <img src="../img/logo.png"></img>
+      </a>
     </div>
+
+    <div class="containerBoutons">
+      <form method="POST" action="admin.php">
+        <div>
+          <input type="submit" value="ACCUEIL" class="bouton">
+          <input type="hidden" name="blbl" value="1000">
+        </div>
+      </form>
+
+      <form method="POST" action="admin_event.php">
+        <div>
+          <input type="submit" value="AJOUTER"  class="bouton">
+          <input type="hidden" name="blbl" value="2000">
+        </div>
+      </form>
+
+      <form method="POST" action="admin_event_modification.php">
+        <div>
+          <input type="submit" value="MODIFIER"  class="bouton">
+          <input type="hidden" name="blbl" value="3000">
+        </div>
+      </form>
+
+      <form method="POST" action="admin_event_delete.php">
+        <div>
+          <input type="submit" value="SUPPRIMER"  class="bouton">
+          <input type="hidden" name="blbl" value="4000">
+        </div>
+      </form>
+    </div>
+  </div>
 </nav>
