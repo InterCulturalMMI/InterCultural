@@ -1,5 +1,5 @@
 <?php
-$connection = new PDO('mysql:host=localhost; port=3306; dbname=sae_web_week_finale', 'root', '');
+$connection = new PDO('mysql:host=localhost; port=3306; dbname=sae_web_week', 'root', '');
 
 $nav = 'SELECT pays.id_pays, pays.nom_pays FROM pays, edition WHERE id_edition = 1';
 $resulat = $connection -> query($nav);
