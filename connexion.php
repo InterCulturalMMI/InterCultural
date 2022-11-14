@@ -14,11 +14,19 @@ $compteur = count($tab_admin);
 <!doctype html>
 <html lang="fr">
 <head>
-  <meta charset="utf-8">
-  <title>INTERCULTURAL | Connexion </title>
-  <link rel="stylesheet" href="css/formulaire.css">
-  <script src="script.js"></script>
-</head>
+		<meta charset="utf-8">
+		<title> INTERCULTURAL | Connexion</title>
+
+		<meta name="description" content="InterCultural, un festival mélangeant culture et passion, dans lequel vous découvrirez nombre de cultures et d'activités liés !">
+		<meta name="author" content="InterCultural Evenement">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<link rel="apple-touch-icon" href="img/favicon.webp"/>
+		<link rel="icon" href="img/favicon.webp" />
+		<link rel="stylesheet" href="css/formulaire.css">
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
+		<script src="js/accueil.js"></script>
+	</head>
 <body>
   <div class="titre">
     <h1> Connexion </h1>
@@ -56,10 +64,6 @@ $compteur = count($tab_admin);
       <input type="password" class="champs" id="mdp" name="mdp" placeholder="Mot de passe.."><br><br> 
       <input type="submit" class="boutt" name="connec" value="Connexion">
     </form>
-  </div>
-  
-  <div class="lien">
-    <p> Pas de compte ? <a href="inscription.php">Cliquez-ici</a></p>
   </div>
 
 <?php

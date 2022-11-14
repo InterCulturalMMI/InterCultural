@@ -23,7 +23,7 @@ html {
 }
 
 body {
-    background-image: url('../img/fondfond.jpg');
+    background-image: url('../img/fondfond.webp');
     background-size:cover;
 }
 
@@ -112,17 +112,18 @@ ul, li {
 
 .fondBar {
     display: grid;
-    grid-template-columns: 1.5fr 5.25fr 5.25fr;
-    width: 75%;
+    grid-template-columns: 2fr 5fr 7fr;
+    width: 70%;
     height: 25%;
     background-color: #6B705C;
-    border-radius: 10vw;
+    border-radius: 10vh;
+    box-shadow: 0px 0px 20px 1px rgba(0, 0, 0, 0.425);
 }
 
 .containerBoutons {
     grid-column: 3;
     display: grid;
-    grid-template-columns: 1fr 1fr 0.3fr;
+    grid-template-columns: 1fr 1fr 1fr 0.3fr;
     width: auto;
     height: auto;
     padding: 1.5vh;
@@ -269,7 +270,7 @@ ul, li {
 
     width: 80%;
 
-    background-image: url('../img/fond.png');
+    background-image: url('../img/fond.webp');
     background-size: cover ;
     border:none;
     border-radius: 3vw;
@@ -302,26 +303,22 @@ ul, li {
 }
 
 .un img:hover{
-    filter: blur(2px);
     transition:0.5s;
-    transform: scale(1);
+    transform: scale(1.1);
 }
 
 .un img:not(:hover){
-    filter: blur(0px);
-    transform: scale(1.1);
+    transform: scale(1);
     transition:0.5s;
 }
 
 .deux img:hover{
-    filter: blur(2px);
     transition:0.5s;
-    transform: scale(1);
+    transform: scale(1.1);
 }
 
 .deux img:not(:hover){
-    filter: blur(0px);
-    transform: scale(1.1);
+    transform: scale(1);
     transition:0.5s;
 }
 
@@ -357,15 +354,11 @@ ul, li {
     font-family: 'GothamReg';
 }
 
-.image_activites {display: flex; justify-content:center;width: 35%;}
+.photoCestQuoi img{width: 100%;}
 
-.image_activites img{width: 100%;}
+.photoCestQuoi img:hover {transform:scale(1.1);transition:0.5s;}
 
-.image_activites img:hover {transform:scale(0.9);filter:blur(2px);transition:0.5s;}
-
-.image_activites img:not(:hover) {transform:scale(1);filter:blur(0px);transition:0.5s;}
-
-
+.photoCestQuoi img:not(:hover) {transform:scale(1);transition:0.5s;}
 
 .texte_activites {
     color: black;

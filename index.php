@@ -39,8 +39,8 @@ $nbr_carousel = count($tab_pays);
 		<meta name="author" content="InterCultural Evenement">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-		<link rel="apple-touch-icon" href="img/favicon.png"/>
-		<link rel="icon" href="img/favicon.png" />
+		<link rel="apple-touch-icon" href="img/favicon.webp"/>
+		<link rel="icon" href="img/favicon.webp" />
 		<link rel="stylesheet" href="css/accueil.css">
 		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
 		<script src="js/accueil.js"></script>
@@ -94,10 +94,10 @@ $nbr_carousel = count($tab_pays);
 			</div>
 		</div>
 		<div class="expo">
-			<img src="img/fleche_gauche.png" alt="Fleche décorative">
+			<img src="img/fleche_gauche.webp" alt="Fleche décorative">
 			</img>
 			<h2><strong>DÉCOUVREZ </strong>LES <strong>EXPOSITIONS</strong></h2>
-			<img src="img/fleche_droite.png" alt="Fleche décorative">
+			<img src="img/fleche_droite.webp" alt="Fleche décorative">
 			</img>
 		</div>
 		<div class="containerCarrousel">
@@ -167,7 +167,7 @@ $nbr_carousel = count($tab_pays);
 					</p>
 					<div class="iconAlea">
 						<!-- A FAIRE VERIFIER, PAS SURE QUE CA MARCHE commande aleatoir entre id=0 et id= nbr de pays present dans nav-->
-						<a href="pays.php?id=<?php echo $tab_nav[rand(0, $nbr_element_nav)]['id_pays'] ;?>"><img src="img/aleatoire.png" alt=" Random"></img></a>
+						<a href="pays.php?id=<?php echo $tab_nav[rand(0, $nbr_element_nav)]['id_pays'] ;?>"><img src="img/aleatoire.webp" alt=" Random"></img></a>
 					</div>
 				</div>
 			</div>

@@ -26,7 +26,7 @@
 }
 
 body {
-    background-image: url('../img/fondfond.jpg');
+    background-image: url('../img/fondfond.webp');
     text-align:center;
 }
 
@@ -108,7 +108,7 @@ ul, li {
 
 .fondBar {
     display: grid;
-    grid-template-columns: 1.5fr 5.25fr 5.25fr;
+    grid-template-columns: 2fr 5fr 7fr;
     width: 70%;
     height: 25%;
     background-color: #6B705C;
@@ -119,7 +119,7 @@ ul, li {
 .containerBoutons {
     grid-column: 3;
     display: grid;
-    grid-template-columns: 1fr 1fr 0.3fr;
+    grid-template-columns: 1fr 1fr 1fr 0.3fr;
     width: auto;
     height: auto;
     padding: 1.5vh;
@@ -197,7 +197,6 @@ ul, li {
 .titre h1 {
     font-family:'GothamBold';
     font-size: 2vw;
-
 }
 
 .global {
