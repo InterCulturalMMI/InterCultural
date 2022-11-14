@@ -28,9 +28,9 @@ if(isset($_POST['supprimer'])){
   $tab_supprimer_image = $resulat -> fetch();
   $resulat -> closeCursor();
 
-  $event = new Event($tab_supprimer_event['id_pays'], $tab_supprimer_event['id_image'], $tab_supprimer_event['nom_activitee'], $tab_supprimer_event['descriptif'], $tab_supprimer_event['horraires'], $tab_supprimer_event['date_event'], $tab_supprimer_event['lieu'], $tab_supprimer_event['prix_adulte'], $tab_supprimer_event['prix_enfant'], $tab_supprimer_event['payant'], $tab_supprimer_event['nbr_place_total'], $tab_supprimer_event['nbr_place_dispo'], $tab_supprimer_event['main_activitee']);
+  $event = new Event($tab_supprimer_event['id_pays'], $tab_supprimer_event['id_image'], $tab_supprimer_event['nom_activitee'], $tab_supprimer_event['descriptif'], $tab_supprimer_event['horraires'], $tab_supprimer_event['date_event'], $tab_supprimer_event['lieu'], $tab_supprimer_event['prix_adulte'], $tab_supprimer_event['prix_enfant'], $tab_supprimer_event['payant'], $tab_supprimer_event['nbr_place_total'], $tab_supprimer_event['nbr_place_dispo'], $tab_supprimer_event['main_activitee'], $tab_supprimer_event['nom_activitee_en'], $tab_supprimer_event['descriptif_en']);
 
-  $image = new Image($tab_supprimer_image['nom_image'], $tab_supprimer_image['alt'], $tab_supprimer_image['type'], $tab_supprimer_image['url']);
+  $image = new Image($tab_supprimer_image['nom_image'], $tab_supprimer_image['alt'], $tab_supprimer_image['type'], $tab_supprimer_image['url'], $tab_supprimer_image['url_en']);
 
   $event-> suppressionEBDD($tab_supprimer_event['id_event']);
   $image->suppressionIBDD($tab_supprimer_event['id_image']);
@@ -75,6 +75,7 @@ if(!isset($_POST['blbl'])){
       </select>
     </p>
     <input class="boutt" type="submit" name="supprimer" value="Supprimer">
+    <input type="hidden" name="blbl" value="3">
   </form>
 
 </body>

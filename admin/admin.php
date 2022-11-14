@@ -41,22 +41,7 @@ if(isset($_POST['id'])){
   </div>
 
   <div class="global">
-    <p>Bonjour, en tant qu'admin du site web de Intercultural, vous avez la possibilitée de créer ou de supprimer des évènements. Les modifications sont envoyées directement à la base de données ou est stocker le contenue de votre site. Tout changement sera donc instantanément visible sur le site web d'Intercultural. </p>
-    <p>Pour modifier un evénement, il vous suffit de selectionner celui que vous souhaitez : </p>
-
-        <?php 
-          for($i = 0; $i < $nbr_event; $i++){
-        ?>
-        <div>
-          <form method="POST" action='admin_event_modif.php?id=<?php echo $tab_event[$i]['id_event'];?>'>
-            <input type="submit" value="<?php echo $tab_event[$i]['nom_activitee'];?>">
-            <input type="hidden" name="blbl" value="<?php echo $tab_event[$i]['id_event'];?>">
-          </form> 
-        </div>
-        <?php 
-          }
-        ?>
-
+    <p>Bonjour, en tant qu'admin du site web de Intercultural, vous avez la possibilitée de créer, modifier ou de supprimer des évènements. Les modifications sont envoyées directement à la base de données ou est stocker le contenue de votre site. Tout changement sera donc instantanément visible sur le site web d'Intercultural. </p>
   </div>
 
   <?php
@@ -90,35 +75,21 @@ else{
     <h1>Administration du site web</h1>
   </div>
 
-  <div class="global">
-    <p>Bonjour, en tant qu'admin du site web de Intercultural, vous avez la possibilitée de créer ou de supprimer des évènements. Les modifications sont envoyées directement à la base de données ou est stocker le contenue de votre site. Tout changement sera donc instantanément visible sur le site web d'Intercultural. </p>
-    <p>Pour modifier un evénement, il vous suffit de selectionner celui que vous souhaitez : </p>
-    <form method="POST" action="admin.php">
-     
-        <?php 
-          for($i = 0; $i < $nbr_event; $i++){
-        ?>
-        <div>
-          <form method="POST" action='admin_event_modif.php?id=<?php echo $tab_event[$i]['id_event'];?>'>
-            <input type="submit" value="<?php echo $tab_event[$i]['nom_activitee'];?>">
-            <input type="hidden" name="blbl" value="<?php echo $tab_event[$i]['id_event'];?>">
-          </form> 
-        </div>
-        <?php 
-          }
-        ?>
-      
+   <div class="global">
+    <p>Bonjour, en tant qu'admin du site web de Intercultural, vous avez la possibilitée de créer, modifier ou de supprimer des évènements. Les modifications sont envoyées directement à la base de données ou est stocker le contenue de votre site. Tout changement sera donc instantanément visible sur le site web d'Intercultural. </p>
   </div>
 
-<?php
+  <?php
   }
-
-  if(!isset($_POST['mdp']) && !isset($_POST['blbl'])){
+  else {
     echo "<script> function Redirection(){
-    document.location.href='../connexion.php?erreur=2';
-  }
-  Redirection()
-  </script>";
-  }
+      document.location.href='../connexion.php?erreur=1';
+    }
+    Redirection()
+    </script>";}
 }
 ?>
+
+
+</div>
+</body>
