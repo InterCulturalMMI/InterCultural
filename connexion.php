@@ -3,12 +3,12 @@
 include("config/config.php") ;
 $connection = new PDO('mysql:host='.$hote.';port='.$port.';dbname='.$nombase,$user, $mdp);
 
-$utilisateurs = 'SELECT pseudo_user, mdp_user FROM utilisateurs';
+$utilisateurs = 'SELECT * FROM utilisateurs';
 $resulat = $connection -> query($utilisateurs);
-$tab_pays = $resulat -> fetchAll();
+$tab_admin = $resulat -> fetchAll();
 $resulat -> closeCursor();
 
-$compteur = count($tab_pays);
+$compteur = count($tab_admin);
 ?>
 
 <!doctype html>
@@ -17,13 +17,7 @@ $compteur = count($tab_pays);
   <meta charset="utf-8">
   <title>INTERCULTURAL | Connexion </title>
   <link rel="stylesheet" href="css/formulaire.css">
-
-  <meta name="description" content="Cette page vous permettra de vous connecter à votre compte, si vous êtes un administrateur !">
-  <meta name="author" content="InterCultural Evenement">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <link rel="apple-touch-icon" href="img/favicon.png"/>
-  <link rel="icon" href="img/favicon.png" />
+  <script src="script.js"></script>
 </head>
 <body>
   <div class="titre">
@@ -43,9 +37,21 @@ $compteur = count($tab_pays);
   ?>
 
   <div class="global">
-    <form method="POST" action="connexion.php">
-      <label for="pseudo" class="label">Pseudonyme</label><br>
-      <input type="pseudo" class="champs" id="pseudo" name="pseudo" placeholder="Pseudonyme.."><br>
+    <form method="POST" action="admin/admin.php">
+      <p>
+        <label for="id">Pseudonyme</label>
+      </p>
+      <p>
+        <select class="champs" name="id">
+        <?php 
+          for($i = 0; $i < $compteur; $i++){
+        ?>
+        <option value="<?php echo $tab_admin[$i]['id_user'];?>"><?php echo $tab_admin[$i]['pseudo_user'];?></option>
+        <?php 
+         }
+        ?>
+        </select>
+      </p>
       <label for="name" class="label">Mot de passe</label></br>
       <input type="password" class="champs" id="mdp" name="mdp" placeholder="Mot de passe.."><br><br> 
       <input type="submit" class="boutt" name="connec" value="Connexion">
