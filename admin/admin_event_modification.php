@@ -50,7 +50,7 @@ if(!isset($_POST['blbl'])){
         ?>
         <div>
           <form method="POST" action='admin_event_modif.php?id=<?php echo $tab_event[$i]['id_event'];?>'>
-            <input type="submit" value="<?php echo $tab_event[$i]['nom_activitee'];?>">
+            <input class="bouton" type="submit" value="<?php echo $tab_event[$i]['nom_activitee'];?>">
             <input type="hidden" name="blbl" value="<?php echo $tab_event[$i]['id_event'];?>">
           </form> 
         </div>

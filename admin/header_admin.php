@@ -15,7 +15,7 @@ $nbr_element_nav = count($tab_nav);
   <div class="fondBar">
     <div class="logo">
       <a href="../index.php">
-        <img src="../img/logo.png"></img>
+        <img src="../img/logo.webp"></img>
       </a>
     </div>
 
