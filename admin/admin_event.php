@@ -40,16 +40,16 @@ if(isset($_POST['ajout'])){
   }
   if ($temoin == false) {
 
-    $p = 'SELECT pays.* FROM pays WHERE id_pays =' .$_POST['id_pays'];
+    $p = 'SELECT id_pays, id_image_ban, id_image_car, id_image_drap, LOWER(pays.nom_pays), geoloc_long, geoloc_latt, descriptif_pays, descriptif_monument, nom_monument_principal, nom_monument_secondaire, nom_pays_en, descriptif_pays_en, descriptif_monument_en FROM pays WHERE id_pays =' .$_POST['id_pays'];
     $resulat = $connection -> query($p);
     $tab_p = $resulat -> fetch();
     $resulat -> closeCursor();
     $p_pays = new Pays($tab_ed[0], $tab_p[4], $tab_p[5], $tab_p[6], $tab_p[7], $tab_p[8], $tab_p[9] , $tab_p[10]);
     
-    //['tmp_name'] et ['name'] --> appartient fonc php = inchangeable
+      //['tmp_name'] et ['name'] --> appartient fonc php = inchangeable
     move_uploaded_file($_FILES['imagee']['tmp_name'], 'img/'.$_POST['type'].'_'.$tab_p[4].'_'. basename($_FILES['imagee']['name']));
     
-    $image = new Image($_POST['nom_image'], $_POST['alt'], $_POST['type'],'img/'.$_POST['type'].' _'.$tab_p[4].'_'.basename($_FILES['imagee']['name']));
+    $image = new Image($_POST['nom_image'], $_POST['alt'], 'event','img/event_'.$tab_p[4].'_'.basename($_FILES['imagee']['name']), '../img/event_'.$tab_p[4].'_'.basename($_FILES['imagee']['name']));
     $image->ajoutiBDD();
 
     
@@ -77,6 +77,7 @@ if(!isset($_POST['blbl'])){
   <meta charset="utf-8">
   <link rel="stylesheet" href="../css/formulaire.css">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="../js/admin.js"></script>
   <title>INTERCULTURAL | Admin - Event ajout</title>
 </head>
 <body>
@@ -97,7 +98,7 @@ if(!isset($_POST['blbl'])){
           for($i = 0; $i < $nbr_pays; $i++){
         ?>
           <option value="<?php echo $tab_pays[$i]['id_pays'];?>"><?php echo $tab_pays[$i]['nom_pays'];?></option>
-        <?php 
+         <?php 
           }
         ?>
         </select>
@@ -105,12 +106,12 @@ if(!isset($_POST['blbl'])){
 
       <p>
         <label for="nom_activitee">Nom de l'évènement</label>
-        <input type="text" name="nom_activitee" placeholder="Évènement" class="champs">
+        <input type="text" name="nom_activitee" placeholder="Évènement" class="champs" required>
       </p>
 
       <p>
         <label for="nom_activitee_en">Nom de l'évènement en Anglais</label>
-        <input type="text" name="nom_activitee_en" placeholder="Event" class="champs">
+        <input type="text" name="nom_activitee_en" placeholder="Event" class="champs" required>
       </p>
 
       <p>
@@ -119,7 +120,12 @@ if(!isset($_POST['blbl'])){
       </p>
 
       <p>
-        <label for="descriptif_en">Descriptif de l'évènement en Anglais</label>
+        <label for="descriptif">Descriptif de l'évènement</label>
+        <input type="textarea" name="descriptif" placeholder="Description" class="champs">
+      </p>
+
+      <p>
+        <label for="descriptif_en">Descriptif de l'évènement en Anglais</label required>
         <input type="textarea" name="descriptif_en" placeholder="Description" class="champs">
       </p>
 
@@ -129,13 +135,13 @@ if(!isset($_POST['blbl'])){
       </p>
 
       <p>
-        <label for="date_event">Date de la course</label>
+        <label for="date_event">Date de l'évènement</label>
         <input id="date" type="date" name="date_event" class="champs">
       </p>
 
       <p>
         <label for="lieu">Emplacement de l'évènement</label>
-        <input type="text" name="lieu" class="champs">
+        <input type="text" name="lieu" class="champs" required>
       </p>
 
       <p>
@@ -146,7 +152,7 @@ if(!isset($_POST['blbl'])){
         </p>
         <p>
           <label>Non</label>
-          <input type="radio" name="main_activitee"value="0" class="check">
+          <input type="radio" name="main_activitee" value="0" class="check" checked>
         </p>
       </p>
 
@@ -157,47 +163,51 @@ if(!isset($_POST['blbl'])){
         <label for="type_course">Est-ce un évènement payant ?</label>
         <p>
           <label>Oui</label>
-          <input type="radio" name="payant" value="1" class="check">
+          <input type="radio" name="payant" value="1" class="check" onclick="sssrank()">
         </p>
         <p>
           <label>Non</label>
-          <input type="radio" name="payant" value="0" class="check">
+          <input type="radio" name="payant" value="0" class="check" checked onclick="sssrank()">
         </p>
       </p>
+
+      <div id="ombremage" class="lumieremage" >
   
-      <p>
-        <label for="prix_adulte">Prix ticket adulte </label>
-        <input type="number" name="prix_adulte" class="champs">
-      </p>
-  
-      <p>
-        <label for="prix_enfant">Prix ticket enfant </label>
-        <input type="number" name="prix_enfant" class="champs">
-      </p>
-  
-      <p>
-        <label for="nbr_place_total">Nombre de place :</label>
-        <input type="number" name="nbr_place_total" class="champs">
-      </p>
-  
-      <p>
-        <label for="nbr_place_dispo">Nombre de place :</label>
-        <input type="number" name="nbr_place_dispo" class="champs">
-      </p>
+        <p>
+          <label for="prix_adulte">Prix ticket adulte </label>
+          <input type="number" name="prix_adulte" class="champs">
+        </p>
+    
+        <p>
+          <label for="prix_enfant">Prix ticket enfant </label>
+          <input type="number" name="prix_enfant" class="champs">
+        </p>
+    
+        <p>
+          <label for="nbr_place_total">Nombre de place :</label>
+          <input type="number" name="nbr_place_total" class="champs">
+        </p>
+    
+        <p>
+          <label for="nbr_place_dispo">Nombre de place :</label>
+          <input type="number" name="nbr_place_dispo" class="champs">
+        </p>
+
+      </div>
           
-      <!--  <input type="submit" name="ajout" id="envoyer"> -->
+    <!--  <input type="submit" name="ajout" id="envoyer"> -->
     </fieldset>
 
     <!-- argument inchangeable, sinon ça ne marche pas / value = taille max du fichier (en loccurence image)-->
     <input type="hidden" name="MAX_FILE_SIZE" value="30000">
     <p>
       <label for="nom_image">Choississez une image associée</label>
-      <input class="champs" type="file" name="imagee">    
+      <input class="champs" type="file" name="imagee" required>    
     </p>
 
     <p>
       <label for="nom_image">Nom de l'image</label>
-     <input class="champs" type="text" name="nom_image" placeholder="Nom de l'image">
+      <input class="champs" type="text" name="nom_image" placeholder="Nom de l'image">
     </p>
 
     <p>
@@ -211,6 +221,8 @@ if(!isset($_POST['blbl'])){
     </p>
 
     <input class="boutt" type="submit" name="ajout" id="envoyer">
+    <input type="hidden" name="blbl" value="2">
+
 
     </form>
   </div>
