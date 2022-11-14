@@ -30,6 +30,13 @@ $nbr_event_sec = count($tab_event_sec);
 <head>
   <meta charset="utf-8">
   <title> INTERCULTURAL | Réservation </title>
+
+  <meta name="description" content="Réservez vos places pour les activités en entrant votre mail et en enregistrant le code qui vous sera affiché à l'écran ! ">
+	<meta name="author" content="InterCultural Evenement">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="apple-touch-icon" href="img/favicon.png"/>
+  <link rel="icon" href="img/favicon.png" />
   <link rel="stylesheet" href="css/reservation.css">
   <script src="js/reservation.js"></script>
 </head>

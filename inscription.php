@@ -16,6 +16,13 @@ $compteur = count($tab_pays);
 <head>
   <meta charset="utf-8">
   <title>INTERCULTURAL | Inscription</title>
+
+  <meta name="description" content="Inscrivez vous en tant qu'administrateur, pour accéder à l'interface !">
+	<meta name="author" content="InterCultural Evenement">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="apple-touch-icon" href="img/favicon.png"/>
+  <link rel="icon" href="img/favicon.png" />
   <link rel="stylesheet" href="css/formulaire.css">
   <script src="script.js"></script>
 </head>

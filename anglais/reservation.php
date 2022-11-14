@@ -29,6 +29,12 @@ $nbr_event_sec = count($tab_event_sec);
 <head>
   <meta charset="utf-8">
   <title> INTERCULTURAL | Reservation </title>
+  <meta name="description" content="InterCultural, a festival mixing culture and passion, in which you will discover many cultures and related activities!">
+	<meta name="author" content="InterCultural Evenement">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<link rel="apple-touch-icon" href="../img/favicon.png"/>
+  <link rel="icon" href="../img/favicon.png" />
   <link rel="stylesheet" href="../css/reservation.css">
   <script src="../js/reservation.js"></script>
 </head>
@@ -135,7 +141,7 @@ $nbr_event_sec = count($tab_event_sec);
       </div>
 
     <div class="bouton_reserver">
-      <a href="../reservation.php?id=<?php echo $_GET['id'];?>" class="bn3">Use french version to reserve</a>
+      <a href="page_reserv.php?id=<?php echo $_GET['id'];?>" class="bn3">Click here to reserve your places ! </a>
     </div>
 
 </div>  

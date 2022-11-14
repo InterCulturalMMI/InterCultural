@@ -23,7 +23,7 @@ $tab_image_ban = $resulat -> fetch();
 $resulat -> closeCursor();
 
 //image et descriptif de l'acitivite principale (nom reccuperer mais pas attribué : /\ prevoir un emplacement pour)
-$main_activitee = 'SELECT event.id_event, event.descriptif_en, image.url, pays.id_pays, event.main_activitee, event.nom_activitee_en FROM event, pays, image WHERE event.main_activitee = 1 AND image.id_image = event.id_image AND pays.id_pays = event.id_pays AND pays.id_pays ='. $_GET['id'];
+$main_activitee = 'SELECT event.id_event, event.descriptif_en, image.url_en, pays.id_pays, event.main_activitee, event.nom_activitee_en FROM event, pays, image WHERE event.main_activitee = 1 AND image.id_image = event.id_image AND pays.id_pays = event.id_pays AND pays.id_pays ='. $_GET['id'];
 $resulat = $connection -> query($main_activitee);
 $tab_event = $resulat -> fetch();
 $resulat -> closeCursor();
@@ -41,6 +41,13 @@ $nbr_element_nav = count($tab_nav);
 <head>
   <meta charset="utf-8">
   <title> INTERCULTURAL | <?php echo $tab_pays["nom_pays_en"] ?></title>
+
+  <meta name="description" content="Countries are on the agenda at this festival! Discover cultures, and what they contain, as well as specificities!">
+  <meta name="author" content="InterCultural Evenement">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="apple-touch-icon" href="../img/favicon.png"/>
+  <link rel="icon" href="../img/favicon.png" />
   <link rel="stylesheet" href="../css/pays.css">
   <script src="../js/pays.js"></script>
 </head>
@@ -67,7 +74,7 @@ $nbr_element_nav = count($tab_nav);
     <div class="zoom"><a href="#intro1">Introduction</a></div>
     <div class="zoom"><a href="#monumentsid">Monuments</a></div>
     <div class="zoom"><a href="#activid">Activities</a></div>
-    <div class="zoom"><a href="#">Inscription</a></div>
+    <div class="zoom"><a href="#resss">Inscription</a></div>
 </nav>
 
   <div class="intro" id="intro1">
@@ -83,8 +90,8 @@ $nbr_element_nav = count($tab_nav);
   <div class="titre" id="monumentsid"><h1  style="color:white;"> MONUMENTS </h1></div>
 
     <div class="images_monument">
-      <div class="un"><img src="<?php  echo $tab_image_monument[0]["url_en"]; ?>"></div>
-      <div class="deux"><img src="<?php  echo $tab_image_monument[1]["url_en"]; ?>"></div>
+      <div class="un"><img src="<?php  echo $tab_image_monument[0]["url_en"]; ?>" alt="Monument pictures"></div>
+      <div class="deux"><img src="<?php  echo $tab_image_monument[1]["url_en"]; ?>" alt="Monument pictures"></div>
     </div>
 
     <div class="intro" id="monum">
@@ -114,7 +121,7 @@ $nbr_element_nav = count($tab_nav);
   </div>
 </div>
 
-  <div class="reserv">
+  <div class="reserv" id="resss">
     <a href="reservation.php?id=<?php echo $_GET['id'];?>"> Reserve your seats for the activities ! </a>
   </div>
 

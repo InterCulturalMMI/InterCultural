@@ -46,6 +46,13 @@ if(isset($_POST['connec'])){
 <head>
   <meta charset="utf-8">
   <title> INTERCULTURAL | Envoi code</title>
+  
+  <meta name="description" content="Découvrez les différentes activités que le pays propose, avec des informations supplémentaires sur le pays !">
+  <meta name="author" content="InterCultural Evenement">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="apple-touch-icon" href="img/favicon.png"/>
+  <link rel="icon" href="img/favicon.png" />
   <link rel="stylesheet" href="css/formulaire.css">
 </head>
 <body>
@@ -66,18 +73,20 @@ if(isset($_POST['connec'])){
                 }
                 ?>
             </select></br>
-            <!--<select class="champs" name="nb_place">
+            <select class="champs" name="nb_place">
                 <option value="1"> 1 place </option>
                 <option value="2"> 2 places </option>
                 <option value="3"> 3 places </option>
                 <option value="3"> 4 places </option>
-            </select>-->
+            </select>
             <div class="envoi"><a href="mailto: <?php $recepteur ?>"><input type="submit" class="boutt" name="connec" value="Envoi code"></a></div>
             <div class="phrasecode">
                 <p>
                 <?php
                 if (isset($_POST['connec'])){
                     $temoin=FALSE;
+
+                    $nb_place_update = "UPDATE event SET nbr_place_dispo=249 WHERE id_event=1"; 
 
                 for ($i=0 ;$i< count($tab_codes); $i++){
                     if ($code_final == $tab_codes[$i]["code"]){
